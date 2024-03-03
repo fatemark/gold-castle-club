@@ -1,0 +1,256 @@
+{
+  "version": "v2.9.0",
+  "name": "GoldToken",
+  "bytecode": "0c0b09121b4024402d4036403f41f6421942384273010000000102ce0002010000000102ce0102010000000102ce0202010000000102ce0302010000000102a00402010000000102a00002010000000102a002020101010b0040ddb417011600130a131283340c7b1600130a1312832d170216011600a9a00416002aa104130a13128317030c17040c17050c170616061602324c40a4a0000c301340787b57405640444e711367102e0d2a1707160713414d2f4c021391e1a3004a404f1607130a314c02138000ad9c4a4049160713404d2f4c020e4a404316071340de2f4c02139dcd65004a403d16071341bc2f4c0213c0773594004a403716071343e72f4c0213c059682f004a403116071343092f4c0213c09502f9004a402b16071348ae2f4c0213c059682f004a4025160713515c2f4c0213c1012a05f2004a1f1607135e612f4c020d4a1916071362b82f4c020f4a1316071355b32f4c02114a0d16071348ae2f4c0213074a07160713072f4c0213c10ba43b74004a010c170816080d2f4c02a0044a402116080e2f4c04a0040e2d4a1916080f2f4c04a00413082d4a111608112f4c04a004112d4a09160813072f4c04a004130a2d4a010c1709160516092a1705160316072c13c2b5e620f480002d170a160416082a160a2a170416060d2a17064a7f581601b11604aba00416052ba10416011605a8a00016042ba10005160116041605a00461010201010012b4ce04451340637ba0020c331340e67bce04b11600aba00216002ba10201020000000db4ce04451340637ba0001380989680311343097bce04a004a801020002001bb4ce04451340637b56a0032b1700160013c1013027c5003313157b13c1174876e8001701ce0577b11601aba00116012ba10156a103",
+  "codeHash": "683511c194b195df560543287b2ed5f4031d1cef581e3f733ea30dda4902fd1c",
+  "fieldsSig": {
+    "names": [
+      "symbol",
+      "name",
+      "decimals",
+      "supply",
+      "chancellor",
+      "fealtyId",
+      "lotterybalance",
+      "warfund",
+      "airdropbalance",
+      "wartime",
+      "jackpot",
+      "__stdInterfaceId"
+    ],
+    "types": [
+      "ByteVec",
+      "ByteVec",
+      "U256",
+      "U256",
+      "Address",
+      "ByteVec",
+      "U256",
+      "U256",
+      "U256",
+      "U256",
+      "U256",
+      "ByteVec"
+    ],
+    "isMutable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false
+    ]
+  },
+  "eventsSig": [
+    {
+      "name": "Withdraw",
+      "fieldNames": [
+        "to",
+        "transferamount",
+        "jackpotwinnings",
+        "jackpot"
+      ],
+      "fieldTypes": [
+        "Address",
+        "U256",
+        "U256",
+        "U256"
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "name": "getSymbol",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "ByteVec"
+      ]
+    },
+    {
+      "name": "getName",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "ByteVec"
+      ]
+    },
+    {
+      "name": "getDecimals",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "U256"
+      ]
+    },
+    {
+      "name": "getTotalSupply",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "U256"
+      ]
+    },
+    {
+      "name": "getJackpot",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "U256"
+      ]
+    },
+    {
+      "name": "lotterybalance",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "U256"
+      ]
+    },
+    {
+      "name": "getAirdropbalance",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "U256"
+      ]
+    },
+    {
+      "name": "withdraw",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": true,
+      "isPublic": true,
+      "paramNames": [
+        "betamount"
+      ],
+      "paramTypes": [
+        "U256"
+      ],
+      "paramIsMutable": [
+        false
+      ],
+      "returnTypes": []
+    },
+    {
+      "name": "airdropWithdraw",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": true,
+      "isPublic": true,
+      "paramNames": [
+        "amount"
+      ],
+      "paramTypes": [
+        "U256"
+      ],
+      "paramIsMutable": [
+        false
+      ],
+      "returnTypes": []
+    },
+    {
+      "name": "emergencyWithdraw",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": true,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    },
+    {
+      "name": "warForTheAges",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": true,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    }
+  ],
+  "constants": [],
+  "enums": [
+    {
+      "name": "ErrorCodes",
+      "fields": [
+        {
+          "name": "InvalidWithdrawAmount",
+          "value": {
+            "type": "U256",
+            "value": "0"
+          }
+        },
+        {
+          "name": "NotTheChancellor",
+          "value": {
+            "type": "U256",
+            "value": "99"
+          }
+        },
+        {
+          "name": "NotWarTimeYet",
+          "value": {
+            "type": "U256",
+            "value": "21"
+          }
+        },
+        {
+          "name": "NoLottery",
+          "value": {
+            "type": "U256",
+            "value": "120"
+          }
+        },
+        {
+          "name": "NoAirdropbalance",
+          "value": {
+            "type": "U256",
+            "value": "230"
+          }
+        },
+        {
+          "name": "LotteryStillGoing",
+          "value": {
+            "type": "U256",
+            "value": "777"
+          }
+        }
+      ]
+    }
+  ],
+  "stdInterfaceId": "0001"
+}

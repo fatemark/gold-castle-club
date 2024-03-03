@@ -1,0 +1,7 @@
+TxScript RevokeAnathemaByHighLord(
+    revokerAddress: Address,
+    scroundrelAddress: Address,
+    fealtyId: ByteVec
+) {
+    Fealty(fealtyId).revokeAnathemaByHighLord(revokerAddress, scroundrelAddress)
+}

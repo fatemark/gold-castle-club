@@ -1,0 +1,8 @@
+TxScript Mint(
+    mintPrice: U256,
+    nftCollectionId: ByteVec
+) {
+
+    NFTPublicSaleCollectionRandomWithRoyalty(nftCollectionId).mint{callerAddress!() -> ALPH: 1 alph + mintPrice}()
+
+}

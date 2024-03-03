@@ -1,0 +1,43 @@
+{
+  "version": "v2.9.0",
+  "name": "DeclareAnathemaByLord",
+  "bytecodeTemplate": "01010300010015{0}13282d1700b47a13c40de0b6b3a764000013c3038d7ea4c680002aa2{4}1600a3{1}{2}{0}{5}100c{3}0111",
+  "fieldsSig": {
+    "names": [
+      "bribe",
+      "declarerLordAddress",
+      "scroundrelAddress",
+      "fealtyId",
+      "goldtokenid",
+      "reason"
+    ],
+    "types": [
+      "U256",
+      "Address",
+      "Address",
+      "ByteVec",
+      "ByteVec",
+      "ByteVec"
+    ],
+    "isMutable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    }
+  ]
+}

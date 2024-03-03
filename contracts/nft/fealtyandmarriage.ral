@@ -1,0 +1,710 @@
+Contract Fealty(
+    fealtyforgoldid: ByteVec,
+    systemowner: Address,
+    specificmarriagetemplateid: ByteVec,
+    anathemaId: ByteVec,
+    mut goldtokenid: ByteVec,
+    mut asiaCollectionid: ByteVec,
+    mut europeCollectionid: ByteVec,
+    mut americasCollectionid: ByteVec,
+    mut africaCollectionid: ByteVec,
+    mut antarticaOceaniaCollectionid: ByteVec,
+    mut championsCollectionid: ByteVec,
+    mut countriesCollectionid: ByteVec,
+    mut divorcefee: U256
+  ){
+
+    event NewMarriage(proposer: Address, proposee: Address)
+    event NewMarriageContractOffer(proposer: Address, proposee: Address, dowry: U256, time: U256, loveletter: ByteVec, maxlovercount: U256)
+
+    event NewMarriageWithDowry(proposer: Address, proposee: Address)
+    event RescindMarriage(proposer: Address)
+    event Divorce(wifeHusband: Address, claimant: Address)
+
+    event BecomeLover(selfloverAddress: Address, lovertargetAddress: Address)
+
+    event NewFealtyContract(bribe: U256, time: U256, lordAddress: Address, minimumClass: U256, lordSubjectIndex: U256, campaign: ByteVec, subjecttarget: Address)
+    event NewSwearForGold(lordAddress: Address, subjectAddress: Address, lordSubjectIndex: U256)
+
+    event NewSwearForFree(lordAddress: Address, subjectAddress: Address, time: U256)
+
+    event NewRescindGoldFealtyOffer(lordAddress: Address, lordSubjectIndex: U256)
+    event NewDeclareAnathemaByHigherLord(declarerLordAddress: Address, scroundrelAddress: Address, bribe: U256, reason: ByteVec)
+    event NewDeclareAnathemaByLord(declarerLordAddress: Address, scroundrelAddress: Address, bribe: U256, reason: ByteVec)
+    event NewRevokeAnathemaByDeclarer(revokerAddress: Address, scroundrelAddress: Address)
+    event NewRevokeAnathemaByHighLord(revokerAddress: Address, scroundrelAddress: Address)
+    event NewRevokeAnathemaByBribe(scroundrelAddress: Address, lordAddress: Address)
+    event NewRevokeAnathemaByTime(scroundrelAddress: Address)
+    event WarDeclared(declarerAddress: Address, targetAddress: Address, timenow: U256)
+    event Voted(voterId: ByteVec, voteInput: U256, voteTime: U256)
+    event BecameOverlord(lordAddress: Address)
+
+
+    enum ErrorCodes {
+      NotSystemOwner = 76
+      Wrongcollection = 43
+      NotTheFeudalLord = 23
+      NotEnoughStanding = 42
+      NotOwner = 21
+      BribeTooHigh = 7
+      NotDeclarer = 4
+      NotYourTimeYet = 5
+      DeclaredAnathemaThreeTimesAlready = 6
+      TooManyOffers = 101
+      SubjectNeedsToBeLowerInClass = 102
+      TooLowInStanding = 103
+      StillMarried = 115
+      RecentlyDivorced = 116
+      NotMarried = 117
+      DivorceBeforeMarry = 118
+      TooSluttyForProposer = 119
+      CantSwearToSelf = 122
+      TooHighInStanding = 444
+    }
+    
+  @using(checkExternalCaller = true)
+  pub fn newFealtyContractMigration(newBytecode: ByteVec) -> () {
+
+    checkCaller!(callerAddress!() == systemowner, ErrorCodes.NotSystemOwner)
+    migrate!(newBytecode)
+  }
+
+  @using(checkExternalCaller = true, updateFields = true)
+  pub fn changeDivorceFee(newdivorcefee: U256) -> () {
+    checkCaller!(callerAddress!() == systemowner, ErrorCodes.NotSystemOwner)
+    divorcefee = newdivorcefee
+  }
+
+  @using(checkExternalCaller = true, assetsInContract = true)
+  pub fn withDraw(amount: U256, tokenId: ByteVec) -> () {
+    checkCaller!(callerAddress!() == systemowner, ErrorCodes.NotSystemOwner)
+    transferTokenFromSelf!(systemowner, tokenId, amount)
+  }
+
+  pub fn checkChancellor() -> (Address) {
+    return systemowner
+  }
+
+  @using(checkExternalCaller = true, updateFields = true)
+  pub fn newCollection(newcollection: ByteVec, collectiontochangenumber: U256) -> () {
+    checkCaller!(callerAddress!() == systemowner, ErrorCodes.NotSystemOwner)
+
+    if (collectiontochangenumber == 0) 
+    {asiaCollectionid = newcollection}
+    else if (collectiontochangenumber == 1)
+    {europeCollectionid = newcollection}
+    else if (collectiontochangenumber == 2)
+    {americasCollectionid = newcollection}
+    else if (collectiontochangenumber == 3)
+    {africaCollectionid = newcollection}
+    else if (collectiontochangenumber == 4)
+    {antarticaOceaniaCollectionid = newcollection}
+    else if (collectiontochangenumber == 5)
+    {championsCollectionid = newcollection}
+    else if (collectiontochangenumber == 6)
+    {countriesCollectionid = newcollection}
+    else if (collectiontochangenumber == 7)
+    {goldtokenid = newcollection}
+    else 
+    {asiaCollectionid = asiaCollectionid}
+  }
+
+  @using(preapprovedAssets = false, updateFields = false, assetsInContract = false, checkExternalCaller = true)
+  pub fn marryOwnCollection(
+    proposee: Address, 
+    proposer: Address,
+    extratime: U256
+    ) -> () {
+
+  let proposeeOwner = callerAddress!()
+  let proposeeNftId = addressToContractId!(proposee)
+  let proposerNftId = addressToContractId!(proposer)
+
+  let owner = NFT(proposeeNftId).getOwner()
+  let proposerOwner = NFT(proposerNftId).getOwner()
+
+  checkCaller!(owner == proposeeOwner, ErrorCodes.NotOwner)
+  checkCaller!(proposerOwner == proposeeOwner, ErrorCodes.NotOwner)
+
+
+  let (currentmarriagetime, currentwife) = NFT(proposerNftId).getMarriage()
+  
+  assert!(currentmarriagetime < blockTimeStamp!(), ErrorCodes.StillMarried)
+
+  let currentwifeowner = 
+  if (currentwife == proposer)
+    owner
+  else 
+    NFT(addressToContractId!(currentwife)).getOwner()
+
+  assert!(currentwifeowner == owner, ErrorCodes.DivorceBeforeMarry)
+
+  let (currentproposeemarriagetime, currentproposeewife) = NFT(proposerNftId).getMarriage()
+  
+  assert!(currentproposeemarriagetime < blockTimeStamp!(), ErrorCodes.StillMarried)
+
+  let currentproposeewifeowner = 
+  if (currentproposeewife == proposee)
+    owner
+  else 
+    NFT(addressToContractId!(currentproposeewife)).getOwner()
+
+  assert!(currentproposeewifeowner == owner, ErrorCodes.DivorceBeforeMarry)
+
+  validateNFT(proposeeNftId)
+  validateNFT(proposerNftId)
+
+  NFT(proposeeNftId).marriageChange(proposer, extratime)
+  NFT(proposerNftId).marriageChange(proposee, extratime)
+
+  emit NewMarriage(proposer, proposee)
+}
+
+
+  @using(preapprovedAssets = true, updateFields = false, assetsInContract = false, checkExternalCaller = true)
+  pub fn createMarriageContract(proposee: Address, proposer: Address, dowry: U256, time: U256, loveletter: ByteVec, maxlovercount: U256) -> () {
+  let caller = callerAddress!()
+
+
+  let proposerNftId = addressToContractId!(proposer)
+  validateNFT(proposerNftId)
+
+  let (proposerMarriagetime, currentMarriage) = NFT(proposerNftId).getMarriage()
+  assert!(currentMarriage == proposer, ErrorCodes.StillMarried)
+  assert!(blockTimeStamp!() > proposerMarriagetime, ErrorCodes.RecentlyDivorced)
+
+  let owner = NFT(proposerNftId).getOwner()
+  checkCaller!(owner == caller, ErrorCodes.NotOwner)
+
+
+  let (encodeImmutableFields, encodeMutableFields) = MarriageSpecific.encodeFields!(proposer, dowry, time, goldtokenid, selfContractId!(), proposee, owner, loveletter, maxlovercount)
+
+  copyCreateSubContract!{caller -> ALPH: 1 alph, goldtokenid: dowry}(proposerNftId, specificmarriagetemplateid, encodeImmutableFields, encodeMutableFields)
+   
+  emit NewMarriageContractOffer(proposer, proposee, dowry, time, loveletter, maxlovercount)
+
+}
+
+
+  @using(preapprovedAssets = false, updateFields = false, assetsInContract = false, checkExternalCaller = true)
+  pub fn acceptMarriage(
+    proposee: Address, 
+    proposer: Address
+    ) -> () {
+
+  let proposeeOwner = callerAddress!()
+  let proposeeNftId = addressToContractId!(proposee)
+
+  let timenow = blockTimeStamp!()
+
+  let (proposermarriagetime, currentproposerMarriage) = NFT(addressToContractId!(proposer)).getMarriage()
+  assert!(currentproposerMarriage == proposer, ErrorCodes.StillMarried)
+  assert!(proposermarriagetime < timenow, ErrorCodes.RecentlyDivorced)
+
+
+  let (proposeemarriagetime, currentproposeeMarriage) = NFT(proposeeNftId).getMarriage()
+  assert!(currentproposeeMarriage == proposee, ErrorCodes.StillMarried)
+  assert!(proposeemarriagetime < timenow, ErrorCodes.RecentlyDivorced)
+
+
+
+  let owner = NFT(proposeeNftId).getOwner()
+  checkCaller!(owner == proposeeOwner, ErrorCodes.NotOwner)
+
+  validateNFT(proposeeNftId)
+
+  let path = addressToContractId!(proposer)
+  let marriagecontract = subContractId!(path)
+
+
+  let maxlovercount = MarriageSpecific(marriagecontract).getmaxlovercount()
+  let proposeelovercount = NFT(proposeeNftId).getLovercount()
+  assert!(proposeelovercount <= maxlovercount, ErrorCodes.TooSluttyForProposer)
+
+  let contractProposee = MarriageSpecific(marriagecontract).getProposee()
+  let contractProposer = MarriageSpecific(marriagecontract).getProposer()
+
+  let extratime = MarriageSpecific(marriagecontract).getTime()
+  
+
+  if (contractProposee == contractProposer)
+    {MarriageSpecific(marriagecontract).accept(proposeeOwner, contractProposer)}
+  else
+    {MarriageSpecific(marriagecontract).accept(proposeeOwner, proposee)}
+
+
+
+  NFT(proposeeNftId).changeLovercount()
+  NFT(addressToContractId!(proposer)).changeLovercount()
+
+  NFT(proposeeNftId).marriageChange(proposer, extratime)
+  NFT(addressToContractId!(proposer)).marriageChange(proposee, extratime)
+
+  emit NewMarriageWithDowry(proposer, proposee)
+}
+
+
+  @using(preapprovedAssets = false, updateFields = false, assetsInContract = false, checkExternalCaller = true)
+  pub fn rescindMarriageOffer(proposer: Address) -> () {
+    let caller = callerAddress!()
+
+    let proposernftid = addressToContractId!(proposer)
+    validateNFT(proposernftid)
+
+    let owner = NFT(proposernftid).getOwner()
+    checkCaller!(owner == caller, ErrorCodes.NotOwner)
+
+    let path = addressToContractId!(proposer)
+
+    let marriagecontract = subContractId!(path)
+
+
+    MarriageSpecific(marriagecontract).destroyOffer()
+
+    emit RescindMarriage(proposer)
+
+  }
+
+  @using(preapprovedAssets = true, updateFields = false, assetsInContract = true, checkExternalCaller = true)
+  pub fn divorce(wifeHusband: Address, claimant: Address) -> () {
+  let caller = callerAddress!()
+  let timenow = blockTimeStamp!()
+
+  let wifeHusbandNftId = addressToContractId!(wifeHusband)
+  let claimantNftId = addressToContractId!(claimant)
+  validateNFT(claimantNftId)
+
+  let (claimantMarriagetime, currentMarriage) = NFT(claimantNftId).getMarriage()
+  assert!(currentMarriage == wifeHusband, ErrorCodes.NotMarried)
+  assert!(timenow > claimantMarriagetime, ErrorCodes.StillMarried)
+
+  let owner = NFT(claimantNftId).getOwner()
+  let claimantNftClass = NFT(claimantNftId).getNftclass()
+  checkCaller!(owner == caller, ErrorCodes.NotOwner)
+
+  let divorcefeetobepaid = divorcefee * claimantNftClass + divorcefee
+  transferTokenToSelf!(caller, goldtokenid, divorcefeetobepaid)
+  
+  let extratime = 1000000000
+
+  let (_, wifehusbandMarriage) = NFT(wifeHusbandNftId).getMarriage()
+  if (wifehusbandMarriage == claimant){
+  NFT(wifeHusbandNftId).marriageChange(wifeHusband, 0)
+  NFT(claimantNftId).marriageChange(claimant, extratime)
+  }
+  else {
+    NFT(claimantNftId).marriageChange(claimant, 0)
+  }
+
+  emit Divorce(wifeHusband, claimant)
+
+}
+
+
+@using(preapprovedAssets = false, updateFields = false, assetsInContract = false, checkExternalCaller = true)
+pub fn becomeLover(selfloverAddress: Address, lovertargetAddress: Address) -> () {
+  let loverId = addressToContractId!(selfloverAddress)
+
+  let owner = NFT(loverId).getOwner()
+  checkCaller!(owner == callerAddress!(), ErrorCodes.NotOwner)
+
+  NFT(loverId).marriageChange(lovertargetAddress, 0)
+  NFT(loverId).changeLovercount()
+
+  emit BecomeLover(selfloverAddress, lovertargetAddress)
+}
+
+
+
+  ////////////////// fealty:
+
+
+@using(preapprovedAssets = true, updateFields = false, assetsInContract = false, checkExternalCaller = true)
+pub fn createFealtyContract(bribe: U256, time: U256, lordAddress: Address, minimumClass: U256, lordSubjectIndex: U256, campaign: ByteVec, subjecttarget: Address) -> () {
+  let lordNftId = addressToContractId!(lordAddress)
+  let caller = callerAddress!()
+
+  let owner = NFT(lordNftId).getOwner()
+  checkCaller!(owner == caller, ErrorCodes.NotOwner)
+
+  validateNFT(lordNftId)
+
+  let lordnftclass = NFT(lordNftId).getNftclass()
+
+  assert!(lordnftclass > 0, ErrorCodes.TooLowInStanding)
+  assert!(lordnftclass > minimumClass, ErrorCodes.SubjectNeedsToBeLowerInClass)
+  assert!(lordSubjectIndex < 7, ErrorCodes.TooManyOffers)
+
+
+  let (encodeImmutableFields, encodeMutableFields) = FealtyForGold.encodeFields!(lordAddress, lordnftclass, bribe, time, goldtokenid, selfContractId!(), minimumClass, caller, campaign, subjecttarget)
+
+  let contractpath = toByteVec!(lordSubjectIndex) ++ lordNftId ++ fealtyforgoldid
+
+  copyCreateSubContract!{caller -> ALPH: 1 alph, goldtokenid: bribe}(contractpath, fealtyforgoldid, encodeImmutableFields, encodeMutableFields)
+
+  emit NewFealtyContract(bribe, time, lordAddress, minimumClass, lordSubjectIndex, campaign, subjecttarget)
+}
+
+@using(preapprovedAssets = true, updateFields = false, assetsInContract = false, checkExternalCaller = true)
+pub fn swearForGold(lordAddress: Address, subjectAddress: Address, lordSubjectIndex: U256) -> () {
+
+  let subjectNftId = addressToContractId!(subjectAddress)
+  let lordNftId = addressToContractId!(lordAddress)
+  let caller = callerAddress!()
+
+  let owner = NFT(subjectNftId).getOwner()
+  checkCaller!(owner == caller, ErrorCodes.NotOwner)
+
+  validateNFT(subjectNftId)
+
+  let subjectNftClass = NFT(subjectNftId).getNftclass()
+
+
+  let contractpath = toByteVec!(lordSubjectIndex) ++ lordNftId ++ fealtyforgoldid
+
+  let fealtyGoldContract = subContractId!(contractpath)
+
+  let extratime = FealtyForGold(fealtyGoldContract).getTime()
+
+  let subjecttarget = FealtyForGold(fealtyGoldContract).getSubjecttarget()
+  if (lordAddress == subjecttarget)
+  {FealtyForGold(fealtyGoldContract).swearFealty(subjectNftClass, caller, lordAddress)}
+else
+  {FealtyForGold(fealtyGoldContract).swearFealty(subjectNftClass, caller, subjectAddress)}
+
+  NFT(subjectNftId).feudalChange(lordAddress, extratime)
+
+  emit NewSwearForGold(lordAddress, subjectAddress, lordSubjectIndex)
+}
+
+
+
+@using(preapprovedAssets = false, assetsInContract = false, updateFields = false, checkExternalCaller = true)
+pub fn swearFealtyWithoutGoldForFree(lordAddress: Address, subjectAddress: Address, time: U256) -> () {
+
+  let lordId = addressToContractId!(lordAddress)
+  let subjectId = addressToContractId!(subjectAddress)
+
+  let owner = NFT(subjectId).getOwner()
+  checkCaller!(owner == callerAddress!(), ErrorCodes.NotOwner)
+
+  assert!(lordAddress != subjectAddress, ErrorCodes.CantSwearToSelf)
+
+  let lordrarity = NFT(lordId).getNftclass()
+  let subjectrarity = NFT(subjectId).getNftclass()
+
+  assert!(subjectrarity < lordrarity, ErrorCodes.TooHighInStanding)
+
+  NFT(subjectId).feudalChange(lordAddress, time)
+
+  emit NewSwearForFree(lordAddress, subjectAddress, time)
+
+}
+
+
+
+@using(preapprovedAssets = false, updateFields = false, assetsInContract = false, checkExternalCaller = true)
+pub fn rescindGoldFealtyOffer(lordAddress: Address, lordSubjectIndex: U256) -> () {
+
+  let lordNftId = addressToContractId!(lordAddress)
+  let caller = callerAddress!()
+
+  let owner = NFT(lordNftId).getOwner()
+  checkCaller!(owner == caller, ErrorCodes.NotOwner)
+
+  validateNFT(lordNftId)
+
+  let contractpath = toByteVec!(lordSubjectIndex) ++ lordNftId ++ fealtyforgoldid
+
+  let fealtyGoldContract = subContractIdOf!(selfContract!(), contractpath)
+
+  FealtyForGold(fealtyGoldContract).destroyOffer()
+
+  emit NewRescindGoldFealtyOffer(lordAddress, lordSubjectIndex)
+}
+
+@using(updateFields = false, checkExternalCaller = true)
+pub fn becomeOverlord(lordAddress: Address) -> () {
+  let lordId = addressToContractId!(lordAddress)
+  let owner = NFT(lordId).getOwner()
+  checkCaller!(owner == callerAddress!(), ErrorCodes.NotOwner)
+
+  let lordrarity = NFT(lordId).getNftclass()
+  assert!(lordrarity >= 5, ErrorCodes.TooLowInStanding)
+
+  NFT(lordId).feudalChange(lordAddress, 0)
+
+  emit BecameOverlord(lordAddress)
+}
+
+
+
+/// Anathema functions: 
+
+
+@using(checkExternalCaller = true, preapprovedAssets = true, assetsInContract = true, updateFields = false)
+pub fn declareAnathemaByHigherLord(declarerLordAddress: Address, scroundrelAddress: Address, bribe: U256, reason: ByteVec) -> () {
+let declarerId = addressToContractId!(declarerLordAddress)
+let caller = callerAddress!()
+let scroundrelId = addressToContractId!(scroundrelAddress)
+
+let owner = NFT(declarerId).getOwner()
+checkCaller!(owner == caller, ErrorCodes.NotOwner)
+
+validateNFT(scroundrelId)
+validateNFT(declarerId)
+
+let scroundrelNftclass = NFT(scroundrelId).getNftclass()
+ 
+let declarerNftclass = NFT(declarerId).getNftclass()
+
+let classdifference = declarerNftclass - scroundrelNftclass
+assert!(classdifference >= 3, ErrorCodes.NotEnoughStanding)
+
+let anathemapath = scroundrelId ++ anathemaId
+
+assert!(bribe < 2000000000 * scroundrelNftclass + 2000000000, ErrorCodes.BribeTooHigh)
+let fee = bribe / 10
+transferTokenToSelf!(caller, goldtokenid, fee)
+let timeDeclared = blockTimeStamp!()
+
+let (encodeImmutableFields, encodeMutableFields) = Anathema.encodeFields!(owner, declarerLordAddress, declarerNftclass, scroundrelAddress, bribe, selfContractId!(), timeDeclared, reason)
+copyCreateSubContract!{caller -> ALPH: 1 alph}(anathemapath, anathemaId, encodeImmutableFields, encodeMutableFields)
+
+let newAnathema = true
+NFT(scroundrelId).anathemaChange(newAnathema)
+
+let oldAnathemaDeclaredCount = NFT(declarerId).getAnathemaDeclaredCount()
+assert!(oldAnathemaDeclaredCount < 3, ErrorCodes.DeclaredAnathemaThreeTimesAlready)
+let newAnathemaDeclaredCount = oldAnathemaDeclaredCount + 1
+NFT(declarerId).anathemaDeclaredCountChange(newAnathemaDeclaredCount)
+
+emit NewDeclareAnathemaByHigherLord(declarerLordAddress, scroundrelAddress, bribe, reason)
+}
+
+
+@using(checkExternalCaller = true, preapprovedAssets = true, assetsInContract = true, updateFields = false)
+pub fn declareAnathemaByLord(declarerLordAddress: Address, scroundrelAddress: Address, bribe: U256, reason: ByteVec) -> () {
+let declarerId = addressToContractId!(declarerLordAddress)
+let caller = callerAddress!()
+let scroundrelId = addressToContractId!(scroundrelAddress)
+
+let owner = NFT(declarerId).getOwner()
+checkCaller!(owner == caller, ErrorCodes.NotOwner)
+
+validateNFT(scroundrelId)
+validateNFT(declarerId)
+
+let feudalLord = NFT(scroundrelId).getfeudalLord()
+
+checkCaller!(declarerLordAddress == feudalLord, ErrorCodes.NotTheFeudalLord)
+
+let declarerNftclass = NFT(declarerId).getNftclass()
+let anathemapath = scroundrelId ++ anathemaId
+
+let scroundrelNftclass = NFT(scroundrelId).getNftclass()
+
+assert!(bribe < 2000000000 * scroundrelNftclass + 2000000000, ErrorCodes.BribeTooHigh)
+let fee = bribe / 40
+transferTokenToSelf!(caller, goldtokenid, fee)
+let timeDeclared = blockTimeStamp!()
+
+let (encodeImmutableFields, encodeMutableFields) = Anathema.encodeFields!(owner, declarerLordAddress, declarerNftclass, scroundrelAddress, bribe, selfContractId!(), timeDeclared, reason)
+copyCreateSubContract!{caller -> ALPH: 1 alph}(anathemapath, anathemaId, encodeImmutableFields, encodeMutableFields)
+
+let newAnathema = true
+NFT(scroundrelId).anathemaChange(newAnathema)
+
+let oldAnathemaDeclaredCount = NFT(declarerId).getAnathemaDeclaredCount()
+assert!(oldAnathemaDeclaredCount < 3, ErrorCodes.DeclaredAnathemaThreeTimesAlready)
+let newAnathemaDeclaredCount = oldAnathemaDeclaredCount + 1
+NFT(declarerId).anathemaDeclaredCountChange(newAnathemaDeclaredCount)
+
+emit NewDeclareAnathemaByLord(declarerLordAddress, scroundrelAddress, bribe, reason)
+}
+
+
+
+
+@using(checkExternalCaller = true, preapprovedAssets = false, assetsInContract = false, updateFields = false)
+pub fn revokeAnathemaByDeclarer(revokerAddress: Address, scroundrelAddress: Address) -> () {
+  let caller = callerAddress!()
+  let revokerId = addressToContractId!(revokerAddress)
+  let scroundrelId = addressToContractId!(scroundrelAddress)
+
+  let owner = NFT(revokerId).getOwner()
+  checkCaller!(owner == caller, ErrorCodes.NotOwner)
+
+  validateNFT(revokerId)
+
+  let anathemapath = scroundrelId ++ anathemaId
+  let anathemaid = subContractId!(anathemapath)
+
+  let lordDeclarerAddress = Anathema(anathemaid).getLordDeclarerAddress()
+
+  assert!(lordDeclarerAddress == revokerAddress, ErrorCodes.NotDeclarer)
+  Anathema(anathemaid).revokeByLord()
+
+  let newAnathema = false
+  NFT(scroundrelId).anathemaChange(newAnathema)
+
+  let oldAnathemaDeclaredCount = NFT(revokerId).getAnathemaDeclaredCount()
+  let newAnathemaDeclaredCount = oldAnathemaDeclaredCount - 1
+  NFT(revokerId).anathemaDeclaredCountChange(newAnathemaDeclaredCount)
+
+  emit NewRevokeAnathemaByDeclarer(revokerAddress, scroundrelAddress)
+}
+
+@using(checkExternalCaller = true, preapprovedAssets = false, assetsInContract = false, updateFields = false)
+pub fn revokeAnathemaByHighLord(revokerAddress: Address, scroundrelAddress: Address) -> () {
+  let caller = callerAddress!()
+  let revokerId = addressToContractId!(revokerAddress)
+  let scroundrelId = addressToContractId!(scroundrelAddress)
+
+  let owner = NFT(revokerId).getOwner()
+  checkCaller!(owner == caller, ErrorCodes.NotOwner)
+
+  validateNFT(revokerId)
+
+  let anathemapath = scroundrelId ++ anathemaId
+  let anathemaid = subContractId!(anathemapath)
+
+  let revokerNftClass = NFT(revokerId).getNftclass()
+  let declarerNftClass = Anathema(anathemaid).getDeclarerNftClass()
+  let declarerLordAddress = Anathema(anathemaid).getLordDeclarerAddress()
+
+  let classdifference = revokerNftClass - declarerNftClass
+
+  assert!(classdifference >= 3 , ErrorCodes.NotEnoughStanding)
+  Anathema(anathemaid).revokeByLord()
+
+  let newAnathema = false
+  NFT(scroundrelId).anathemaChange(newAnathema)
+
+  let declarerLordNftId = addressToContractId!(declarerLordAddress)
+  let oldAnathemaDeclaredCount = NFT(declarerLordNftId).getAnathemaDeclaredCount()
+  let newAnathemaDeclaredCount = oldAnathemaDeclaredCount - 1
+  NFT(declarerLordNftId).anathemaDeclaredCountChange(newAnathemaDeclaredCount)
+
+  emit NewRevokeAnathemaByHighLord(revokerAddress, scroundrelAddress)
+}
+
+@using(checkExternalCaller = false, preapprovedAssets = true, assetsInContract = true, updateFields = false)
+pub fn revokeAnathemaByBribe(scroundrelAddress: Address, lordAddress: Address) -> () {
+  
+  let bribepayer = callerAddress!()
+  let scroundrelId = addressToContractId!(scroundrelAddress)
+
+  let anathemapath = scroundrelId ++ anathemaId
+  let anathemaid = subContractId!(anathemapath)
+
+  let bribe = Anathema(anathemaid).getBribe()
+  let owner = Anathema(anathemaid).getOwner()
+  let declarerLordAddress = Anathema(anathemaid).getLordDeclarerAddress()
+
+  let fee = bribe / 20
+  let reward = bribe - fee
+  transferToken!(bribepayer, owner, goldtokenid, reward)
+  transferTokenToSelf!(bribepayer, goldtokenid, fee)
+
+  Anathema(anathemaid).revokeByLord()
+
+  let newAnathema = false
+  NFT(scroundrelId).anathemaChange(newAnathema)
+
+  let declarerLordNftId = addressToContractId!(declarerLordAddress)
+  let oldAnathemaDeclaredCount = NFT(declarerLordNftId).getAnathemaDeclaredCount()
+  let newAnathemaDeclaredCount = oldAnathemaDeclaredCount - 1
+  NFT(declarerLordNftId).anathemaDeclaredCountChange(newAnathemaDeclaredCount)
+
+  emit NewRevokeAnathemaByBribe(scroundrelAddress, lordAddress)
+}
+
+@using(checkExternalCaller = false, preapprovedAssets = false, assetsInContract = false, updateFields = false)
+pub fn revokeAnathemaByTime(scroundrelAddress: Address) -> () {
+
+  let scroundrelId = addressToContractId!(scroundrelAddress)
+  let anathemapath = scroundrelId ++ anathemaId
+  let anathemaid = subContractId!(anathemapath)
+
+  let timeDeclared = Anathema(anathemaid).getDeclarerNftClass()
+  let declarerLordAddress = Anathema(anathemaid).getLordDeclarerAddress()
+
+  let timedelta = blockTimeStamp!() - timeDeclared
+  assert!(timedelta > 31536000000, ErrorCodes.NotYourTimeYet)
+
+  Anathema(anathemaid).revokeByLord()
+
+  let newAnathema = false
+  NFT(scroundrelId).anathemaChange(newAnathema)
+
+  let declarerLordNftId = addressToContractId!(declarerLordAddress)
+  let oldAnathemaDeclaredCount = NFT(declarerLordNftId).getAnathemaDeclaredCount()
+  let newAnathemaDeclaredCount = oldAnathemaDeclaredCount - 1
+  NFT(declarerLordNftId).anathemaDeclaredCountChange(newAnathemaDeclaredCount)
+
+  emit NewRevokeAnathemaByTime(scroundrelAddress)
+}
+
+// war
+
+@using(updateFields = false, checkExternalCaller = true)
+pub fn declareWar(declarerAddress: Address, targetAddress: Address) -> () {
+  let caller = callerAddress!()
+  let declarerId = addressToContractId!(declarerAddress)
+  validateNFT(declarerId)
+
+  let owner = NFT(declarerId).getOwner()
+  checkCaller!(owner == caller, ErrorCodes.NotOwner)
+
+  let timenow = blockTimeStamp!()
+  NFT(declarerId).declareWar(targetAddress, timenow)
+  
+  emit WarDeclared(declarerAddress, targetAddress, timenow)
+}
+
+
+// election
+
+@using(updateFields = false, checkExternalCaller = true)
+pub fn voteInElection(voterId: ByteVec, voteInput: U256) -> () {
+  let owner = NFT(voterId).getOwner()
+  checkCaller!(owner == callerAddress!(), ErrorCodes.NotOwner)
+  let voteTime = blockTimeStamp!()
+  NFT(voterId).voteInElection(voteInput, voteTime)
+
+  emit Voted(voterId, voteInput, voteTime)
+}
+
+// Validation:
+
+@using(checkExternalCaller = false)
+pub fn validateNFT(callerid: ByteVec) -> (U256) {
+
+  let (collectionId, nftIndex) = NFT(callerid).getCollectionIndex()
+
+
+  validateCollection(collectionId)
+
+  NFTPublicSaleCollectionRandomWithRoyalty(collectionId).validateNFT(callerid, nftIndex)
+
+  return nftIndex
+}
+
+
+
+pub fn validateCollection(collectionId: ByteVec) -> () {
+
+  let matchingcollectionid =
+  if (collectionId == asiaCollectionid) 
+      1
+  else 
+      0
+
+  assert!(matchingcollectionid == 1, ErrorCodes.Wrongcollection)
+  
+}
+
+
+
+}

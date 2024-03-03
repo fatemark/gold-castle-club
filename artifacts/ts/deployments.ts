@@ -4,23 +4,78 @@
 
 import { RunScriptResult, DeployContractExecutionResult } from "@alephium/cli";
 import { NetworkId } from "@alephium/web3";
-import { TokenFaucet, TokenFaucetInstance } from ".";
-import { default as testnetDeployments } from "../.deployments.testnet.json";
-import { default as devnetDeployments } from "../.deployments.devnet.json";
+import {
+  NFT,
+  NFTInstance,
+  MarriageSpecific,
+  MarriageSpecificInstance,
+  FealtyForGold,
+  FealtyForGoldInstance,
+  Anathema,
+  AnathemaInstance,
+  Fealty,
+  FealtyInstance,
+  NFTPublicSaleCollectionRandomWithRoyalty,
+  NFTPublicSaleCollectionRandomWithRoyaltyInstance,
+  GoldToken,
+  GoldTokenInstance,
+} from ".";
+import { default as mainnetDeployments } from "../.deployments.mainnet.json";
 
 export type Deployments = {
   deployerAddress: string;
   contracts: {
-    TokenFaucet: DeployContractExecutionResult<TokenFaucetInstance>;
+    NFT: DeployContractExecutionResult<NFTInstance>;
+    MarriageSpecific: DeployContractExecutionResult<MarriageSpecificInstance>;
+    FealtyForGold: DeployContractExecutionResult<FealtyForGoldInstance>;
+    Anathema: DeployContractExecutionResult<AnathemaInstance>;
+    Fealty: DeployContractExecutionResult<FealtyInstance>;
+    NFTPublicSaleCollectionRandomWithRoyalty: DeployContractExecutionResult<NFTPublicSaleCollectionRandomWithRoyaltyInstance>;
+    GoldToken: DeployContractExecutionResult<GoldTokenInstance>;
   };
 };
 
 function toDeployments(json: any): Deployments {
   const contracts = {
-    TokenFaucet: {
-      ...json.contracts["TokenFaucet"],
-      contractInstance: TokenFaucet.at(
-        json.contracts["TokenFaucet"].contractInstance.address
+    NFT: {
+      ...json.contracts["NFT"],
+      contractInstance: NFT.at(json.contracts["NFT"].contractInstance.address),
+    },
+    MarriageSpecific: {
+      ...json.contracts["MarriageSpecific"],
+      contractInstance: MarriageSpecific.at(
+        json.contracts["MarriageSpecific"].contractInstance.address
+      ),
+    },
+    FealtyForGold: {
+      ...json.contracts["FealtyForGold"],
+      contractInstance: FealtyForGold.at(
+        json.contracts["FealtyForGold"].contractInstance.address
+      ),
+    },
+    Anathema: {
+      ...json.contracts["Anathema"],
+      contractInstance: Anathema.at(
+        json.contracts["Anathema"].contractInstance.address
+      ),
+    },
+    Fealty: {
+      ...json.contracts["Fealty"],
+      contractInstance: Fealty.at(
+        json.contracts["Fealty"].contractInstance.address
+      ),
+    },
+    NFTPublicSaleCollectionRandomWithRoyalty: {
+      ...json.contracts["NFTPublicSaleCollectionRandomWithRoyalty"],
+      contractInstance: NFTPublicSaleCollectionRandomWithRoyalty.at(
+        json.contracts["NFTPublicSaleCollectionRandomWithRoyalty"]
+          .contractInstance.address
+      ),
+    },
+    GoldToken: {
+      ...json.contracts["GoldToken"],
+      contractInstance: GoldToken.at(
+        json.contracts["GoldToken"].contractInstance.address
       ),
     },
   };
@@ -34,12 +89,7 @@ export function loadDeployments(
   networkId: NetworkId,
   deployerAddress?: string
 ): Deployments {
-  const deployments =
-    networkId === "testnet"
-      ? testnetDeployments
-      : networkId === "devnet"
-      ? devnetDeployments
-      : undefined;
+  const deployments = networkId === "mainnet" ? mainnetDeployments : undefined;
   if (deployments === undefined) {
     throw Error("The contract has not been deployed to the " + networkId);
   }

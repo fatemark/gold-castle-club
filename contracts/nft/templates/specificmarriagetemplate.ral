@@ -1,0 +1,57 @@
+Contract MarriageSpecific(
+    proposer: Address,
+    dowry: U256,
+    time: U256,
+    goldtokenid: ByteVec,
+    fealtyId: ByteVec,
+    proposee: Address,
+    owner: Address,
+    loveletter: ByteVec,
+    maxlovercount: U256
+){
+    enum ErrorCodes {
+        NotFealtyContract = 38
+        NotProposee = 39
+     }
+
+     
+    @using(assetsInContract = true, updateFields = false, checkExternalCaller = true)
+    pub fn accept(proposeeOwner: Address, proposeeCaller: Address) -> () {
+    assert!(proposee == proposeeCaller, ErrorCodes.NotProposee)
+    checkCaller!(callerAddress!() == contractIdToAddress!(fealtyId), ErrorCodes.NotFealtyContract)
+    transferTokenFromSelf!(proposeeOwner, goldtokenid, dowry)
+    destroySelf!(owner)
+    }
+
+    @using(checkExternalCaller = true, assetsInContract = true)
+    pub fn destroyOffer() -> () {
+
+    checkCaller!(callerAddress!() == contractIdToAddress!(fealtyId), ErrorCodes.NotFealtyContract)
+    destroySelf!(owner)
+    }
+
+    pub fn getProposer() -> (Address) {
+        return proposer
+    }
+
+    pub fn getProposee() -> (Address) {
+        return proposee
+    }
+
+    pub fn getDowry() -> (U256) {
+        return dowry
+    }
+
+    pub fn getTime() -> (U256) {
+        return time
+    }
+
+    pub fn getLoveletter() -> (ByteVec) {
+        return loveletter
+    }
+ 
+    pub fn getmaxlovercount() -> (U256) {
+        return maxlovercount
+    }
+
+}

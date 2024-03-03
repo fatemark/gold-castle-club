@@ -1,0 +1,31 @@
+{
+  "version": "v2.9.0",
+  "name": "ChangeOwner",
+  "bytecodeTemplate": "0101030000000cb47a{0}0da313c3038d7ea4c68000a2{0}0d0c{1}010d",
+  "fieldsSig": {
+    "names": [
+      "nftId",
+      "nftCollectionId"
+    ],
+    "types": [
+      "ByteVec",
+      "ByteVec"
+    ],
+    "isMutable": [
+      false,
+      false
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    }
+  ]
+}

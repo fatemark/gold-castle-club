@@ -1,0 +1,31 @@
+{
+  "version": "v2.9.0",
+  "name": "RescindMarriageOffer",
+  "bytecodeTemplate": "01010300000005{0}0d0c{1}0108",
+  "fieldsSig": {
+    "names": [
+      "proposer",
+      "fealtyId"
+    ],
+    "types": [
+      "Address",
+      "ByteVec"
+    ],
+    "isMutable": [
+      false,
+      false
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    }
+  ]
+}

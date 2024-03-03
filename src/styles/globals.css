@@ -2,15 +2,196 @@
   box-sizing: border-box;
 }
 
+/* Apply custom styles to scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Adjust the width as needed */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; /* Make the track transparent */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3); /* Set the color of the scrollbar handle */
+  border-radius: 10px; /* Adjust the border radius as needed */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5); /* Set the color of the scrollbar handle on hover */
+}
+
+
 .columns {
   display: flex;
   grid-template-columns: 1fr 1fr;
   column-gap: 2em;
+  padding-top: 100px;
 }
 
 .columns > * {
   flex-grow: 1;
 }
+
+
+
+.padding_top {
+  padding-top: 100px;
+}
+
+.toconnectButton{
+  font-family: 'Copperplatebold';
+  display: flex;
+  border: 1px solid var(--color-text);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size:50px; /* Adjusts between 1rem and 1.75rem based on viewport width */
+  position: relative; /* or absolute, fixed, or sticky */
+  left: -10px; /* Distance from the left */
+  align-items: center; /* Vertical centering */
+  background-color: #2bab27f5; /* Example background color */
+  color: #ffffff; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 0px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 320px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 0px; /* Adds space above the container */
+  margin-bottom: 0px; /* Adds space below the container */
+  height: 50px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  text-shadow: 0 0 10px #000000;
+}
+
+.toconnectButton:hover{
+  font-family: 'Copperplatebold';
+  display: flex;
+  border: 1px solid var(--color-text);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size:50px; /* Adjusts between 1rem and 1.75rem based on viewport width */
+  position: relative; /* or absolute, fixed, or sticky */
+  left: -10px; /* Distance from the left */
+  align-items: center; /* Vertical centering */
+  background-color: #2bab27f5; /* Example background color */
+  color: #e29b16; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 0px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 320px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 0px; /* Adds space above the container */
+  margin-bottom: 0px; /* Adds space below the container */
+  height: 50px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  text-shadow: 0 0 10px #000000;
+}
+
+.connectButton {
+  font-family: 'Copperplatebold';
+  display: flex;
+  border: 1px solid var(--color-text);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size:50px; /* Adjusts between 1rem and 1.75rem based on viewport width */
+  position: relative; /* or absolute, fixed, or sticky */
+  left: -10px; /* Distance from the left */
+  align-items: center; /* Vertical centering */
+  background-color: #200e0e1e; /* Example background color */
+  color: #ffffff; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 0px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 320px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 0px; /* Adds space above the container */
+  margin-bottom: 0px; /* Adds space below the container */
+  height: 50px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  text-shadow: 0 0 10px #000000;
+}
+
+.connectButton:hover {
+  font-family: 'Copperplatebold';
+  display: flex;
+  border: 1px solid var(--color-text);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size:50px; /* Adjusts between 1rem and 1.75rem based on viewport width */
+  position: relative; /* or absolute, fixed, or sticky */
+  left: -10px; /* Distance from the left */
+  align-items: center; /* Vertical centering */
+  background-color: #ff0000d7; /* Example background color */
+  color: #ffffff; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 0px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 320px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 0px; /* Adds space above the container */
+  margin-bottom: 0px; /* Adds space below the container */
+  height: 50px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  text-shadow: 0 0 10px #000000;
+}
+/* In globals.css or another CSS file */
+
+.notAmember {
+  background-image: url('/fatemark_A_medieval_castle_made_entirely_out_of_gold_on_a_hill__a24afa5c-bc0d-417d-bbf4-87894180edd7.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Fill the entire screen height */
+  width: 100%; /* Ensure it covers the full width as well */
+  height: 5000px;
+}
+
+.homepagebackground {
+  background-image: url('/fatemark_A_medieval_castle_made_entirely_out_of_gold_on_a_hill__a24afa5c-bc0d-417d-bbf4-87894180edd7.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: auto;
+}
+@font-face {
+  font-family: 'Copperplate';
+  src: url('/CopperplateGothicStd-29BC.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Copperplatebold';
+  src: url('/CopperplateGothicStd-33BC.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'TimesNewRoman';
+  src: url('/Users/esse/Desktop/crypto/gold_castle/goldtoken/alephium-nextjs-tutorial/public/fonts/TimesNewRomanMTStd.woff2') format('woff2');
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 
 /* MVP.css v1.8 - https://github.com/andybrewer/mvp */
 
@@ -28,35 +209,50 @@
   --color-shadow: rgba(0, 0, 0, 0.1);
   --color-table: #118bee;
   --color-text: #000;
-  --color-text-secondary: #999;
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --color-text-secondary: #000000;
+  --font-family: 'Copperplate', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, 'Copperplatebold';
   --hover-brightness: 1.2;
   --justify-important: center;
   --justify-normal: left;
   --line-height: 1.5;
-  --width-card: 285px;
-  --width-card-medium: 460px;
-  --width-card-wide: 800px;
-  --width-content: 1080px;
+  --width-card: 50%;
+  --width-card-mint: 48%;
+  --width-card-medium: 50%;
+  --width-card-wide: 50%;
+  --width-content: 50%;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color: #0097fc;
     --color-accent: #0097fc4f;
-    --color-bg: #333;
-    --color-bg-secondary: #555;
-    --color-link: #0097fc;
+    --color-bg: #f1e9e9;
+    --color-bg-secondary: #cf8933;
+    --color-link: #000000;
     --color-secondary: #e20de9;
     --color-secondary-accent: #e20de94f;
     --color-shadow: rgba(0, 0, 0, 0.2);
-    --color-table: #0097fc;
-    --color-text: #f7f7f7;
-    --color-text-secondary: #aaa;
+    --color-table: #fcbc0a;
+    --color-text: #000000;
+    --color-text-secondary: #000000;
   }
 }
 
+@media (max-width: 1200px) {
+
+.columns {
+  flex-direction: column; /* Stack columns vertically */
+  width: 180vw;
+}
+}
+
+@media (max-width: 600px) {
+  .columns {
+    margin-top: 0vh;
+  }
+
+}
 /* Layout */
 article aside {
   background: var(--color-secondary-accent);
@@ -72,6 +268,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   padding: 0;
+  overflow-y: scroll;
 }
 
 footer,
@@ -152,12 +349,31 @@ section header {
 
 /* Nav */
 nav {
-  align-items: center;
+  position: fixed; /* Set the position to fixed */
+  top: 0; /* Stick it to the top of the viewport */
+  left: 0; /* Align it to the left */
+  width: 100%; /* Make it span the full width */
+  z-index: 1000; /* Set a high z-index to ensure it appears above other content */
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-bg-secondary);
+  padding: 1rem;
   display: flex;
-  font-weight: bold;
-  justify-content: space-between;
-  margin-bottom: 7rem;
+  justify-content: space-between; /* Align items */
+  align-items: center; /* Center items vertically */
 }
+
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--color-link);
+  cursor: pointer;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
 
 nav ul {
   list-style: none;
@@ -172,9 +388,41 @@ nav ul li {
 }
 
 /* Nav Dropdown */
-nav ul li:hover ul {
-  display: block;
+.dropdown {
+  position: relative;
 }
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position the dropdown below the dropdown title */
+  left: 50%; /* Move the dropdown menu to the middle */
+  transform: translateX(-50%); /* Center the dropdown horizontally */
+  background-color: #e9e9e9;
+  min-width: 200%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 0px;
+  border-radius: 20%;
+  display: flex; /* Use flexbox to control the layout of dropdown items */
+  flex-direction: column; /* Arrange dropdown items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.dropdown-menu a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 6px 0;
+  width: 100%; /* Allow the text to use the full width of the container */
+  text-align: center; /* Left-align the text */
+}
+
+.dropdown-menu a:hover {
+  background-color: #b0afaf;
+  border-radius: 20%;
+  text-align: center;
+}
+
 
 nav ul li ul {
   background: var(--color-bg);
@@ -304,13 +552,33 @@ a em,
 a i,
 a strong,
 button {
-  border-radius: var(--border-radius);
-  display: inline-block;
-  font-size: medium;
-  font-weight: bold;
-  line-height: var(--line-height);
-  margin: 0.5rem 0;
-  padding: 1rem 2rem;
+  font-family: 'Copperplatebold';
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size:50px; /* Adjusts between 1rem and 1.75rem based on viewport width */
+  position: relative; /* or absolute, fixed, or sticky */
+  left: -10px; /* Distance from the left */
+  align-items: center; /* Vertical centering */
+  background-color: #ffffffee; /* Example background color */
+  color: #fcbc0a; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 320px; /* Or any other width */
+  margin: 0; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 10px; /* Adds space above the container */
+  margin-bottom: 10px; /* Adds space below the container */
+  height: 60px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  text-shadow:
+  -0.5px -0.5px 0 #000000,  
+  0.5px -0.5px 0 #000000,
+  -0.5px 0.5px 0 #000000,
+  0.5px 0.5px 0 #000000;
 }
 
 button.flat {
@@ -344,10 +612,38 @@ button:hover {
 a b,
 a strong,
 button {
-  background-color: var(--color-link);
-  border: 2px solid var(--color-link);
-  color: white;
+  font-family: 'Copperplatebold';
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size:clamp(20px, 4vw, 50px); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  position: relative; /* or absolute, fixed, or sticky */
+  left: -10px; /* Distance from the left */
+  align-items: center; /* Vertical centering */
+  background-color: #ffffffee; /* Example background color */
+  color: #fcbc0a; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 420px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 10px; /* Adds space above the container */
+  margin-bottom: 10px; /* Adds space below the container */
+  height: 60px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  text-shadow:
+  -0.5px -0.5px 0 #000000,  
+  0.5px -0.5px 0 #000000,
+  -0.5px 0.5px 0 #000000,
+  0.5px 0.5px 0 #000000;
 }
+
+
+
+
 
 a em,
 a i {
@@ -380,14 +676,13 @@ figure figcaption {
 
 button:disabled,
 input:disabled {
-  background: var(--color-bg-secondary);
-  border-color: var(--color-bg-secondary);
-  color: var(--color-text-secondary);
+  border-color: #ff0000;
   cursor: not-allowed;
 }
 
 button[disabled]:hover {
-  filter: none;
+  border-color: #ff0000;
+  cursor: not-allowed;
 }
 
 form {
@@ -411,10 +706,36 @@ input,
 label,
 select,
 textarea {
-  display: block;
-  font-size: inherit;
-  max-width: var(--width-card-wide);
+  font-family: 'Copperplatebold';
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size:clamp(20px, 4vw, 50px); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  position: relative; /* or absolute, fixed, or sticky */
+  left: -10px; /* Distance from the left */
+  align-items: center; /* Vertical centering */
+  background-color: #26c038a1; /* Example background color */
+  color: #fcbc0a; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 320px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 10px; /* Adds space above the container */
+  margin-bottom: 10px; /* Adds space below the container */
+  height: 60px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  text-shadow:
+  -0.5px -0.5px 0 #000000,  
+  0.5px -0.5px 0 #000000,
+  -0.5px 0.5px 0 #000000,
+  0.5px 0.5px 0 #000000;
+
 }
+
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -443,6 +764,12 @@ textarea[readonly] {
   background-color: var(--color-bg-secondary);
 }
 
+
+
+
+
+
+
 label {
   font-weight: bold;
   margin-bottom: 0.2rem;
@@ -450,14 +777,17 @@ label {
 
 /* Tables */
 table {
+  float: center;
   border: 1px solid var(--color-bg-secondary);
-  border-radius: var(--border-radius);
+  border-radius: 0px;
   border-spacing: 0;
   display: inline-block;
   max-width: 100%;
   overflow-x: auto;
   padding: 0;
   white-space: nowrap;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 table td,
@@ -465,23 +795,24 @@ table th,
 table tr {
   padding: 0.4rem 0.8rem;
   text-align: var(--justify-important);
+  color: #000000;
 }
 
 table thead {
   background-color: var(--color-table);
   border-collapse: collapse;
-  border-radius: var(--border-radius);
+  border-radius: 0px;
   color: var(--color-bg);
   margin: 0;
   padding: 0;
 }
 
 table thead th:first-child {
-  border-top-left-radius: var(--border-radius);
+  border-top-left-radius: 0px;
 }
 
 table thead th:last-child {
-  border-top-right-radius: var(--border-radius);
+  border-top-right-radius: 0px;
 }
 
 table thead th:first-child,
@@ -510,4 +841,17 @@ blockquote footer {
   font-size: small;
   line-height: var(--line-height);
   padding: 1.5rem 0;
+}
+
+.discord-icon {
+  color: #7289da; /* Discord color */
+}
+
+.telegram-icon {
+  color: #0088cc; /* Telegram color */
+}
+
+.twitter-icon {
+  color: #1da1f2; /* Twitter color */
+  cursor: pointer;
 }

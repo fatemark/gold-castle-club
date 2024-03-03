@@ -1,5 +1,5 @@
 {
-  "fullNodeVersion": "v2.3.5",
+  "fullNodeVersion": "v2.9.0",
   "compilerOptionsUsed": {
     "ignoreUnusedConstantsWarnings": false,
     "ignoreUnusedVariablesWarnings": false,
@@ -9,23 +9,324 @@
     "ignoreCheckExternalCallerWarnings": false
   },
   "infos": {
+    "AcceptMarriageOffer": {
+      "sourceFile": "nft/txscripts/marriage/acceptMarriageOffer.ral",
+      "sourceCodeHash": "d8df38ffd578f06d5e1275d3ec6f5475cc51f252ae9d2d098ed0cf9c98f9e2e6",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "AirdropWithdraw": {
+      "sourceFile": "nft/txscripts/owner/airdropwithdraw.ral",
+      "sourceCodeHash": "c757b0c198b685a7d3778637142d6c2daa614a2be331df39746e4b3e505451a3",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "Anathema": {
+      "sourceFile": "nft/templates/anathema.ral",
+      "sourceCodeHash": "2f580fa902c77f8595d4735fbef42ab54c78f99abea8990b349f08e9db558b51",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "1f874cf085dbe79f52d6eb650eedf687a6fe2842363da9e66a39922f37ff9b59",
+      "warnings": []
+    },
+    "BecomeLover": {
+      "sourceFile": "nft/txscripts/marriage/becomeLover.ral",
+      "sourceCodeHash": "b7f08bf17b5a1171fe4c480fc21f8ab7dfad4e0d3e13e3bf6cbe433d47ab4e08",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "BecomeOverlord": {
+      "sourceFile": "nft/txscripts/fealty/becomeOverlord.ral",
+      "sourceCodeHash": "fc94b4bf424c99fb55f36fd81ec9ef20ea022e323c38c6949f19202c7ceb528c",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "BuyListing": {
+      "sourceFile": "nft/txscripts/marketplace/buyListing.ral",
+      "sourceCodeHash": "341c365763208bdd03a34c8f3f2a474b382c13a63f6db7e6eb323087fcc5d48b",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "ChangeCollectionId": {
+      "sourceFile": "nft/txscripts/owner/changecollectionid.ral",
+      "sourceCodeHash": "27836843ae1461b4f179e41ed0ef48f0da7bcbb199d5693ec6991967ff30209e",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "ChangeOwner": {
+      "sourceFile": "nft/changeowner.ral",
+      "sourceCodeHash": "5ee7df70677cfcbf077028ad4851ff3f963e431c270eac5fd8c195689b1298e0",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "CreateFealtyForGoldContract": {
+      "sourceFile": "nft/txscripts/fealty/createFealtyContract.ral",
+      "sourceCodeHash": "2ffe0f4d8f5511ee56b2194a5c0e977cda2bfee4acb1fca0075d0df91f84f2e4",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "CreateListing": {
+      "sourceFile": "nft/txscripts/marketplace/createListing.ral",
+      "sourceCodeHash": "6607bc1aa63bbadbae7da6bafe961f7a0fa4f4385802ebb21edbbad044e61093",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "CreateMarriageOffer": {
+      "sourceFile": "nft/txscripts/marriage/createMarriageOffer.ral",
+      "sourceCodeHash": "3727defa2323bfcad2143094a3cefd314a2e23d719cec97295c4f8b23c5e8317",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "DeclareAnathemaByHighLord": {
+      "sourceFile": "nft/txscripts/anathema/declareAnathemaByHighLord.ral",
+      "sourceCodeHash": "cf0b2d3bdd00a8c4f78faf94d9b959b027c0dabfb3d5d36e19d7777840e90646",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "DeclareAnathemaByLord": {
+      "sourceFile": "nft/txscripts/anathema/declareAnathemaByLord.ral",
+      "sourceCodeHash": "12464f3fc4ca03d9cafce35af62f2ebcdc4edf81775da8c58c53d4bbe50cc045",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "DeclareWar": {
+      "sourceFile": "nft/txscripts/fealty/declareWar.ral",
+      "sourceCodeHash": "19d5b8072da8f0ccbb4de8e0cd03e0fcf44f759797ea0059136bdd0fe783b790",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "DestroyNft": {
+      "sourceFile": "nft/destroynft.ral",
+      "sourceCodeHash": "31501dd6b3aa848cb755b060dcf6e7e9be1614bdb198cf2be029986b727db058",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "Divorce": {
+      "sourceFile": "nft/txscripts/marriage/divorce.ral",
+      "sourceCodeHash": "c879f4ec3baf4e79400dec88aba671558b0eb71499afa13724a55ab7fb5be93b",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "Fealty": {
+      "sourceFile": "nft/fealtyandmarriage.ral",
+      "sourceCodeHash": "627d43ca5c315eea274a3086fc08345d718a754dd5d6537d352ebc2682fbd1bf",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "16abbf44da06d7543194b5a2cdeac375d35acb44bc5ffffcf6765f3456b4dd61",
+      "warnings": []
+    },
+    "FealtyForGold": {
+      "sourceFile": "nft/templates/fealtyforgold.ral",
+      "sourceCodeHash": "34a4ef88a532c5cf8b804b3f85c09181c1e7186ab1e8326dd8fad010eb33fb62",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "e9c011833a5f66c61ce324fe53f8f240aa31ec90430a180ce5e2e3c79fe44b63",
+      "warnings": []
+    },
+    "GoldToken": {
+      "sourceFile": "goldtoken/token.ral",
+      "sourceCodeHash": "f31e6e5fe8ed1a653819f2a4ced422093ed7b0da8ba686318cd5a1be7e676791",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "683511c194b195df560543287b2ed5f4031d1cef581e3f733ea30dda4902fd1c",
+      "warnings": []
+    },
     "IFungibleToken": {
-      "sourceFile": "../node_modules/@alephium/web3/std/fungible_token_interface.ral",
+      "sourceFile": "../../../../../../.npm/_npx/f1b120e1b513c04c/node_modules/@alephium/web3/std/fungible_token_interface.ral",
       "sourceCodeHash": "6809cb06fb20fa7edf529461998beeebd12b1636d439612cca2f84214dbf4a20",
       "bytecodeDebugPatch": "",
       "codeHashDebug": "",
       "warnings": []
     },
-    "TokenFaucet": {
-      "sourceFile": "token.ral",
-      "sourceCodeHash": "3a12c7604f3899bde03ab81e81eac394a53e723c6e99bc38aeb722689826759f",
-      "bytecodeDebugPatch": "=20-2+67=101+3a0007e02=1+75468652063757272656e742062616c616e63652069732000=46",
-      "codeHashDebug": "a3309aa3a0dbd0c53b67a0c422316dcbc0571d8fa5f9ea2ab374b5c110f4efe2",
+    "INFT": {
+      "sourceFile": "../../../../../../.npm/_npx/f1b120e1b513c04c/node_modules/@alephium/web3/std/nft_interface.ral",
+      "sourceCodeHash": "7f7514adf9fee057049d1c162701725b3377c01a0a102e6f0f5cf747039926b6",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "INFTCollection": {
+      "sourceFile": "../../../../../../.npm/_npx/f1b120e1b513c04c/node_modules/@alephium/web3/std/nft_collection_interface.ral",
+      "sourceCodeHash": "738a3440b686d94c9f7db58f23e22b7512d229540392b426ecb190b82db3fb4f",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "INFTCollectionWithRoyalty": {
+      "sourceFile": "../../../../../../.npm/_npx/f1b120e1b513c04c/node_modules/@alephium/web3/std/nft_collection_with_royalty_interface.ral",
+      "sourceCodeHash": "6407fb10136b21e191c5cf1f695be89f9e427ce2b01c039dd525dac587f3fc05",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "MarketPlace": {
+      "sourceFile": "marketplace/marketplace.ral",
+      "sourceCodeHash": "bf70177bfad50fef8c0be64fb58e586072bda0394c360b23de332ad3981b4bd8",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "a18dd3da1255f952360b8c86e36d5d6eb0b0af6e0a52307282720ecea0a75cdc",
+      "warnings": []
+    },
+    "MarriageSpecific": {
+      "sourceFile": "nft/templates/specificmarriagetemplate.ral",
+      "sourceCodeHash": "96c0580504d3cfc8d3934e942a7382894312822cd33f2f3e95f71e032679dbbb",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "92dcf5cb564a6161b3f821532f639af11e11becf34bab6b78f3efd4309eba8f0",
+      "warnings": []
+    },
+    "MarryOwnCollection": {
+      "sourceFile": "nft/txscripts/marriage/marryOwnCollection.ral",
+      "sourceCodeHash": "58e94989b5113c656ee6c333338c419516e9d8e9e8d1b041c791ec69b280b659",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "Mint": {
+      "sourceFile": "nft/mintnft.ral",
+      "sourceCodeHash": "0f1f0b4799c075418cb0b8abbae6195deea3d2139e2515721d7148e59f5fdf3a",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "NFT": {
+      "sourceFile": "nft/nft.ral",
+      "sourceCodeHash": "3c8944552fe2eac2f8807d699ffc929fbfb7e8d979baf0a610db75c74011608a",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "e3b8b1d9e07bced78726022d82a4386b6cb1a452b5d845699512e1c2d4e42dbc",
+      "warnings": []
+    },
+    "NFTCollectionBase": {
+      "sourceFile": "nftcollection/nftcollectionbase.ral",
+      "sourceCodeHash": "2ab97e78301edeadf6c9c3f94a25b184a465807941ab9dbdc7f4bd58c9932648",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "NFTPublicSaleCollectionBase": {
+      "sourceFile": "nftcollection/nftpublicsalecollectionbase.ral",
+      "sourceCodeHash": "2bbaff4bea3cc25f111ae0f78857dd9f9fa13dcdaab8dab4358a632e52b3f4b1",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "NFTPublicSaleCollectionRandomBase": {
+      "sourceFile": "nftcollection/nftcollectionrandombase.ral",
+      "sourceCodeHash": "922aba7c97c5e93b870fde5509594aace97e6d8297d1586a2758136e7bd23276",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "NFTPublicSaleCollectionRandomWithRoyalty": {
+      "sourceFile": "nftcollection/nftcollectionwithroyalty.ral",
+      "sourceCodeHash": "48fafb61fd8f7b985e81c786fe6487d0d9a8873780897e58409eb9927757aaaa",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "92ae7f267c61b48d5226cb0ce8db12c510ad07f5af930464d564562c761d8629",
+      "warnings": []
+    },
+    "NftListing": {
+      "sourceFile": "marketplace/listing.ral",
+      "sourceCodeHash": "2a503d3bfc5bbc5019a67f1cd47884d0f26b1046784a9a42580bfa0a379f66a2",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "2b777eaf3b29a86b595d5f135f5bf3e10e8b8ba9f35ee623666e37d25ed72e68",
+      "warnings": []
+    },
+    "RescindGoldForFealtyOffer": {
+      "sourceFile": "nft/txscripts/fealty/rescindGoldForFealtyOffer.ral",
+      "sourceCodeHash": "45db246b654f4b5cedca0b9a4157b8b2f3e9a70f5cd6056785220d52784d2c0e",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "RescindMarriageOffer": {
+      "sourceFile": "nft/txscripts/marriage/rescindMarriageOffer.ral",
+      "sourceCodeHash": "19b7654242f0d353a7d25a355b781a4be987a6d08b10c9de2013706ad4df8d0f",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "RevokeAnathemaByBribe": {
+      "sourceFile": "nft/txscripts/anathema/revokeAnathemaByBribe.ral",
+      "sourceCodeHash": "4b0881e6708d3a61989181b7145952c5b43de1c77b5d72a51eadaeb390e6caa0",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "RevokeAnathemaByDeclarer": {
+      "sourceFile": "nft/txscripts/anathema/revokeAnathemaByDeclarer.ral",
+      "sourceCodeHash": "f62941f9867f7bdc288112911a319ccb3ed192d37c047d9861139442decdae40",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "RevokeAnathemaByHighLord": {
+      "sourceFile": "nft/txscripts/anathema/revokeAnathemaByHighLord.ral",
+      "sourceCodeHash": "379debdfdcc433fc4982ebc765db0da0819189cefc73eabfbb2906f93a4995bf",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "RevokeAnathemaByTime": {
+      "sourceFile": "nft/txscripts/anathema/revokeAnathemaByTime.ral",
+      "sourceCodeHash": "4a9813115cd0d5cc64b376624896606fb8fbd4e54862d71c11c51f53e322f076",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "RevokeListing": {
+      "sourceFile": "nft/txscripts/marketplace/revokeListing.ral",
+      "sourceCodeHash": "f2ec8757e4ea241f77655b915b5ae4db2aaa2ff61511b2d094f18415b3885450",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "SwearFealtyForGold": {
+      "sourceFile": "nft/txscripts/fealty/swearFealtyForGold.ral",
+      "sourceCodeHash": "7900bd73148d1ea825255ef58f1cc3337bf050ff3ea2697c9a79f4bd4018528c",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "SwearFealtyWithoutGoldFree": {
+      "sourceFile": "nft/txscripts/fealty/swearFealtyWithoutGold.ral",
+      "sourceCodeHash": "2ebcf28ada1f53d74e31f8b2a44d9f5b5f75bfd0a928bf433b2e887b2f43b0e0",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "VoteInElection": {
+      "sourceFile": "nft/txscripts/fealty/voteInElection.ral",
+      "sourceCodeHash": "fe89c7edee9af8d068074c468b1f8ebb788f380e047bdf894dd30f749ce1feb9",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "WithDrawFromCollection": {
+      "sourceFile": "nft/txscripts/owner/withdrawFromCollection.ral",
+      "sourceCodeHash": "adb49c63eb0a5497ca59c4d5de9b6e34eca0c5e548d9459d39183440bcd10e5d",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "WithDrawRoyalty": {
+      "sourceFile": "nft/txscripts/owner/withdrawRoyalty.ral",
+      "sourceCodeHash": "58c23b73a447f566adbad24ecee6104a08b1e565428810a63823b92050b96294",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
       "warnings": []
     },
     "Withdraw": {
-      "sourceFile": "withdraw.ral",
-      "sourceCodeHash": "52423580f02f5aab7050bfb9a14b497ea4bdcb10b3444483650f3dad8e0e5330",
+      "sourceFile": "goldtoken/withdraw.ral",
+      "sourceCodeHash": "19508025d4b2fa94a26ff3e016173744be45dd130499c068489c9fde9d14f30c",
       "bytecodeDebugPatch": "",
       "codeHashDebug": "",
       "warnings": []

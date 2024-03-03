@@ -1,0 +1,31 @@
+{
+  "version": "v2.9.0",
+  "name": "RevokeAnathemaByTime",
+  "bytecodeTemplate": "01010300000005{0}0d0c{1}0115",
+  "fieldsSig": {
+    "names": [
+      "scroundrelAddress",
+      "fealtyId"
+    ],
+    "types": [
+      "Address",
+      "ByteVec"
+    ],
+    "isMutable": [
+      false,
+      false
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    }
+  ]
+}

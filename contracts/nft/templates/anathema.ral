@@ -1,0 +1,53 @@
+Contract Anathema(
+    owner: Address,
+    lordDeclarerAddress: Address,
+    declarerNftClass: U256,
+    scroundrelAddress: Address,
+    bribe: U256,
+    fealtyId: ByteVec,
+    timeDeclared: U256,
+    reason: ByteVec
+){
+enum ErrorCodes{
+    NotFealtyContract = 5
+}
+
+@using(checkExternalCaller = true, assetsInContract = true)
+pub fn revokeByLord() -> () {
+    
+    checkCaller!(callerAddress!() == contractIdToAddress!(fealtyId), ErrorCodes.NotFealtyContract)
+
+    destroySelf!(owner)
+}
+
+pub fn getDeclarerNftClass() -> (U256) {
+    return declarerNftClass
+}
+
+pub fn getBribe() -> (U256) {
+    return bribe
+}
+
+pub fn getTimeDeclared() -> (U256) {
+    return timeDeclared
+}
+
+
+pub fn getLordDeclarerAddress() -> (Address) {
+    return lordDeclarerAddress
+}
+
+pub fn getScroundrelAddress() -> (Address) {
+    return scroundrelAddress
+}
+
+pub fn getOwner() -> (Address) {
+    return owner
+}
+
+pub fn getReason() -> (ByteVec) {
+return reason
+}
+
+}
+

@@ -1,0 +1,6 @@
+TxScript RevokeListing(
+    nftId: ByteVec,
+    marketplaceId: ByteVec
+) {
+    MarketPlace(marketplaceId).revokeListing(nftId)
+}

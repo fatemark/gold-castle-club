@@ -1,0 +1,37 @@
+{
+  "version": "v2.9.0",
+  "name": "MarryOwnCollection",
+  "bytecodeTemplate": "01010300000007{0}{1}{2}0f0c{3}0105",
+  "fieldsSig": {
+    "names": [
+      "proposee",
+      "proposer",
+      "extratime",
+      "fealtyId"
+    ],
+    "types": [
+      "Address",
+      "Address",
+      "U256",
+      "ByteVec"
+    ],
+    "isMutable": [
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    }
+  ]
+}

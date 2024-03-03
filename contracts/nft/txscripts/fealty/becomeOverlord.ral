@@ -1,0 +1,6 @@
+TxScript BecomeOverlord(
+    fealtyId: ByteVec,
+    lordAddress: Address
+) {
+    Fealty(fealtyId).becomeOverlord(lordAddress)
+}

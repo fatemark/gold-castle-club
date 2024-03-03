@@ -1,0 +1,3 @@
+TxScript AirdropWithdraw(token: GoldToken, amount: U256) {
+    token.airdropWithdraw(amount)
+}

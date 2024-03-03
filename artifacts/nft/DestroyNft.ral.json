@@ -1,0 +1,31 @@
+{
+  "version": "v2.9.0",
+  "name": "DestroyNft",
+  "bytecodeTemplate": "01010300000009b4{0}0da3{0}0d0c{1}010e",
+  "fieldsSig": {
+    "names": [
+      "nftId",
+      "nftCollectionId"
+    ],
+    "types": [
+      "ByteVec",
+      "ByteVec"
+    ],
+    "isMutable": [
+      false,
+      false
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+TxScript VoteInElection(
+    selfAddress: Address,
+    voteInput: U256,
+    fealtyId: ByteVec
+) {
+    Fealty(fealtyId).voteInElection(addressToContractId!(selfAddress), voteInput)
+}

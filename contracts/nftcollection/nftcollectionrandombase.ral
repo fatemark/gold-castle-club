@@ -1,0 +1,96 @@
+Abstract Contract NFTPublicSaleCollectionRandomBase(
+    nftTemplateId: ByteVec,
+    collectionUri: ByteVec,
+    collectionOwner: Address,
+    nftBaseUri: ByteVec,
+    maxSupply: U256,
+    mintPrice: U256,
+    fealtyId: ByteVec,
+    mut totalSupply: U256,
+    mut maxmaxnumber: U256
+) extends NFTCollectionBase(collectionUri, totalSupply), NFTPublicSaleCollectionBase(nftBaseUri, maxSupply, mintPrice) {
+    event Mint(minter: Address, index: U256)
+
+    enum ErrorCodes {
+        IncorrectTokenIndex = 44
+    }
+
+    @using(preapprovedAssets = true, updateFields = true, assetsInContract = true, checkExternalCaller = false)
+    pub fn mint() -> (ByteVec) {
+
+        let mut index = (u256From32Byte!(blake2b!(toByteVec!(blockTarget!()) ++ toByteVec!(blockTimeStamp!()))) % maxSupply)
+        let mut path = toByteVec!(index)
+
+        while (contractExists!(subContractId!(path)) == true ) {
+            maxmaxnumber = maxmaxnumber - 1
+            index = maxmaxnumber
+            path = toByteVec!(index)
+        }
+        
+        
+        let nftclass = 
+        if (index == 382)
+            13
+        else if (index == 515)
+            12
+        else if (index == 560)
+            11
+        else if (index == 0) 
+            10
+        else if (index == 1)
+            9
+        else if (index < 6)
+            8
+        else if (index < 12)
+            7
+        else if (index < 24)
+            6
+        else if (index < 41)
+            5
+        else if (index < 57)
+            4
+        else if (index < 75)
+            3
+        else if (index < 118)
+            2
+        else if (index < 196)
+            1
+        else 
+            0
+
+
+
+
+        let anathema = false
+        let time = 0
+        let minter = callerAddress!()
+        // let path = toByteVec!(index)
+        let nftcontractid = subContractId!(path)
+        let nftcontractaddress = contractIdToAddress!(nftcontractid)
+        let (encodeImmutableFields, encodeMutableFields) = NFT.encodeFields!(getNFTUri(index), selfContractId!(), index, nftclass, fealtyId, minter, time, time, nftcontractaddress, time, nftcontractaddress, time, nftcontractaddress, time, anathema, time, time, time)
+
+        assert!(index < maxSupply, ErrorCodes.IncorrectTokenIndex)
+        
+        let contractId = copyCreateSubContractWithToken!{minter -> ALPH: 1 alph}(
+            path,
+            nftTemplateId,
+            encodeImmutableFields,
+            encodeMutableFields,
+            1,
+            minter
+        )
+
+        transferTokenToSelf!(minter, ALPH, mintPrice)
+        totalSupply = totalSupply + 1
+        emit Mint(minter, index)
+        return contractId
+    }
+
+    pub fn getCollectionOwner() -> Address {
+        return collectionOwner
+    }
+
+    pub fn getMaxSupply() -> U256 {
+        return maxSupply
+    }
+}

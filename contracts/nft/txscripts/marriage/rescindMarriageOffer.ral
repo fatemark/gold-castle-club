@@ -1,0 +1,6 @@
+TxScript RescindMarriageOffer(
+    proposer: Address,
+    fealtyId: ByteVec
+) {
+    Fealty(fealtyId).rescindMarriageOffer(proposer)
+}

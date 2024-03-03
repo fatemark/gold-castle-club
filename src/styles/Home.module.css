@@ -1,6 +1,727 @@
 .container {
   padding: 0 2rem;
 }
+@keyframes fadeIn {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.popupimage {
+  width: 100px !important; /* Adjust as needed */
+  height: auto !important; 
+}
+
+
+.rollbutton {
+  font-family: 'Copperplatebold';
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size:clamp(20px, 4vw, 50px); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  position: relative; /* or absolute, fixed, or sticky */
+  left: -10px; /* Distance from the left */
+  align-items: center; /* Vertical centering */
+  background-color: #ffffffee; /* Example background color */
+  color: #fcbc0a; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 420px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 10px; /* Adds space above the container */
+  margin-bottom: 10px; /* Adds space below the container */
+  height: 60px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  text-shadow:
+  -0.5px -0.5px 0 #000000,  
+  0.5px -0.5px 0 #000000,
+  -0.5px 0.5px 0 #000000,
+  0.5px 0.5px 0 #000000;
+}
+
+.rollbutton:hover {
+  font-family: 'Copperplatebold';
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size:clamp(20px, 4vw, 50px); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  position: relative; /* or absolute, fixed, or sticky */
+  left: -10px; /* Distance from the left */
+  align-items: center; /* Vertical centering */
+  background-color: #26c038a1; /* Example background color */
+  color: #fcbc0a; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 420px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 10px; /* Adds space above the container */
+  margin-bottom: 10px; /* Adds space below the container */
+  height: 60px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  text-shadow:
+  -0.5px -0.5px 0 #ffffff,  
+  0.5px -0.5px 0 #ffffff,
+  -0.5px 0.5px 0 #ffffff,
+  0.5px 0.5px 0 #ffffff;
+}
+
+.tinyinput {
+margin-right: 10px;
+width: 40%;
+height: 30px;
+font-size: 20px;
+}
+.tinyinput:hover {
+  margin-right: 10px;
+  width: 40%;
+  height: 30px;
+  font-size: 20px;
+  }
+
+.alphLottery {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Align items vertically in the center */
+  background-image: url('/goldcoins.png'); /* Update with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 80px; /* Adjust height as needed */
+  border-radius: 5px;
+  border: 1px solid var(--color-bg-secondary);
+  margin-bottom: 80px;
+}
+
+.smallcolumn {
+  flex: 1; /* Distribute space equally among columns */
+  display: flex; /* Use flexbox for the columns */
+  justify-content: center; /* Align content horizontally in the center */
+  align-items: center; /* Align content vertically in the center */
+  text-align: center; /* Center text */
+  padding: 0 10px; /* Add padding for spacing */
+  color:#ffffff;
+  font-size: larger;
+  text-shadow:
+  -1px -1px 0 #000000,  
+  1px -1px 0 #000000,
+  -1px 1px 0 #000000,
+  1px 1px 0 #000000;
+  position: relative;
+}
+
+.nftmint{
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  display: block;
+  max-width: var(--width-card-wide);
+  min-width: var(--width-card-mint);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 4rem;
+  text-align: var(--justify-normal);}
+
+  .newmintContainer{
+    display: flex;
+    border: 1px solid var(--color-bg-secondary);
+    font-family: 'Copperplatebold';
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    max-width: 100%;
+    font-size: clamp(0.6rem, 2vw, 0.9rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+    float: right; /* or absolute, fixed, or sticky */
+    left: -10px; /* Distance from the left */
+    align-items: center; /* Vertical centering */
+    background-color: #07c2303b; /* Example background color */
+    color: #ffffff; /* Replace with your desired color */
+    padding: 0.00008px 5px;
+    border-radius: 10px;
+    justify-content: center; /* Horizontally centers the content */
+    width: 380px; /* Or any other width */
+    margin-left: 20rem; /* Keeps the container centered */
+    text-align: center; /* Centers the text horizontally */
+    line-height: 1.2; /* Adjust for proper text spacing */
+    margin-top: 10px; /* Adds space above the container */
+    margin-bottom: 10px; /* Adds space below the container */
+    height: 30px; /* Adjust as needed */
+    transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+    text-shadow: 0 0 10px #000000;
+  }
+  .newmintContainer:hover{
+    display: flex;
+    border: 1px solid var(--color-bg-secondary);
+    font-family: 'Copperplatebold';
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    max-width: 100%;
+    font-size: clamp(0.7rem, 2vw, 1.0rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+    float: right; /* or absolute, fixed, or sticky */
+    left: -10px; /* Distance from the left */
+    align-items: center; /* Vertical centering */
+    background-color: #07c230ca; /* Example background color */
+    color: #ffffff; /* Replace with your desired color */
+    padding: 0.00008px 5px;
+    border-radius: 10px;
+    justify-content: center; /* Horizontally centers the content */
+    width: 380px; /* Or any other width */
+    margin-left: 20rem; /* Keeps the container centered */
+    text-align: center; /* Centers the text horizontally */
+    line-height: 1.2; /* Adjust for proper text spacing */
+    margin-top: 10px; /* Adds space above the container */
+    margin-bottom: 10px; /* Adds space below the container */
+    height: 30px; /* Adjust as needed */
+    transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+    text-shadow: 0 0 10px #000000;
+    cursor: crosshair;
+  }
+
+  @media (max-width: 600px) {
+    .newcollectionexampleContainer {
+      /* Adjust styles for smaller screens */
+      width: 100%; /* Let it take the full width */
+      max-width: none; /* Remove max-width constraint */
+      margin-left: 0; /* Reset margin-left */
+    }
+  
+    .newWrapperContainer {
+      flex-direction: column; /* Stack the children vertically */
+      
+    }
+  
+    .newLeftContainer {
+      width: 100%; /* Full width for smaller screens */
+    }
+  }
+  
+
+  @media (max-width: 600px) {
+    .newWrapperContainer {
+        flex-direction: column;
+    }
+}
+  .newWrapperContainer {
+    display: flex;
+    align-items: flex-start; /* Adjust vertical alignment as needed */
+    width: 100%; /* Ensure it takes the full width */
+    /* Add other properties as needed for spacing, alignment, etc. */
+}
+
+.newcollectionexampleContainer{
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  font-family: 'Copperplatebold';
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  float: right; /* or absolute, fixed, or sticky */
+  left: -10px; /* Distance from the left */
+  background-color: #07c230ca; /* Example background color */
+  color: #ffffff; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: flex-start; /* Horizontally centers the content */
+  width: 90%; /* Example */
+  max-width: 300px;
+  margin-left: auto;
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 10px; /* Adds space above the container */
+  margin-bottom: 10px; /* Adds space below the container */
+  margin-right: 0;
+  height: 400px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  text-shadow: 0 0 10px #000000;
+  position: relative;
+
+}
+
+
+.newcollectionexampleContainer .mintimagebackground:first-child {
+  background-size: cover;
+
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  background-position: center; /* Adjust the positioning */
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: wait;
+}
+
+
+.newLeftSideContainer {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-bg-secondary);
+  font-family: 'Copperplatebold';
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: flex-start; /* Horizontally centers the content */
+  width: 24vw; /* Example */
+  margin-left: auto;
+  margin-top: 5%; /* Adds space above the container */
+  margin-bottom: 10px; /* Adds space below the container */
+  margin-right: 0;
+  height: 34vh; /* Adjust as needed */
+  position: relative;
+  align-items: center;
+  
+}
+.checkraritiesandclassesredirect{
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  font-family: 'Copperplatebold';
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.6em, 2vw, 1.0rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  background-color: #06750058; /* Example background color */
+  color: #ffffff; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 14vw; /* Example */
+  text-align: center; /* Centers the text horizontally */
+  margin-top: 3px; /* Adds space above the container */
+  margin-bottom: 3px; /* Adds space below the container */
+  height: 4vh; /* Adjust as needed */
+  text-shadow:
+  -1px -1px 0 #000000,  
+  1px -1px 0 #000000,
+  -1px 1px 0 #000000,
+  1px 1px 0 #000000;
+  position: relative;
+  align-items: center; /* Vertical centering */
+}
+
+.checkraritiesandclassesredirect:hover{
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  font-family: 'Copperplatebold';
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.6em, 2vw, 1.0rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  background-color: #067500aa; /* Example background color */
+  color: #ffffff; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 14vw; /* Example */
+  text-align: center; /* Centers the text horizontally */
+  margin-top: 3px; /* Adds space above the container */
+  margin-bottom: 3px; /* Adds space below the container */
+  height: 4vh; /* Adjust as needed */
+  text-shadow:
+  -1px -1px 0 #000000,  
+  1px -1px 0 #000000,
+  -1px 1px 0 #000000,
+  1px 1px 0 #000000;
+  position: relative;
+  align-items: center; /* Vertical centering */
+  cursor: wait;
+}
+
+.mintNowActioncontainer{
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  font-family: 'Copperplatebold';
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.1rem, 1.6vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  background-color: #d9bc1bc7; /* Example background color */
+  color: #ffffff; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 16vw; /* Example */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 0px; /* Adds space above the container */
+  margin-bottom: 3px; /* Adds space below the container */
+  height: 12%; /* Adjust as needed */
+  text-shadow:
+  -1px -1px 0 #000000,  
+  1px -1px 0 #000000,
+  -1px 1px 0 #000000,
+  1px 1px 0 #000000;
+  position: center;
+  align-items: center; /* Vertical centering */
+}
+
+.mintNowActioncontainer:hover{
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  font-family: 'Copperplatebold';
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  background-color: #d9bc1bc7; /* Example background color */
+  color: #ffffff; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 16vw; /* Example */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 0px; /* Adds space above the container */
+  margin-bottom: 3px; /* Adds space below the container */
+  height: 12%; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  text-shadow:
+  -1px -1px 0 #000000,  
+  1px -1px 0 #000000,
+  -1px 1px 0 #000000,
+  1px 1px 0 #000000;
+  position: center;
+  align-items: center; /* Vertical centering */
+  cursor: crosshair;
+  
+}
+/* In your component's CSS file */
+.mySpecialButton {
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  font-family: 'Copperplatebold';
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.6rem, 2.4vw, 2.8rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  background-color: #3007c269; /* Example background color */
+  color: #ffffff; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 17vw; /* Example */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 9px; /* Adds space above the container */
+  margin-bottom: 0px; /* Adds space below the container */
+  margin-left: 20px;
+  margin-right: 0px;
+  height: 12vh; /* Adjust as needed */
+  text-shadow:
+  -2px -2px 0 #000000,  
+  2px -2px 0 #000000,
+  -2px 2px 0 #000000,
+  2px 2px 0 #000000;
+  position: relative;
+  align-items: center; /* Vertical centering */
+  letter-spacing: 2px; /* Adjust the value as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s, height 1s, width 1s; /* Smooth transition for hover effect */
+
+
+}
+
+.mySpecialButton:hover {
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  font-family: 'Copperplatebold';
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(1rem, 7.4vw, 9.5rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  background-color: #4724c6d0; /* Example background color */
+  color: #ffd000; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 21vw; /* Example */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 9px; /* Adds space above the container */
+  margin-bottom: 0px; /* Adds space below the container */
+  margin-left: 20px;
+  margin-right: 0px;
+  height: 20vh; /* Adjust as needed */
+  text-shadow:
+  -2px -2px 0 #000000,  
+  2px -2px 0 #000000,
+  -2px 2px 0 #000000,
+  2px 2px 0 #000000;
+  position: relative;
+  align-items: center; /* Vertical centering */
+  letter-spacing: 2px; /* Adjust the value as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s, height 1s, width 1s; /* Smooth transition for hover effect */
+
+}
+
+
+
+.simpletextContainer {
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.1rem, 1.45vw, 1.55rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  text-align: center; /* Centers the text horizontally */
+  font-family: 'Copperplatebold';
+  align-items: center; /* Vertical centering */
+  /* background-image: url('/goldcoins.png'); /* Update with your image path */
+  background-color: #ab7f214a; /* Example background color */
+  color: #ffffff; /* Replace with your desired color */
+  padding: 1px 1px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 620px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 10px; /* Adds space above the container */
+  margin-bottom: 10px; /* Adds space below the container */
+  height: 40px; /* Adjust as needed */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+  cursor: pointer;
+  text-shadow:
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+.simpletextContainer:hover {
+  display: flex;
+  filter: brightness(150%);
+  border: 1px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.1rem, 1.45vw, 1.55rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  font-family: 'Copperplatebold';
+  align-items: center; /* Vertical centering */
+  /* background-image: url('/goldcoins.png'); /* Update with your image path */
+  background-color: #ab7f21bd; /* Example background color */
+  color: #ffffff; /* Replace with your desired color */
+  padding: 1px 1px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 620px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 10px; /* Adds space above the container */
+  margin-bottom: 10px; /* Adds space below the container */
+  height: 40px; /* Adjust as needed */
+  transition: background-color 0.7s, box-shadow 0.3s; /* Smooth transition for hover effect */
+  text-shadow:
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+.simpleundertextContainer {
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.9rem, 1vw, 1.2rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  position: relative; /* or absolute, fixed, or sticky */
+  left: -10px; /* Distance from the left */
+  align-items: center; /* Vertical centering */
+  background-color: #ffffff89; /* Example background color */
+  color: #000000; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 320px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 10px; /* Adds space above the container */
+  margin-bottom: 10px; /* Adds space below the container */
+  height: 20px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  cursor: pointer;
+
+}
+
+.simpleundertextContainer:hover {
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(1.2rem, 0.3vw, 2rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  align-items: center; /* Vertical centering */
+  background-color: #f65c5c93; /* Example background color */
+  color: #000000; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 320px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 10px; /* Adds space above the container */
+  margin-bottom: 10px; /* Adds space below the container */
+  height: 20px; /* Adjust as needed */
+  text-shadow:
+  -0.5px -0.5px 0 #ffffff,  
+  0.5px -0.5px 0 #ffffff,
+  -0.5px 0.5px 0 #ffffff,
+  0.5px 0.5px 0 #ffffff;
+}
+
+.contracttextContainer {
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.43rem, 1vw, 1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  float: left; /* Aligns the container to the left */
+  align-items: center; /* Vertical centering */
+  justify-content: left; /* Horizontally centers the content */
+  background-color: #ffffff89; /* Example background color */
+  color: #000000; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 0px;
+  width: 500px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 10px; /* Adds space above the container */
+  margin-bottom: 10px; /* Adds space below the container */
+  height: 24px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s; /* Smooth transition for hover effect */
+  cursor: pointer;
+  text-shadow:
+  -0.5px -0.5px 0 #ffffff,  
+  0.5px -0.5px 0 #ffffff,
+  -0.5px 0.5px 0 #ffffff,
+  0.5px 0.5px 0 #ffffff;
+  
+}
+
+.contracttextContainer:hover {
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.43rem, 1vw, 1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  float: left; /* Aligns the container to the left */
+  align-items: center; /* Vertical centering */
+  justify-content: left; /* Horizontally centers the content */
+  background-color: #ffffff; /* Example background color */
+  color: #000000; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 0px;
+  width: 500px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 10px; /* Adds space above the container */
+  margin-bottom: 10px; /* Adds space below the container */
+  height: 24px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s; /* Smooth transition for hover effect */
+
+}
+
+.lotterytextContainer {
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.54rem, 1vw, 1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  float: left; /* Aligns the container to the left */
+  align-items: center; /* Vertical centering */
+  justify-content: left; /* Horizontally centers the content */
+  background-color: #ffffff89; /* Example background color */
+  color: #000000; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 0px;
+  width: 500px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 0px; /* Adds space above the container */
+  margin-bottom: 0px; /* Adds space below the container */
+  height: 24px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s; /* Smooth transition for hover effect */
+
+}
+
+.lotterytextContainer:hover {
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.54rem, 1vw, 1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  float: left; /* Aligns the container to the left */
+  align-items: center; /* Vertical centering */
+  justify-content: left; /* Horizontally centers the content */
+  background-color: #ffffff; /* Example background color */
+  color: #000000; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 0px;
+  width: 500px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 0px; /* Adds space above the container */
+  margin-bottom: 0px; /* Adds space below the container */
+  height: 24px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s; /* Smooth transition for hover effect */
+
+}
+
+.secondaryContainer {
+  display: none;
+
+  /* Other styles for secondaryContainer */
+  
+}
+
+.lotterytextContainer:hover + .secondaryContainer,
+.secondaryContainer:hover {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.54rem, 1vw, 1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  float: left; /* Aligns the container to the left */
+  align-items: center; /* Vertical centering */
+  justify-content: left; /* Horizontally centers the content */
+  background-color: #cba768ca; /* Example background color */
+  color: #000000; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 40px;
+  width: 500px; /* Or any other width */
+  margin: auto; /* Keeps the container centered */
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 0px; /* Adds space above the container */
+  margin-bottom: 20px; /* Adds space below the container */
+  height: 35%; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s; /* Smooth transition for hover effect */
+}
+
+
+
+
+
+.tokenDappBackground {
+  background-image: url('/goldcoins.png'); /* Update with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: var(--width-card-wide); /* Set the width to 50% */
+  
+  /* Add a min-height or height as needed */
+  min-height: 300px; /* Example height, adjust as needed */
+}
 
 .main {
   display: flex;

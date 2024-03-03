@@ -1,0 +1,175 @@
+{
+  "version": "v2.9.0",
+  "name": "FealtyForGold",
+  "bytecode": "0a0740344046404f40584061406a407301020303001b1602ce094513405c7bb4ce05774513405b7b1600ce06341340567b1600ce01311340577b1601ce04ce02abce07b0010200000008b4ce05774513405b7bce07b0010000000102ce0002010000000102ce0302010000000102ce0202010000000102ce0802010000000102ce0902",
+  "codeHash": "e9c011833a5f66c61ce324fe53f8f240aa31ec90430a180ce5e2e3c79fe44b63",
+  "fieldsSig": {
+    "names": [
+      "lordAddress",
+      "lordnftclass",
+      "bribe",
+      "time",
+      "goldtokenid",
+      "fealtyId",
+      "minimumClass",
+      "owner",
+      "campaign",
+      "subjecttarget"
+    ],
+    "types": [
+      "Address",
+      "U256",
+      "U256",
+      "U256",
+      "ByteVec",
+      "ByteVec",
+      "U256",
+      "Address",
+      "ByteVec",
+      "Address"
+    ],
+    "isMutable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "eventsSig": [],
+  "functions": [
+    {
+      "name": "swearFealty",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": true,
+      "isPublic": true,
+      "paramNames": [
+        "subjectNftClass",
+        "caller",
+        "subjectAddress"
+      ],
+      "paramTypes": [
+        "U256",
+        "Address",
+        "Address"
+      ],
+      "paramIsMutable": [
+        false,
+        false,
+        false
+      ],
+      "returnTypes": []
+    },
+    {
+      "name": "destroyOffer",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": true,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    },
+    {
+      "name": "getLord",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "Address"
+      ]
+    },
+    {
+      "name": "getTime",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "U256"
+      ]
+    },
+    {
+      "name": "getBribe",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "U256"
+      ]
+    },
+    {
+      "name": "getCampaign",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "ByteVec"
+      ]
+    },
+    {
+      "name": "getSubjecttarget",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "Address"
+      ]
+    }
+  ],
+  "constants": [],
+  "enums": [
+    {
+      "name": "ErrorCodes",
+      "fields": [
+        {
+          "name": "TooHighInStanding",
+          "value": {
+            "type": "U256",
+            "value": "87"
+          }
+        },
+        {
+          "name": "NotEnoughStanding",
+          "value": {
+            "type": "U256",
+            "value": "86"
+          }
+        },
+        {
+          "name": "NotFealtyContract",
+          "value": {
+            "type": "U256",
+            "value": "91"
+          }
+        },
+        {
+          "name": "NotSpecifiedSubject",
+          "value": {
+            "type": "U256",
+            "value": "92"
+          }
+        }
+      ]
+    }
+  ]
+}

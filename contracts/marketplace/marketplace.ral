@@ -1,0 +1,92 @@
+Contract MarketPlace(
+    listingTemplateId: ByteVec,
+    marketplaceOwner: Address
+){
+
+    event NewListing(newlisting: ByteVec, price: U256, nftId: ByteVec, lister: Address)
+    event NewBuyListing(nftId: ByteVec, price: U256)
+    event RevokedListing(nftId: ByteVec)
+    event NewOwner(nftId: ByteVec)
+
+
+
+
+    enum ErrorCodes{
+        NotOwner = 108
+        NotLister = 124
+    }
+
+
+
+@using(preapprovedAssets = true, checkExternalCaller = false, assetsInContract = false)
+pub fn createListing(nftId: ByteVec, price: U256) -> () {
+
+    let lister = callerAddress!()
+    let path = nftId ++ selfContractId!()
+    let (encodeImmutableFields, encodeMutableFields) = NftListing.encodeFields!(selfContractId!(), nftId, price, lister)
+    let newlisting = copyCreateSubContract!{lister -> ALPH: 1 alph, nftId: 1}(path, listingTemplateId, encodeImmutableFields, encodeMutableFields)
+    
+    emit NewListing(newlisting, price, nftId, lister)
+
+}
+
+@using(preapprovedAssets = true, assetsInContract = true, checkExternalCaller = false)
+pub fn buyListing(
+    nftId: ByteVec
+    ) -> () {
+    let buyer = callerAddress!()
+    let path = nftId ++ selfContractId!()
+    let listingcontractid = subContractId!(path)
+
+    let price = NftListing(listingcontractid).getPrice()
+    let royalty = price / 50
+    let priceAfterFee = price - royalty
+
+    transferTokenToSelf!(buyer, ALPH, royalty)
+
+    NftListing(listingcontractid).buyNFT{buyer -> ALPH: priceAfterFee}(buyer, priceAfterFee)
+
+    NFT(nftId).ownerchange(buyer)
+
+    emit NewBuyListing(nftId, price)
+}
+
+@using(assetsInContract = true, checkExternalCaller = true)
+pub fn withdrawFees(withdrawamount: U256) -> () {
+    checkCaller!(marketplaceOwner == callerAddress!(), ErrorCodes.NotOwner)
+    transferTokenFromSelf!(marketplaceOwner, ALPH, withdrawamount)
+}
+
+@using(assetsInContract = false, checkExternalCaller = true)
+pub fn migrateToNewMarketplace(newcode: ByteVec) -> () {
+    checkCaller!(marketplaceOwner == callerAddress!(), ErrorCodes.NotOwner)
+    migrate!(newcode)
+}
+
+@using(assetsInContract = false, checkExternalCaller = true, preapprovedAssets = false, updateFields = false)
+pub fn revokeListing(nftId: ByteVec) -> () {
+let path = nftId ++ selfContractId!()
+let listingcontractid = subContractId!(path)
+let lister = NftListing(listingcontractid).getLister()
+checkCaller!(callerAddress!() == lister, ErrorCodes.NotLister)
+NftListing(listingcontractid).revokeListing()
+
+emit RevokedListing(nftId)
+}
+
+@using(preapprovedAssets = true, assetsInContract = false, checkExternalCaller = false)
+pub fn changeOwner(
+    nftId: ByteVec
+    ) -> () {
+
+    let owner = callerAddress!()
+    
+    let timeuntil = blockTimeStamp!() + 15000
+    lockApprovedAssets!{owner -> nftId: 1}(owner, timeuntil)
+
+    NFT(nftId).ownerchange(owner)
+
+    emit NewOwner(nftId)
+}
+
+}

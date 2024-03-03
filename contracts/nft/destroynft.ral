@@ -1,0 +1,6 @@
+TxScript DestroyNft(
+    nftId: ByteVec,
+    nftCollectionId: ByteVec
+) {
+    NFTPublicSaleCollectionRandomWithRoyalty(nftCollectionId).destroyNft{callerAddress!() -> nftId: 1}(nftId)
+}

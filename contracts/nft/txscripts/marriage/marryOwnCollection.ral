@@ -1,0 +1,9 @@
+TxScript MarryOwnCollection(
+    proposee: Address, 
+    proposer: Address,
+    extratime: U256,
+    fealtyId: ByteVec
+)
+{
+    Fealty(fealtyId).marryOwnCollection(proposee, proposer, extratime)
+}

@@ -1,0 +1,11 @@
+TxScript DeclareAnathemaByHighLord(
+    bribe: U256,
+    declarerLordAddress: Address,
+    scroundrelAddress: Address,
+    fealtyId: ByteVec,
+    goldtokenid: ByteVec,
+    reason: ByteVec
+) {
+    let fee = bribe / 10
+    Fealty(fealtyId).declareAnathemaByHigherLord{callerAddress!() -> ALPH: 1 alph + dustAmount!(), goldtokenid: fee}(declarerLordAddress, scroundrelAddress, bribe, reason)
+}

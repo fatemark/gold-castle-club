@@ -1,0 +1,167 @@
+{
+  "version": "v2.9.0",
+  "name": "MarriageSpecific",
+  "bytecode": "090840204031403a4043404c4055405e4067010202020011ce0516014513277bb4ce04774513267b1600ce03ce01abce06b0010200000008b4ce04774513267bce06b0010000000102ce0002010000000102ce0502010000000102ce0102010000000102ce0202010000000102ce0702010000000102ce0802",
+  "codeHash": "92dcf5cb564a6161b3f821532f639af11e11becf34bab6b78f3efd4309eba8f0",
+  "fieldsSig": {
+    "names": [
+      "proposer",
+      "dowry",
+      "time",
+      "goldtokenid",
+      "fealtyId",
+      "proposee",
+      "owner",
+      "loveletter",
+      "maxlovercount"
+    ],
+    "types": [
+      "Address",
+      "U256",
+      "U256",
+      "ByteVec",
+      "ByteVec",
+      "Address",
+      "Address",
+      "ByteVec",
+      "U256"
+    ],
+    "isMutable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "eventsSig": [],
+  "functions": [
+    {
+      "name": "accept",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": true,
+      "isPublic": true,
+      "paramNames": [
+        "proposeeOwner",
+        "proposeeCaller"
+      ],
+      "paramTypes": [
+        "Address",
+        "Address"
+      ],
+      "paramIsMutable": [
+        false,
+        false
+      ],
+      "returnTypes": []
+    },
+    {
+      "name": "destroyOffer",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": true,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    },
+    {
+      "name": "getProposer",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "Address"
+      ]
+    },
+    {
+      "name": "getProposee",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "Address"
+      ]
+    },
+    {
+      "name": "getDowry",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "U256"
+      ]
+    },
+    {
+      "name": "getTime",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "U256"
+      ]
+    },
+    {
+      "name": "getLoveletter",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "ByteVec"
+      ]
+    },
+    {
+      "name": "getmaxlovercount",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "U256"
+      ]
+    }
+  ],
+  "constants": [],
+  "enums": [
+    {
+      "name": "ErrorCodes",
+      "fields": [
+        {
+          "name": "NotFealtyContract",
+          "value": {
+            "type": "U256",
+            "value": "38"
+          }
+        },
+        {
+          "name": "NotProposee",
+          "value": {
+            "type": "U256",
+            "value": "39"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+Contract FealtyForGold(
+    lordAddress: Address,
+    lordnftclass: U256,
+    bribe: U256,
+    time: U256,
+    goldtokenid: ByteVec,
+    fealtyId: ByteVec,
+    minimumClass: U256,
+    owner: Address,
+    campaign: ByteVec,
+    subjecttarget: Address
+){
+    enum ErrorCodes {
+        TooHighInStanding = 87
+        NotEnoughStanding = 86
+        NotFealtyContract = 91
+        NotSpecifiedSubject = 92
+     }
+
+    @using(assetsInContract = true, updateFields = false, checkExternalCaller = true)
+    pub fn swearFealty(subjectNftClass: U256, caller: Address, subjectAddress: Address) -> () {
+
+    assert!(subjectAddress == subjecttarget, ErrorCodes.NotSpecifiedSubject)
+    checkCaller!(callerAddress!() == contractIdToAddress!(fealtyId), ErrorCodes.NotFealtyContract)
+
+    assert!(subjectNftClass >= minimumClass, ErrorCodes.NotEnoughStanding)
+
+    assert!(subjectNftClass < lordnftclass, ErrorCodes.TooHighInStanding)
+
+    transferTokenFromSelf!(caller, goldtokenid, bribe)
+    destroySelf!(owner)
+    }
+
+    @using(assetsInContract = true, checkExternalCaller = true)
+    pub fn destroyOffer() -> () {
+
+    checkCaller!(callerAddress!() == contractIdToAddress!(fealtyId), ErrorCodes.NotFealtyContract)
+    destroySelf!(owner)
+    }
+
+pub fn getLord() -> (Address) {
+    return lordAddress
+}
+
+pub fn getTime() -> (U256) {
+    return time
+}
+
+pub fn getBribe() -> (U256) {
+    return bribe
+}
+
+pub fn getCampaign() -> (ByteVec) {
+    return campaign
+}
+
+pub fn getSubjecttarget() -> (Address) {
+    return subjecttarget
+}
+
+}

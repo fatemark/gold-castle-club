@@ -1,0 +1,7 @@
+TxScript AcceptMarriageOffer(
+    proposee: Address,
+    proposer: Address,
+    fealtyId: ByteVec
+) {
+    Fealty(fealtyId).acceptMarriage(proposee, proposer)
+}

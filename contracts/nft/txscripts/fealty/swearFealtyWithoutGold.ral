@@ -1,0 +1,8 @@
+TxScript SwearFealtyWithoutGoldFree(
+    lordAddress: Address,
+    subjectAddress: Address,
+    time: U256,
+    fealtyId: ByteVec
+) {
+    Fealty(fealtyId).swearFealtyWithoutGoldForFree(lordAddress, subjectAddress, time)
+}

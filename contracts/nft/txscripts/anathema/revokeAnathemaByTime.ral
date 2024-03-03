@@ -1,0 +1,6 @@
+TxScript RevokeAnathemaByTime(
+    scroundrelAddress: Address,
+    fealtyId: ByteVec
+) {
+    Fealty(fealtyId).revokeAnathemaByTime(scroundrelAddress)
+}

@@ -1,0 +1,7 @@
+TxScript DeclareWar(
+    selfAddress: Address,
+    target: Address,
+    fealtyId: ByteVec
+) {
+    Fealty(fealtyId).declareWar(selfAddress, target)
+}

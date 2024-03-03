@@ -1,0 +1,7 @@
+TxScript RescindGoldForFealtyOffer(
+    fealtyId: ByteVec,
+    lordAddress: Address,
+    lordSubjectIndex: U256
+) {
+    Fealty(fealtyId).rescindGoldFealtyOffer(lordAddress, lordSubjectIndex)
+}

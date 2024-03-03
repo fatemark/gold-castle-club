@@ -1,0 +1,43 @@
+Contract NftListing(
+    marketplaceId: ByteVec,
+    nftId: ByteVec,
+    price: U256,
+    lister: Address
+){
+    enum ErrorCodes{
+        NotMarketplace = 13
+    }
+
+
+    @using(assetsInContract = true, checkExternalCaller = true, preapprovedAssets = true)
+    pub fn buyNFT(buyer: Address, priceAfterFee: U256) -> () {
+    let caller = callerAddress!()
+    checkCaller!(caller == contractIdToAddress!(marketplaceId), ErrorCodes.NotMarketplace)
+
+    transferToken!(buyer, lister, ALPH, priceAfterFee)
+    transferTokenFromSelf!(buyer, nftId, 1)
+    destroySelf!(lister)
+
+    }
+
+    @using(assetsInContract = true, checkExternalCaller = true)
+    pub fn revokeListing() -> () {
+        checkCaller!(callerAddress!() == contractIdToAddress!(marketplaceId), ErrorCodes.NotMarketplace)
+        destroySelf!(lister)
+    }
+
+    pub fn getPrice() -> (U256) {
+        return price
+    }
+
+    pub fn getNftId() -> (ByteVec) {
+        return nftId
+    }
+
+    pub fn getLister() -> (Address) {
+        return lister
+    }
+
+}
+
+

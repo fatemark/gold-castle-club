@@ -1,0 +1,155 @@
+import "std/nft_interface"
+Contract NFT(
+  tokenUri: ByteVec,
+  collectionId: ByteVec,
+  nftIndex: U256,
+  nftclass: U256,
+  fealtyId: ByteVec,
+  mut owner: Address,
+  mut vote: U256,
+  mut voteTime: U256,
+  mut wartarget: Address,
+  mut warStarted: U256,
+  mut marriage: Address,
+  mut marriageTime: U256,
+  mut feudalLord: Address,
+  mut feudalTime: U256,
+  mut anathema: Bool,
+  mut anathemaDeclaredCount: U256,
+  mut lovercount: U256,
+  mut anathemaCooldown: U256
+) implements INFT {
+enum ErrorCodes {
+     Marriagestillfresh = 2
+     TooEarlyforBetrayal = 1
+     Wrongcollection = 10
+     CooldownAnathema = 200
+     StillOnTheMarch = 225
+     NotFealtyId = 226
+  }
+
+  pub fn getAnathemaCooldown() -> (U256) {
+    return anathemaCooldown
+  }
+  pub fn getMarriage() -> (U256, Address) {
+    return marriageTime, marriage
+  }
+
+  pub fn getLovercount() -> (U256) {
+    return lovercount
+  }
+
+  pub fn getAnathemaDeclaredCount() -> U256 {
+    return anathemaDeclaredCount
+  }
+
+  pub fn getAnathema() -> Bool {
+    return anathema
+  }
+
+  pub fn getfeudalLord() -> Address {
+    return feudalLord
+  }
+
+  pub fn getWarTarget() -> (Address, U256) {
+    return wartarget, warStarted
+  }
+
+  @using(updateFields = true, checkExternalCaller = true)
+  pub fn declareWar(target: Address, timenow: U256) -> () {
+    checkCaller!(callerAddress!() == contractIdToAddress!(fealtyId), ErrorCodes.NotFealtyId)
+    let timedelta = timenow - warStarted
+    assert!(timedelta > 86400000, ErrorCodes.StillOnTheMarch)
+    wartarget = target
+    warStarted = timenow
+  }
+
+
+  pub fn getNftclass() -> U256 {
+    return nftclass
+  }
+
+  pub fn getTokenUri() -> ByteVec {
+    return tokenUri
+  }
+
+  pub fn getNFTIndex() -> U256 {
+    return nftIndex
+  }
+
+  @using(updateFields = true, checkExternalCaller = true)
+  pub fn voteInElection(voteInput: U256, voteTimeInput:U256) -> () {
+    checkCaller!(callerAddress!() == contractIdToAddress!(fealtyId), ErrorCodes.NotFealtyId)
+    vote = voteInput
+    voteTime = voteTimeInput
+  }
+
+  pub fn getVote() -> (U256, U256) {
+    return vote, voteTime
+  }
+
+  pub fn getCollectionIndex() -> (ByteVec, U256) {
+    return collectionId, nftIndex
+  }
+
+
+@using(preapprovedAssets = false, assetsInContract = false, updateFields = true, checkExternalCaller = true)
+pub fn ownerchange(newowner: Address) -> (Address) {
+checkCaller!(callerAddress!() == contractIdToAddress!(collectionId), ErrorCodes.Wrongcollection)
+owner = newowner
+return owner
+}
+
+pub fn getOwner() -> (Address) {
+  return owner
+}
+
+@using(preapprovedAssets = false, assetsInContract = false, updateFields = true, checkExternalCaller = true)
+pub fn marriageChange(newMarriagepartner: Address, extratime: U256) -> () {
+
+  checkCaller!(callerAddress!() == contractIdToAddress!(fealtyId), ErrorCodes.Wrongcollection)
+
+  let timenow = blockTimeStamp!()
+  assert!(marriageTime < timenow, ErrorCodes.Marriagestillfresh)
+  marriage = newMarriagepartner
+  marriageTime = timenow + extratime
+}
+
+@using(preapprovedAssets = false, assetsInContract = false, updateFields = true, checkExternalCaller = true)
+pub fn changeLovercount() -> () {
+  checkCaller!(callerAddress!() == contractIdToAddress!(fealtyId), ErrorCodes.Wrongcollection)
+  lovercount = lovercount + 1
+}
+
+
+@using(preapprovedAssets = false, assetsInContract = false, updateFields = true, checkExternalCaller = true)
+pub fn feudalChange(newLord: Address, extratime: U256) -> () {
+
+  checkCaller!(callerAddress!() == contractIdToAddress!(fealtyId), ErrorCodes.Wrongcollection)
+
+  let timenow = blockTimeStamp!()
+  assert!(feudalTime < timenow, ErrorCodes.TooEarlyforBetrayal)
+  feudalLord = newLord
+  feudalTime = timenow + extratime
+}
+
+@using(preapprovedAssets = false, assetsInContract = false, updateFields = true, checkExternalCaller = true)
+pub fn anathemaChange(newAnathema: Bool) -> () {
+  assert!(anathemaCooldown < blockTimeStamp!(), ErrorCodes.CooldownAnathema)
+  checkCaller!(callerAddress!() == contractIdToAddress!(fealtyId), ErrorCodes.Wrongcollection)
+  anathema = newAnathema
+}
+
+@using(preapprovedAssets = false, assetsInContract = false, updateFields = true, checkExternalCaller = true)
+pub fn anathemaDeclaredCountChange(newAnathemaDeclaredCount: U256) -> () {
+checkCaller!(callerAddress!() == contractIdToAddress!(fealtyId), ErrorCodes.Wrongcollection)
+anathemaDeclaredCount = newAnathemaDeclaredCount
+anathemaCooldown = blockTimeStamp!() + 550000000
+}
+
+@using(preapprovedAssets = false, assetsInContract = true, updateFields = false, checkExternalCaller = true)
+pub fn destroyNft(caller: Address) -> () {
+checkCaller!(callerAddress!() == contractIdToAddress!(collectionId), ErrorCodes.Wrongcollection)
+destroySelf!(caller)
+}
+}

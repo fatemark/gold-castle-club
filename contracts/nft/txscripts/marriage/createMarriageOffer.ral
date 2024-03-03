@@ -1,0 +1,12 @@
+TxScript CreateMarriageOffer(
+    fealtyId: ByteVec,
+    dowry: U256,
+    goldtokenid: ByteVec,
+    proposee: Address,
+    proposer: Address,
+    time: U256,
+    loveletter: ByteVec,
+    maxlovercount: U256
+) {
+    Fealty(fealtyId).createMarriageContract{callerAddress!() -> ALPH: 1 alph + dustAmount!(), goldtokenid: dowry}(proposee, proposer, dowry, time, loveletter, maxlovercount)
+}

@@ -1,0 +1,1758 @@
+@media (max-width: 900px) {
+
+  .twoColumnLayout {
+    flex-direction: column; /* Stack columns vertically */
+    width: 190%;
+  }
+
+  .threeColumnLayout{
+    justify-content: flex;
+
+  }
+
+  .overlordinfoscroll img {
+    display: block; /* Ensures the image is treated as a block element */
+    margin: 0 auto; /* Centers the image horizontally */
+    border-radius: 40px;
+    width: 100%;
+    height: 50%;
+  }
+  .overlordinfoscroll img {
+    display: block; /* Ensures the image is treated as a block element */
+    margin: 0 auto; /* Centers the image horizontally */
+    border-radius: 40px;
+    max-width: 100%; /* Maximum width is 100% of its container */
+    max-height: 100%; /* Maximum height is 100% of its container */
+    height: auto; /* Height is automatic, preserving aspect ratio */
+    width: auto; 
+  }
+  .collectiontwoColumnLayout img {
+    display: none;
+}
+.governmentlayout{
+  flex-direction: column !important;
+  width: 190%;
+}
+.electioninfo{
+  display: none !important;
+}
+
+  .powertextbox {
+    display: none !important;
+  }
+
+  .twoimageslayout{
+    max-width: 50%; /* Maximum width is 100% of its container */
+    max-height: 50%; /* Maximum height is 100% of its container */
+    height: auto; /* Height is automatic, preserving aspect ratio */
+    width: auto; 
+  }
+.votinginfo{
+  max-width: 50% !important;
+}
+
+  }
+
+
+.becomeoverlordbutton{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #583ab3;
+  border: 3px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 6vh;
+  font-size: 100%;
+  color: #ffffff;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  max-width: 32vw; /* set max-width instead of width */
+  width: 32vw; /* fill the width of the container */
+  transition: width 1.3s, height 1.3s, background-color 1.3s, box-shadow 1.3s, font-size 1s, text-shadow 1s;
+  margin-top: 2px;
+  border-radius: 20px;
+  font-size: 15px;
+  overflow: hidden; /* Hides the overflowing content */
+  margin-top: 7px;
+}
+.becomeoverlordbutton:hover{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #583ab3;
+  border: 3px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 8vh;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #ffffff;
+  text-align: center;
+  max-width: 32vw; /* set max-width instead of width */
+  width: 32vw; /* fill the width of the container */
+  transition: width 1.3s, height 1.3s, background-color 1.3s, box-shadow 1.3s, font-size 1s, text-shadow 1s;
+  margin-top: 2px;
+  border-radius: 20px;
+  font-size: 15px;
+  overflow: hidden; /* Hides the overflowing content */
+  margin-top: 7px;
+}
+
+
+.divorcebutton{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #ee55d5d1;
+  border: 2px solid #000000;
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 40px;
+  font-size: 100%;
+  color: #ffffff;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  max-width: 30vw; /* set max-width instead of width */
+  width: 70%; /* fill the width of the container */
+  transition: width 1.3s, height 1.3s, background-color 1.3s, box-shadow 1.3s, font-size 1s, text-shadow 1s;
+  margin-top: 2px;
+  border-radius: 10px;
+  font-size: 12px;
+  overflow: hidden; /* Hides the overflowing content */
+}
+
+
+.divorcebutton:hover{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #000000;
+  border: 5px solid #780000;
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 70px;
+  font-size: 100%;
+  color: #ff0000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  max-width: 600px; /* set max-width instead of width */
+  width: 100%; /* fill the width of the container */
+  transition: width 1.3s, height 1.3s, background-color 1.3s, box-shadow 1.3s, font-size 1s, text-shadow 1s;
+  margin-top: 2px;
+  border-radius: 0px;
+  font-size: 18px;
+
+}
+
+
+.buykingdombutton {
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #0B45C1;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 8vh;
+  font-size: 140%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  width: 14vw;
+  transition: width 1.3s, height 1s, background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+
+}
+.buykingdombutton:hover{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #156324;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 10vh;
+  font-size: 200%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  width: 14vw;
+  transition: width 1.3s, height 1s, background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+}
+
+.governmentpowertextbox{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #0c17b5;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 1.5rem;
+  height: 50px;
+  font-size: 90%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #fffdfa;
+  transition: width 1.3s, height 1s, background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; 
+  font-size: small;
+  max-width: 140%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+.electioninfo{
+  background-color: #695acd41;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-right: 20px;
+  margin-bottom: 2rem;
+  text-align: var(--justify-normal);
+  align-items: center;
+  justify-content: center;
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  overflow-y: auto;
+  height: 82vh;;
+  width: 80%;
+}
+.electioninfo img {
+  display: block; /* Ensures the image is treated as a block element */
+  margin: 0 auto; /* Centers the image horizontally */
+  border-radius: 40px;
+}
+.revokeanathemabutton{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #000000;
+  border: 2px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 40px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  max-width: 100%; /* set max-width instead of width */
+  width: 70%; /* fill the width of the container */
+  transition: width 1.3s, height 1.3s, background-color 1.3s, box-shadow 1.3s, font-size 1s, text-shadow 1s;
+  margin-top: 2px;
+  border-radius: 10px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden; 
+}
+
+.revokeanathemabutton:hover{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #15540e;
+  border: 2px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 40px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  max-width: 100%; /* set max-width instead of width */
+  width: 100%; /* fill the width of the container */
+  transition: width 1.3s, height 1.3s, background-color 1.3s, box-shadow 1.3s, font-size 1s, text-shadow 1s;
+  margin-top: 2px;
+  border-radius: 10px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden; 
+  height: 70px;
+  font-size: x-large;
+}
+
+
+.overlordinfoscroll {
+  position: fixed;
+  background-color: #695acd41;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 35%;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: var(--justify-normal);
+  align-items: center;
+  justify-content: center;
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  overflow-y: scroll; /* or overflow-y: auto; */
+  margin-left: 60%;
+  height: 82vh; /* Adjust the height as needed */
+  align-items: center;
+  align-content: center;
+}
+
+.overlordinfoscroll img {
+  display: block; /* Ensures the image is treated as a block element */
+  margin: 0 auto; /* Centers the image horizontally */
+  border-radius: 40px;
+}
+
+
+
+.colortest{
+  background-color: rgb(2, 133, 156);
+} 
+
+.outlined_text {
+  font-size: 30px;
+  color: black;
+  text-shadow: 
+    -1px -1px 0 #FFD700,  
+     1px -1px 0 #FFD700,
+    -1px  1px 0 #FFD700,
+     1px  1px 0 #FFD700,
+    -2px -2px 0 #000000,  
+     2px -2px 0 #000000,
+    -2px  2px 0 #000000,
+     2px  2px 0 #000000;
+}
+
+.smallinfotextboxself{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #0B45C1;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 20px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  width: 50%;
+  padding-left: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 1px;
+}
+
+.smallpowernftpagetextbox{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #b50c0c;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 30px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #fffdfa;
+  text-align: center;
+  width: 50%;
+  font-size: large;
+  margin: 3px;
+}
+
+
+.nftpagetitle{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #c60a0a;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 77px;
+  font-size: small;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: left;
+  width: 100%;
+  padding-left: 1rem;
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+
+.smallmarriageofferinfotextbox{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #0a9dc6a2;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 20px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: left;
+  width: 19vw;
+  padding-left: 1rem;
+  white-space: nowrap;
+}
+
+
+.smallmarriageoffertextbox{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #0a9dc6a2;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 30px;
+  font-size: 90%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  width: 17vw;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 5px;
+
+}
+
+.marryofferbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Your existing styles */
+  background-color: #0a9ec6;
+  border: 3px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  height: 45px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  max-width: 800px;
+  width: 110%;
+  transition: width 1.3s, height 1.3s, background-color 1.3s, box-shadow 1.3s, font-size 1s, text-shadow 1s;
+  border-radius: 15px;
+  white-space: nowrap;
+  padding: 0; /* Add this line to reset padding */
+  margin: 0; /* Add this line to reset margin */
+  line-height: 1; /* Add this line to ensure proper centering */
+}
+
+
+.marriageoffersbackground{
+  background-image: url('/backgrounds/fatemark_Full_body_a_handsome_knight_and_a_beautiful_lady_with__e3feae0f-8ec1-46ac-a05a-802d7ff4933d.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: auto;
+}
+
+
+.smalloverlordtextbox{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #5718d4d0;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 30px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 5px;
+
+}
+
+.overlordsmalltitle{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #3f09bd54;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  width: 100%;
+  margin-top: 9px;
+  margin-bottom: 10px;
+  font-size: medium;
+  height: 40px;
+}
+
+.overlordtitle{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #3f09bd54;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: large;
+}
+
+.overlordinfobox{
+  background-color: #695acd41;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  min-width: 70%;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: var(--justify-normal);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  justify-content: center;
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  color: #ffd000;
+  text-shadow: -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+
+}
+
+.offerfealtybutton{
+display: flex; /* Add flex display */
+justify-content: center; /* Horizontally center content */
+align-items: center; /* Vertically center content */
+background-color: #0c17b5;
+border: 1px solid var(--color-bg-secondary);
+border-radius: 20px;
+box-shadow: var(--box-shadow) var(--color-shadow);
+padding: 0.5rem;
+height: 50px;
+font-size: 13px;
+color: #ffd000;
+text-shadow: 0 0 10px #000000;
+text-align: center;
+width: 13vw;
+padding-left: 1rem;
+transition: height 1.2s, font-size 1.2s, text-shadow 1.2s;
+}
+.offerfealtybutton:hover{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #b50c0c;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: 20px;
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 8vh;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #ffffff;
+  text-align: center;
+  width: 13vw;
+  padding-left: 1rem;
+  font-size: 14px;
+  transition: height 1.2s, font-size 1.2s, text-shadow 1.2s;
+  }
+
+.offerselectbutton{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #b50c0c;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: 20px;
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 50px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  width: 12vw;
+  padding-left: 1rem;
+  white-space: nowrap;
+}
+
+
+.smallofferinfotextbox{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #0c17b5;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 20px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: left;
+  width: 400px;
+  padding-left: 1rem;
+  white-space: nowrap;
+}
+
+
+
+.smalloffertextbox{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #0c17b5;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 30px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  width: 105%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+
+.offerbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Your existing styles */
+  background-color: #0c17b5;
+  border: 3px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  height: 45px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  width: 120%;
+  transition: width 1.3s, height 1.3s, background-color 1.3s, box-shadow 1.3s, font-size 1s, text-shadow 1s;
+  border-radius: 5px;
+  white-space: nowrap;
+  padding: 0; /* Add this line to reset padding */
+  margin: 0; /* Add this line to reset margin */
+  line-height: 1; /* Add this line to ensure proper centering */
+}
+
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 34%;
+  height: 50px;
+  margin-bottom: 35px;
+}
+
+.buttonContainer button {
+  flex: 1; /* Ensure equal distribution of space */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, font-size 0s;
+  min-width: 76%; /* Ensure minimum width is respected */
+  overflow: hidden; /* Hide overflow text */
+  font-size: 130%;
+  text-shadow: -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+  outline: auto;
+  margin-right: 2px;
+
+}
+.buttonContainer button:hover {
+  flex: 1; /* Ensure equal distribution of space */
+  border: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  filter: brightness(70%); /* Darken the button on hover */  cursor: pointer;
+  transition: transform 0.3s ease-in-out, font-size 0.5s;
+  min-width: 76%; /* Ensure minimum width is respected */
+  overflow: hidden; /* Hide overflow text */
+  font-size: 230%;
+  text-shadow: #000000;
+  text-shadow: -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000; /* Adds black outline */
+  outline: auto;
+  margin-right: 2px;
+  font-size: calc(1.3vw); /* Font size dependent on viewport width */
+}
+.buttonContainer button:disabled {
+  cursor: not-allowed;
+}
+
+
+
+.buttonContainer button span {
+  display: inline-block; /* Ensure text wraps */
+  width: 100%; /* Force text to wrap */
+}
+.buttonContainer label {
+  flex: 1; /* Ensure equal distribution of space */
+  border: none;
+  background-color: transparent;
+  cursor: crosshair;
+  transition: transform 0.3s ease-in-out, font-size 0s;
+  min-width: 76%; /* Ensure minimum width is respected */
+  overflow: hidden; /* Hide overflow text */
+  font-size: 230%;
+  text-shadow: -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+  outline: auto;
+  margin-right: 2px;
+  font-size: calc(2vw); /* Font size dependent on viewport width */
+  
+}
+.buttonContainer label:hover {
+  flex: 1; /* Ensure equal distribution of space */
+  border: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  filter: brightness(70%); /* Darken the button on hover */  
+  cursor: crosshair;
+  transition: transform 0.3s ease-in-out, font-size 0.5s;
+  min-width: 76%; /* Ensure minimum width is respected */
+  overflow: hidden; /* Hide overflow text */
+  font-size: 230%;
+  text-shadow: #000000;
+  text-shadow: -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000; /* Adds black outline */
+  outline: auto;
+  margin-right: 2px;
+  font-size: calc(2.3vw); /* Font size dependent on viewport width */
+}
+
+.buttonContainer label .replies,
+.buttonContainer label .comment {
+  display: none;
+}
+
+.buttonContainer label:hover .replies {
+  display: inline;
+}
+
+.buttonContainer label:hover .comment {
+  display: none;
+}
+
+.fealtyInput{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #ffd0008a;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 30px;
+  font-size: 100%;
+  color: #ff0000;
+  text-shadow: 0 0 10px #ffffff;
+  text-align: center;
+  max-width: 450px; /* set max-width instead of width */
+  width: 60%; /* fill the width of the container */
+  transition: width 1.3s, height 1s, background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s;
+  margin-top: 0px;
+}
+.fealtyInput:hover{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #00ff4884;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 30px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  max-width: 450px; /* set max-width instead of width */
+  width: 60%; /* fill the width of the container */
+  transition: width 1.3s, height 1s, background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s;
+  margin-top: 2px;
+}
+
+
+.fealtyInputField{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #b50c0c;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 25px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #ffffff;
+  text-align: center;
+  max-width: 450px; /* set max-width instead of width */
+  width: 60%; /* fill the width of the container */
+  transition: width 1.3s, height 1s, background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s;
+  margin-top: 2px;
+}
+.fealtyInputField:hover{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #b50c0c;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 25px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #ffffff;
+  text-align: center;
+  max-width: 450px; /* set max-width instead of width */
+  width: 60%; /* fill the width of the container */
+  transition: width 1.3s, height 1s, background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s;
+  margin-top: 2px;
+}
+.fealtybribeofferbutton{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #ffd000;
+  border: 3px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 40px;
+  font-size: 100%;
+  color: #b50c0c;
+  text-shadow: 0 0 10px #ffffff;
+  text-align: center;
+  max-width: 500px; /* set max-width instead of width */
+  width: 70%; /* fill the width of the container */
+  transition: width 1.3s, height 1.3s, background-color 1.3s, box-shadow 1.3s, font-size 1s, text-shadow 1s;
+  margin-top: 2px;
+  border-radius: 20px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden; /* Hides the overflowing content */
+}
+
+
+.fealtybribeofferbutton:hover{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #b50c0c;
+  border: 3px solid var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 40px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #ffffff;
+  text-align: center;
+  max-width: 600px; /* set max-width instead of width */
+  width: 100%; /* fill the width of the container */
+  transition: width 1.3s, height 1.3s, background-color 1.3s, box-shadow 1.3s, font-size 1s, text-shadow 1s;
+  margin-top: 2px;
+  border-radius: 20px;
+  font-size: 22px;
+  white-space: nowrap;
+
+}
+
+.fealtyselect {
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #ffd000;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 40px;
+  font-size: 100%;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  color: #b50c0c;
+  text-shadow: 0 0 10px #ffffff;
+  text-align: center;
+  max-width: 400px; /* set max-width instead of width */
+  width: 60%; /* fill the width of the container */
+  transition: width 0.8s, height 1s, background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+}
+
+.fealtyselect:hover{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #ffd000;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 40px;
+  font-size: 100%;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  color: #b50c0c;
+  text-shadow: 0 0 10px #ffffff;
+  text-align: center;
+  max-width: 450px; /* set max-width instead of width */
+  width: 100%; /* fill the width of the container */
+  transition: width 1.3s, height 1s, background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+}
+
+.goldoffersbackground{
+  background-image: url('/backgrounds/fatemark_At_sunset_treasure_and_loot_on_the_left_side_a_beautif_be3c8c2c-64af-4ff9-8e42-51ace38a99ec.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: auto;
+}
+
+.mycollectionbackground{
+  background-image: url('/backgrounds/fatemark_Mars_on_fire_as_seen_from_space_sun_in_the_background_a7df1287-6e00-49c2-bd67-6f02356dd5be.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: auto;
+}
+
+.fealtybackground{
+  background-image: url('/backgrounds/mycollectiobackground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: auto;
+}
+
+.explorekingdombutton{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #ffd000;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 10bh;
+  font-size: 100%;
+  color: #b50c0c;
+  text-shadow: 0 0 10px #ffffff;
+  text-align: center;
+  width: 12vw;
+  transition: width 1.3s, height 1s, background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+}
+.explorekingdombutton:hover{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #b50c0c;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 90px;
+  font-size: 130%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #fffdfa;
+  text-align: center;
+  width: 14vw;
+  transition: width 1.3s, height 1s, background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+}
+
+.explorelordbutton{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #0B45C1;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 30px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #ffffff;
+  text-align: center;
+  width: 14vw;
+  transition: width 1.3s, height 1s, background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  font-size: small;
+}
+.explorelordbutton:hover{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #0B45C1;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 90px;
+  font-size: 130%;
+  color: #b50c0c;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  width: 14.5vw;
+  transition: width 1.3s, height 1s, background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+}
+
+
+.powertextbox {
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #b50c0c;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 1.5rem;
+  height: 50px;
+  font-size: 110%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #fffdfa;
+  transition: width 1.3s, height 1s, background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  white-space: nowrap;
+}
+.smallinfotextbox{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #b50c0c;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 20px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #fffdfa;
+  text-align: left;
+  width: 20vw;
+  padding-left: 1rem;
+  white-space: nowrap;
+}
+.bigpowertextbox{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #b50c0c;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #000000;
+  text-align: center;
+  width: 16vw;
+  margin-top: 10px;
+  font-size: smaller;
+}
+.smallpowertextbox{
+  display: flex; /* Add flex display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #b50c0c;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  padding: 0.5rem;
+  height: 30px;
+  font-size: 100%;
+  color: #ffd000;
+  text-shadow: 0 0 10px #fffdfa;
+  text-align: center;
+  width: 17vw;
+}
+
+
+
+.collection{
+  background-color: #e7e7e7;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: var(--width-card-wide);
+  min-width: 60%;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  text-align: var(--justify-normal);
+}
+
+.votinginfo{
+  background-color: #695acd41;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 35%;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: var(--justify-normal);
+  align-items: center;
+  justify-content: center;
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  overflow-y: auto;
+}
+
+.overlordinfo{
+  background-color: #695acd41;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 10%;
+  min-width: 35%;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: var(--justify-normal);
+  align-items: center;
+  justify-content: center;
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  overflow-y: auto;
+}
+
+.overlordinfo img {
+  display: block; /* Ensures the image is treated as a block element */
+  margin: 0 auto; /* Centers the image horizontally */
+  border-radius: 40px;
+}
+
+.underlordinfo{
+  background-color: #695acd41;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  min-width: 35%;
+  max-width: 50%;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-right: 2%;
+  margin-bottom: 2rem;
+  text-align: var(--justify-normal);
+  align-items: center;
+  justify-content: center;
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  width: 100%;
+}
+
+.underlordinfo img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 40px;
+  width: 70%; /* Adjust the width to your desired size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.mycollectioninfo{
+  background-color: #d7321941;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 10%;
+  min-width: 35%;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: var(--justify-normal);
+  align-items: center;
+  justify-content: center;
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+}
+
+.mycollectioninfo img {
+  display: block; /* Ensures the image is treated as a block element */
+  margin: 0 auto; /* Centers the image horizontally */
+  border-radius: 40px;
+}
+.subcollection{
+  background-color: #e7e7e7;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: var(--width-card-wide);
+  min-width: 100%;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 4rem;
+  text-align: var(--justify-normal);
+
+}
+    
+
+.nft{
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    display: block;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-right: 4rem;
+    text-align: var(--justify-normal);
+    padding: 10px;
+    border-bottom: 1px solid #5d5858;
+    cursor: pointer;
+}
+.imageContainer{
+  overflow: hidden;
+}
+.submember{
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  display: block;
+  max-width: 100%;
+  min-width: 100%;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 4rem;
+  text-align: var(--justify-normal);
+  padding: 10px;
+  border-bottom: 1px solid #5d5858;
+  cursor: pointer;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.twoColumnLayout {
+    display: flex;
+    margin-left: 3%;
+}
+
+.twoimageslayout{
+  display: flex;
+  margin-left: 3%;
+}
+
+.governmentlayout{
+  display: flex;
+  margin-left: 3%;
+}
+
+.collectiontwoColumnLayout {
+  display: flex;
+  margin-left: 3%;
+}
+
+.threeColumnLayout {
+  display: flex;
+}
+
+.expanded {
+    background-color: #f0f0f0;
+}
+
+.newcollectionexampleContainer {
+    position: fixed;
+    margin-top: 2%;
+    margin-left: 56%;
+    border-radius: 15%;
+    width: 30%;
+    align-items: center;
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+  }
+
+  .newcollectionexampleContainer:hover {
+    position: fixed;
+    margin-top: 2%;
+    margin-left: 56%;
+    border-radius: 15%;
+    width: 30%;
+    align-items: center;
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+  }
+  
+  .buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the buttons horizontally */
+  }
+
+  .buttonsContainer:hover {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the buttons horizontally */
+  }
+  
+  .newcollectionexampleContainer img {
+    width: 75%;
+    height: 75%;
+    object-fit: cover; /* Scale the image to cover the container */
+    border-radius: 15%;
+    position: sticky;
+    margin-bottom: 3%;
+  }
+
+.goldenfealtyoutofhonorbutton{ 
+    display: flex;
+    border: 1px solid var(--color-bg-secondary);
+    font-family: 'Copperplatebold';
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    max-width: 100%;
+    font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+    background-color: #bc0babe2; /* Example background color */
+    color: #ffffff; /* Replace with your desired color */
+    padding: 0.00008px 5px;
+    border-radius: 10px;
+    justify-content: center; /* Horizontally centers the content */
+    width: 100%; /* Example */
+    max-width: 300px;
+    text-align: center; /* Centers the text horizontally */
+    line-height: 1.2; /* Adjust for proper text spacing */
+    margin-top: 3%; /* Adds space above the container */
+    margin-bottom: 3%; /* Adds space below the container */
+    margin-left: 10px;
+    margin-right: 0px;
+    height: 50px; /* Adjust as needed */
+    transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+    text-shadow: 0 0 10px #000000;
+    position: relative;
+    align-items: center; /* Vertical centering */
+    align-self: center; /* Aligns this specific item to the start */
+}
+.goldenfealtyoutofhonorbutton:hover{ 
+  display: flex;
+  border: 1px solid var(--color-bg-secondary);
+  font-family: 'Copperplatebold';
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  max-width: 100%;
+  font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  background-color: #bc0babe2; /* Example background color */
+  color: #ffffff; /* Replace with your desired color */
+  padding: 0.00008px 5px;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally centers the content */
+  width: 100%; /* Example */
+  max-width: 300px;
+  text-align: center; /* Centers the text horizontally */
+  line-height: 1.2; /* Adjust for proper text spacing */
+  margin-top: 3%; /* Adds space above the container */
+  margin-bottom: 3%; /* Adds space below the container */
+  margin-left: 10px;
+  margin-right: 0px;
+  height: 50px; /* Adjust as needed */
+  transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+  text-shadow: 0 0 10px #000000;
+  position: relative;
+  align-items: center; /* Vertical centering */
+  align-self: center; /* Aligns this specific item to the start */
+
+}
+
+  .fealtyoutofhonorbutton{
+    display: flex;
+    border: 1px solid var(--color-bg-secondary);
+    font-family: 'Copperplatebold';
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    max-width: 80%;
+    font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+    background-color: #29f30ae2; /* Example background color */
+    color: #ffffff; /* Replace with your desired color */
+    padding: 0.00008px 5px;
+    border-radius: 10px;
+    justify-content: center; /* Horizontally centers the content */
+    width: 100%; /* Example */
+    max-width: 300px;
+    text-align: center; /* Centers the text horizontally */
+    line-height: 1.2; /* Adjust for proper text spacing */
+    margin-top: 0px; /* Adds space above the container */
+    margin-bottom: 0px; /* Adds space below the container */
+    margin-left: 10px;
+    margin-right: 0px;
+    height: 140%; /* Adjust as needed */
+    transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+    text-shadow: 0 0 10px #000000;
+    position: relative;
+    align-items: center; /* Vertical centering */
+    align-self: center; /* Aligns this specific item to the start */
+  }
+
+  .fealtyoutofhonorbutton:hover{
+    display: flex;
+    border: 1px solid var(--color-bg-secondary);
+    font-family: 'Copperplatebold';
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    max-width: 80%;
+    font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+    background-color: #29f30ae2; /* Example background color */
+    color: #ffffff; /* Replace with your desired color */
+    padding: 0.00008px 5px;
+    border-radius: 10px;
+    justify-content: center; /* Horizontally centers the content */
+    width: 100%; /* Example */
+    max-width: 300px;
+    text-align: center; /* Centers the text horizontally */
+    line-height: 1.2; /* Adjust for proper text spacing */
+    margin-top: 0px; /* Adds space above the container */
+    margin-bottom: 0px; /* Adds space below the container */
+    margin-left: 10px;
+    margin-right: 0px;
+    height: 140%; /* Adjust as needed */
+    transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+    text-shadow: 0 0 10px #000000;
+    position: relative;
+    align-items: center; /* Vertical centering */
+    align-self: center; /* Aligns this specific item to the start */
+  }
+
+  .goldofferfealtybutton{
+    display: flex;
+    border: 1px solid var(--color-bg-secondary);
+    font-family: 'Copperplatebold';
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    max-width: 100%;
+    font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+    background-color: #e5b60dca; /* Example background color */
+    color: #ffffff; /* Replace with your desired color */
+    padding: 0.00008px 5px;
+    border-radius: 10px;
+    justify-content: center; /* Horizontally centers the content */
+    width: 100%; /* Example */
+    max-width: 300px;
+    text-align: center; /* Centers the text horizontally */
+    line-height: 1.2; /* Adjust for proper text spacing */
+    margin-top: 0px; /* Adds space above the container */
+    margin-bottom: 0px; /* Adds space below the container */
+    margin-left: 10px;
+    margin-right: 0px;
+    height: 50px; /* Adjust as needed */
+    transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+    text-shadow: 0 0 10px #000000;
+    position: relative;
+    align-items: center; /* Vertical centering */
+    align-self: center; /* Aligns this specific item to the start */
+  
+  }
+
+  .goldofferfealtybutton:hover{
+    display: flex;
+    border: 1px solid var(--color-bg-secondary);
+    font-family: 'Copperplatebold';
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    max-width: 100%;
+    font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+    background-color: #e5b60dca; /* Example background color */
+    color: #ffffff; /* Replace with your desired color */
+    padding: 0.00008px 5px;
+    border-radius: 10px;
+    justify-content: center; /* Horizontally centers the content */
+    width: 100%; /* Example */
+    max-width: 300px;
+    text-align: center; /* Centers the text horizontally */
+    line-height: 1.2; /* Adjust for proper text spacing */
+    margin-top: 0px; /* Adds space above the container */
+    margin-bottom: 0px; /* Adds space below the container */
+    margin-left: 10px;
+    margin-right: 0px;
+    height: 50px; /* Adjust as needed */
+    transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+    text-shadow: 0 0 10px #000000;
+    position: relative;
+    align-items: center; /* Vertical centering */
+    align-self: center; /* Aligns this specific item to the start */
+  }
+
+  .rescindfealtybutton{
+    display: flex;
+    border: 1px solid var(--color-bg-secondary);
+    font-family: 'Copperplatebold';
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    max-width: 100%;
+    font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+    background-color: #c20707ca; /* Example background color */
+    color: #ffffff; /* Replace with your desired color */
+    padding: 0.00008px 5px;
+    border-radius: 10px;
+    justify-content: center; /* Horizontally centers the content */
+    width: 100%; /* Example */
+    max-width: 300px;
+    text-align: center; /* Centers the text horizontally */
+    line-height: 1.2; /* Adjust for proper text spacing */
+    margin-top: 0px; /* Adds space above the container */
+    margin-bottom: 0px; /* Adds space below the container */
+    margin-left: 10px;
+    margin-right: 0px;
+    height: 50px; /* Adjust as needed */
+    transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+    text-shadow: 0 0 10px #000000;
+    position: relative;
+    align-items: center; /* Vertical centering */
+    align-self: center; /* Aligns this specific item to the start */
+  
+  }
+
+  .rescindfealtybutton:hover{
+    display: flex;
+    border: 1px solid var(--color-bg-secondary);
+    font-family: 'Copperplatebold';
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    max-width: 100%;
+    font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+    background-color: #c20707ca; /* Example background color */
+    color: #ffffff; /* Replace with your desired color */
+    padding: 0.00008px 5px;
+    border-radius: 10px;
+    justify-content: center; /* Horizontally centers the content */
+    width: 100%; /* Example */
+    max-width: 300px;
+    text-align: center; /* Centers the text horizontally */
+    line-height: 1.2; /* Adjust for proper text spacing */
+    margin-top: 0px; /* Adds space above the container */
+    margin-bottom: 0px; /* Adds space below the container */
+    margin-left: 10px;
+    margin-right: 0px;
+    height: 50px; /* Adjust as needed */
+    transition: background-color 1.3s, box-shadow 1.3s, font-size 1.3s, text-shadow 0.8s; /* Smooth transition for hover effect */
+    text-shadow: 0 0 10px #000000;
+    position: relative;
+    align-items: center; /* Vertical centering */
+    align-self: center; /* Aligns this specific item to the start */
+  }
+
+
+
+  .inputContainer {
+    display: flex;
+    justify-content: space-between; /* Add space between the input fields */
+    font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .inputContainer:hover {
+    display: flex;
+    justify-content: space-between; /* Add space between the input fields */
+    font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+  .inputField {
+    flex: 1; /* Take up equal space */
+    margin-right: 10px; /* Add some space between input fields */
+    font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+    width: clamp(0.6rem, 1000vw, 15.1rem);    
+  }
+
+  .inputField:hover {
+    flex: 1; /* Take up equal space */
+    margin-right: 10px; /* Add some space between input fields */
+    font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+    width: clamp(0.6rem, 1000vw, 15.1rem);    
+  }
+  
+  .inputField:last-child {
+    margin-right: 0; /* Remove margin from the last input field */
+    font-size: clamp(0.6rem, 2vw, 1.1rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+
+  }
+
+  
+
+
+  .fealtyLabel {
+    font-size: clamp(0.6rem, 2vw, 1.4rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+    width: clamp(0.6rem, 1000vw, 15.1rem);
+    height: clamp(0.6rem, 10vw, 2.1rem);
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .fealtyLabel:hover {
+    font-size: clamp(0.6rem, 2vw, 1.4rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+    width: clamp(0.6rem, 1000vw, 15.1rem);
+    height: clamp(0.6rem, 10vw, 2.1rem);
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+
+
+  .inputField input[type="number"] {
+    margin-top: 2px;
+    --input-width: 100%; /* Default width */
+    --font-size: 1.1rem; /* Default font size */
+    width: var(--input-width);
+    font-size: var(--font-size-fealty);
+    box-sizing: border-box;
+    max-width: 100%;
+    height: 60%;
+    margin-bottom: 0px;
+    text-align: center;
+    margin-bottom: 15%;
+  }
+
+  .inputField:hover input[type="number"] {
+    margin-top: 2px;
+    --input-width: 100%; /* Default width */
+    --font-size: 1.1rem; /* Default font size */
+    width: var(--input-width);
+    font-size: var(--font-size-fealty);
+    box-sizing: border-box;
+    max-width: 100%;
+    height: 60%;
+    margin-bottom: 0px;
+    text-align: center;
+    margin-bottom: 15%;
+  }
+
+  .inputField select {
+    margin-top: 2px;
+    --input-width: 100%; /* Default width */
+    --font-size: 1.1rem; /* Default font size */
+    width: var(--input-width);
+    font-size: var(--font-size-fealty);
+    box-sizing: border-box;
+    max-width: 100%;
+    height: 60%;
+    margin-bottom: 0px;
+    text-align: center;
+    margin-bottom: 15%;
+  
+  }
+
+  .inputField:hover select {
+    margin-top: 2px;
+    --input-width: 100%; /* Default width */
+    --font-size: 1.1rem; /* Default font size */
+    width: var(--input-width);
+    font-size: var(--font-size-fealty);
+    box-sizing: border-box;
+    max-width: 100%;
+    height: 60%;
+    margin-bottom: 0px;
+    text-align: center;
+    margin-bottom: 15%;
+  }
+
+  .inputField textarea {
+    font-family: "Copperfield", cursive;
+    font-weight: 400;
+
+    margin-top: 2px;
+    --input-width: 100%; /* Default width */
+    --font-size: 2.1rem; /* Default font size */
+    width: var(--input-width);
+    font-size: var(--font-size-fealty);
+    box-sizing: border-box;
+    max-width: 100%;
+    height: 60%;
+    margin-bottom: 0px;
+    text-align: center;
+    margin-bottom: 15%;
+  }
+
+  .inputField:hover textarea {
+    font-family: "Copperfield", cursive;
+    font-weight: 400;
+
+    margin-top: 2px;
+    --input-width: 100%; /* Default width */
+    --font-size: 2.1rem; /* Default font size */
+    width: var(--input-width);
+    font-size: var(--font-size-fealty);
+    box-sizing: border-box;
+    max-width: 100%;
+    height: 60%;
+    margin-bottom: 0px;
+    text-align: center;
+    margin-bottom: 15%;
+  }
+
+
+
+  
+  
+  .inputField input[type="text"] {
+    font-size: 1em; /* Set a default font size */
+    width: 100%; /* Ensure the input takes up the entire width */
+    height: auto; /* Allow the height to adjust based on content */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    white-space: pre-wrap; /* Allow text to wrap to a new line */
+  }
+  
+  .inputField input[type="text"]:focus,
+  .inputField input[type="number"]:focus {
+    outline: none; /* Removes the default focus outline */
+  }
+  

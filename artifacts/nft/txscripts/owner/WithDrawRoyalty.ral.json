@@ -1,0 +1,34 @@
+{
+  "version": "v2.9.0",
+  "name": "WithDrawRoyalty",
+  "bytecodeTemplate": "01010300000006{0}{1}0e0c{2}0106",
+  "fieldsSig": {
+    "names": [
+      "to",
+      "amount",
+      "nftCollectionId"
+    ],
+    "types": [
+      "Address",
+      "U256",
+      "ByteVec"
+    ],
+    "isMutable": [
+      false,
+      false,
+      false
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    }
+  ]
+}

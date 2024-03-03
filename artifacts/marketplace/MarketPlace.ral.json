@@ -1,0 +1,189 @@
+{
+  "version": "v2.9.0",
+  "name": "MarketPlace",
+  "bytecode": "02064048409640a940ba40e5410d01030207004023b417021600b1441703b11600160116021304641300641705170416027a13c40de0b6b3a7640000a216000da31603ce0016041605c11706051606160116001602610101010700402cb417011600b14417021602cb17030c0d160301021704160413322d1705160416052b170616011605a916011606a2160116060e0c1603010016010d0d1600010e1806160016045f010201010008ce01b44513406c7bce011600a8010001010007ce01b44513406c7b1600ba0100010400181600b14417011601cb17020c0d160201041703b416034513407c7b0c0c160201010716005e010301030016b4170156137a982a1702160116000da316011602be16010d0d1600010e180816005e",
+  "codeHash": "a18dd3da1255f952360b8c86e36d5d6eb0b0af6e0a52307282720ecea0a75cdc",
+  "fieldsSig": {
+    "names": [
+      "listingTemplateId",
+      "marketplaceOwner"
+    ],
+    "types": [
+      "ByteVec",
+      "Address"
+    ],
+    "isMutable": [
+      false,
+      false
+    ]
+  },
+  "eventsSig": [
+    {
+      "name": "NewListing",
+      "fieldNames": [
+        "newlisting",
+        "price",
+        "nftId",
+        "lister"
+      ],
+      "fieldTypes": [
+        "ByteVec",
+        "U256",
+        "ByteVec",
+        "Address"
+      ]
+    },
+    {
+      "name": "NewBuyListing",
+      "fieldNames": [
+        "nftId",
+        "price"
+      ],
+      "fieldTypes": [
+        "ByteVec",
+        "U256"
+      ]
+    },
+    {
+      "name": "RevokedListing",
+      "fieldNames": [
+        "nftId"
+      ],
+      "fieldTypes": [
+        "ByteVec"
+      ]
+    },
+    {
+      "name": "NewOwner",
+      "fieldNames": [
+        "nftId"
+      ],
+      "fieldTypes": [
+        "ByteVec"
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "name": "createListing",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [
+        "nftId",
+        "price"
+      ],
+      "paramTypes": [
+        "ByteVec",
+        "U256"
+      ],
+      "paramIsMutable": [
+        false,
+        false
+      ],
+      "returnTypes": []
+    },
+    {
+      "name": "buyListing",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": true,
+      "isPublic": true,
+      "paramNames": [
+        "nftId"
+      ],
+      "paramTypes": [
+        "ByteVec"
+      ],
+      "paramIsMutable": [
+        false
+      ],
+      "returnTypes": []
+    },
+    {
+      "name": "withdrawFees",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": true,
+      "isPublic": true,
+      "paramNames": [
+        "withdrawamount"
+      ],
+      "paramTypes": [
+        "U256"
+      ],
+      "paramIsMutable": [
+        false
+      ],
+      "returnTypes": []
+    },
+    {
+      "name": "migrateToNewMarketplace",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [
+        "newcode"
+      ],
+      "paramTypes": [
+        "ByteVec"
+      ],
+      "paramIsMutable": [
+        false
+      ],
+      "returnTypes": []
+    },
+    {
+      "name": "revokeListing",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [
+        "nftId"
+      ],
+      "paramTypes": [
+        "ByteVec"
+      ],
+      "paramIsMutable": [
+        false
+      ],
+      "returnTypes": []
+    },
+    {
+      "name": "changeOwner",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [
+        "nftId"
+      ],
+      "paramTypes": [
+        "ByteVec"
+      ],
+      "paramIsMutable": [
+        false
+      ],
+      "returnTypes": []
+    }
+  ],
+  "constants": [],
+  "enums": [
+    {
+      "name": "ErrorCodes",
+      "fields": [
+        {
+          "name": "NotOwner",
+          "value": {
+            "type": "U256",
+            "value": "108"
+          }
+        },
+        {
+          "name": "NotLister",
+          "value": {
+            "type": "U256",
+            "value": "124"
+          }
+        }
+      ]
+    }
+  ]
+}

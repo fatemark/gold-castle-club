@@ -1,0 +1,9 @@
+TxScript SwearFealtyForGold(
+    lordAddress: Address,
+    subjectAddress: Address,
+    lordSubjectIndex: U256,
+    fealtyId: ByteVec
+) {
+    Fealty(fealtyId).swearForGold{callerAddress!() -> ALPH: dustAmount!()}(lordAddress, subjectAddress, lordSubjectIndex)
+}
+

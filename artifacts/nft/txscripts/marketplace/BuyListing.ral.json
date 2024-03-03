@@ -1,0 +1,34 @@
+{
+  "version": "v2.9.0",
+  "name": "BuyListing",
+  "bytecodeTemplate": "0101030000000ab4{1}13c3038d7ea4c680002aa2{2}0d0c{0}0101",
+  "fieldsSig": {
+    "names": [
+      "marketplaceId",
+      "price",
+      "nftId"
+    ],
+    "types": [
+      "ByteVec",
+      "U256",
+      "ByteVec"
+    ],
+    "isMutable": [
+      false,
+      false,
+      false
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    }
+  ]
+}

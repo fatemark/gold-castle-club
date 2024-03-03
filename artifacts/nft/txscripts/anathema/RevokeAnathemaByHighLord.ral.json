@@ -1,0 +1,34 @@
+{
+  "version": "v2.9.0",
+  "name": "RevokeAnathemaByHighLord",
+  "bytecodeTemplate": "01010300000006{0}{1}0e0c{2}0113",
+  "fieldsSig": {
+    "names": [
+      "revokerAddress",
+      "scroundrelAddress",
+      "fealtyId"
+    ],
+    "types": [
+      "Address",
+      "Address",
+      "ByteVec"
+    ],
+    "isMutable": [
+      false,
+      false,
+      false
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    }
+  ]
+}

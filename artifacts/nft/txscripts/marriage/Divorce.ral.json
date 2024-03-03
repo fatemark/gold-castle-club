@@ -1,0 +1,40 @@
+{
+  "version": "v2.9.0",
+  "name": "Divorce",
+  "bytecodeTemplate": "0101030000000ab4{3}{4}a3{0}{1}0e0c{2}0109",
+  "fieldsSig": {
+    "names": [
+      "wifeHusband",
+      "claimant",
+      "fealtyId",
+      "goldtokenid",
+      "divorcefee"
+    ],
+    "types": [
+      "Address",
+      "Address",
+      "ByteVec",
+      "ByteVec",
+      "U256"
+    ],
+    "isMutable": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    }
+  ]
+}

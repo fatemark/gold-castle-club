@@ -1,0 +1,57 @@
+import "std/nft_collection_with_royalty_interface"
+
+Contract NFTPublicSaleCollectionRandomWithRoyalty(
+    nftTemplateId: ByteVec,
+    collectionUri: ByteVec,
+    collectionOwner: Address,
+    nftBaseUri: ByteVec,
+    maxSupply: U256,
+    mintPrice: U256,
+    fealtyId: ByteVec,
+    royaltyRate: U256,
+    mut totalSupply: U256,
+    mut maxmaxnumber: U256
+) extends NFTPublicSaleCollectionRandomBase(nftTemplateId, collectionUri, collectionOwner, nftBaseUri, maxSupply, mintPrice, fealtyId, totalSupply, maxmaxnumber)
+    implements INFTCollectionWithRoyalty {
+
+    pub fn royaltyAmount(@unused tokenId: ByteVec, salePrice: U256) -> (U256) {
+        return salePrice * royaltyRate / 10000
+    }
+
+    @using(assetsInContract = false, preapprovedAssets = true, checkExternalCaller = false)
+    pub fn payRoyalty(payer: Address, amount: U256) -> () {
+        transferTokenToSelf!(payer, ALPH, amount)
+    }
+
+    @using(checkExternalCaller = false)
+    pub fn withdrawRoyalty(to: Address, amount: U256) -> () {
+        withdraw(to, amount)
+    }
+
+    @using(preapprovedAssets = true, assetsInContract = false, checkExternalCaller = false)
+    pub fn changeOwner(
+        nftId: ByteVec
+        ) -> () {
+    
+        let owner = callerAddress!()
+        
+        let timeuntil = blockTimeStamp!() + 15000
+        lockApprovedAssets!{owner -> nftId: 1, ALPH: dustAmount!()}(owner, timeuntil)
+    
+        NFT(nftId).ownerchange(owner)
+    }
+
+    @using(preapprovedAssets = true, assetsInContract = true, checkExternalCaller = false)
+    pub fn destroyNft(
+        nftId: ByteVec
+        ) -> () {
+    
+        let owner = callerAddress!()
+        
+        transferTokenToSelf!(owner, nftId, 1)
+    
+        NFT(nftId).destroyNft(owner)
+    
+    }
+
+}

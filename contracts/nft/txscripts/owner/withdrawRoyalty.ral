@@ -1,0 +1,7 @@
+TxScript WithDrawRoyalty(
+    to: Address,
+    amount: U256,
+    nftCollectionId: ByteVec
+) {
+    NFTPublicSaleCollectionRandomWithRoyalty(nftCollectionId).withdrawRoyalty(to, amount)
+}

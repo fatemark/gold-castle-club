@@ -11,8 +11,198 @@ import {
   SignerProvider,
   HexString,
 } from "@alephium/web3";
-import { default as WithdrawScriptJson } from "../Withdraw.ral.json";
+import { default as AcceptMarriageOfferScriptJson } from "../nft/txscripts/marriage/AcceptMarriageOffer.ral.json";
+import { default as AirdropWithdrawScriptJson } from "../nft/txscripts/owner/AirdropWithdraw.ral.json";
+import { default as BecomeLoverScriptJson } from "../nft/txscripts/marriage/BecomeLover.ral.json";
+import { default as BecomeOverlordScriptJson } from "../nft/txscripts/fealty/BecomeOverlord.ral.json";
+import { default as BuyListingScriptJson } from "../nft/txscripts/marketplace/BuyListing.ral.json";
+import { default as ChangeCollectionIdScriptJson } from "../nft/txscripts/owner/ChangeCollectionId.ral.json";
+import { default as ChangeOwnerScriptJson } from "../nft/ChangeOwner.ral.json";
+import { default as CreateFealtyForGoldContractScriptJson } from "../nft/txscripts/fealty/CreateFealtyForGoldContract.ral.json";
+import { default as CreateListingScriptJson } from "../nft/txscripts/marketplace/CreateListing.ral.json";
+import { default as CreateMarriageOfferScriptJson } from "../nft/txscripts/marriage/CreateMarriageOffer.ral.json";
+import { default as DeclareAnathemaByHighLordScriptJson } from "../nft/txscripts/anathema/DeclareAnathemaByHighLord.ral.json";
+import { default as DeclareAnathemaByLordScriptJson } from "../nft/txscripts/anathema/DeclareAnathemaByLord.ral.json";
+import { default as DeclareWarScriptJson } from "../nft/txscripts/fealty/DeclareWar.ral.json";
+import { default as DestroyNftScriptJson } from "../nft/DestroyNft.ral.json";
+import { default as DivorceScriptJson } from "../nft/txscripts/marriage/Divorce.ral.json";
+import { default as MarryOwnCollectionScriptJson } from "../nft/txscripts/marriage/MarryOwnCollection.ral.json";
+import { default as MintScriptJson } from "../nft/Mint.ral.json";
+import { default as RescindGoldForFealtyOfferScriptJson } from "../nft/txscripts/fealty/RescindGoldForFealtyOffer.ral.json";
+import { default as RescindMarriageOfferScriptJson } from "../nft/txscripts/marriage/RescindMarriageOffer.ral.json";
+import { default as RevokeAnathemaByBribeScriptJson } from "../nft/txscripts/anathema/RevokeAnathemaByBribe.ral.json";
+import { default as RevokeAnathemaByDeclarerScriptJson } from "../nft/txscripts/anathema/RevokeAnathemaByDeclarer.ral.json";
+import { default as RevokeAnathemaByHighLordScriptJson } from "../nft/txscripts/anathema/RevokeAnathemaByHighLord.ral.json";
+import { default as RevokeAnathemaByTimeScriptJson } from "../nft/txscripts/anathema/RevokeAnathemaByTime.ral.json";
+import { default as RevokeListingScriptJson } from "../nft/txscripts/marketplace/RevokeListing.ral.json";
+import { default as SwearFealtyForGoldScriptJson } from "../nft/txscripts/fealty/SwearFealtyForGold.ral.json";
+import { default as SwearFealtyWithoutGoldFreeScriptJson } from "../nft/txscripts/fealty/SwearFealtyWithoutGoldFree.ral.json";
+import { default as VoteInElectionScriptJson } from "../nft/txscripts/fealty/VoteInElection.ral.json";
+import { default as WithDrawFromCollectionScriptJson } from "../nft/txscripts/owner/WithDrawFromCollection.ral.json";
+import { default as WithDrawRoyaltyScriptJson } from "../nft/txscripts/owner/WithDrawRoyalty.ral.json";
+import { default as WithdrawScriptJson } from "../goldtoken/Withdraw.ral.json";
 
+export const AcceptMarriageOffer = new ExecutableScript<{
+  proposee: Address;
+  proposer: Address;
+  fealtyId: HexString;
+}>(Script.fromJson(AcceptMarriageOfferScriptJson));
+export const AirdropWithdraw = new ExecutableScript<{
+  token: HexString;
+  amount: bigint;
+}>(Script.fromJson(AirdropWithdrawScriptJson));
+export const BecomeLover = new ExecutableScript<{
+  selfloverAddress: Address;
+  lovertargetAddress: Address;
+  fealtyId: HexString;
+}>(Script.fromJson(BecomeLoverScriptJson));
+export const BecomeOverlord = new ExecutableScript<{
+  fealtyId: HexString;
+  lordAddress: Address;
+}>(Script.fromJson(BecomeOverlordScriptJson));
+export const BuyListing = new ExecutableScript<{
+  marketplaceId: HexString;
+  price: bigint;
+  nftId: HexString;
+}>(Script.fromJson(BuyListingScriptJson));
+export const ChangeCollectionId = new ExecutableScript<{
+  collectiontochangenumber: bigint;
+  newcollection: HexString;
+  fealtyId: HexString;
+}>(Script.fromJson(ChangeCollectionIdScriptJson));
+export const ChangeOwner = new ExecutableScript<{
+  nftId: HexString;
+  nftCollectionId: HexString;
+}>(Script.fromJson(ChangeOwnerScriptJson));
+export const CreateFealtyForGoldContract = new ExecutableScript<{
+  bribe: bigint;
+  time: bigint;
+  lordAddress: Address;
+  minimumClass: bigint;
+  lordSubjectIndex: bigint;
+  fealtyId: HexString;
+  goldtokenid: HexString;
+  campaign: HexString;
+  subjecttarget: Address;
+}>(Script.fromJson(CreateFealtyForGoldContractScriptJson));
+export const CreateListing = new ExecutableScript<{
+  nftId: HexString;
+  price: bigint;
+  marketplaceId: HexString;
+}>(Script.fromJson(CreateListingScriptJson));
+export const CreateMarriageOffer = new ExecutableScript<{
+  fealtyId: HexString;
+  dowry: bigint;
+  goldtokenid: HexString;
+  proposee: Address;
+  proposer: Address;
+  time: bigint;
+  loveletter: HexString;
+  maxlovercount: bigint;
+}>(Script.fromJson(CreateMarriageOfferScriptJson));
+export const DeclareAnathemaByHighLord = new ExecutableScript<{
+  bribe: bigint;
+  declarerLordAddress: Address;
+  scroundrelAddress: Address;
+  fealtyId: HexString;
+  goldtokenid: HexString;
+  reason: HexString;
+}>(Script.fromJson(DeclareAnathemaByHighLordScriptJson));
+export const DeclareAnathemaByLord = new ExecutableScript<{
+  bribe: bigint;
+  declarerLordAddress: Address;
+  scroundrelAddress: Address;
+  fealtyId: HexString;
+  goldtokenid: HexString;
+  reason: HexString;
+}>(Script.fromJson(DeclareAnathemaByLordScriptJson));
+export const DeclareWar = new ExecutableScript<{
+  selfAddress: Address;
+  target: Address;
+  fealtyId: HexString;
+}>(Script.fromJson(DeclareWarScriptJson));
+export const DestroyNft = new ExecutableScript<{
+  nftId: HexString;
+  nftCollectionId: HexString;
+}>(Script.fromJson(DestroyNftScriptJson));
+export const Divorce = new ExecutableScript<{
+  wifeHusband: Address;
+  claimant: Address;
+  fealtyId: HexString;
+  goldtokenid: HexString;
+  divorcefee: bigint;
+}>(Script.fromJson(DivorceScriptJson));
+export const MarryOwnCollection = new ExecutableScript<{
+  proposee: Address;
+  proposer: Address;
+  extratime: bigint;
+  fealtyId: HexString;
+}>(Script.fromJson(MarryOwnCollectionScriptJson));
+export const Mint = new ExecutableScript<{
+  mintPrice: bigint;
+  nftCollectionId: HexString;
+}>(Script.fromJson(MintScriptJson));
+export const RescindGoldForFealtyOffer = new ExecutableScript<{
+  fealtyId: HexString;
+  lordAddress: Address;
+  lordSubjectIndex: bigint;
+}>(Script.fromJson(RescindGoldForFealtyOfferScriptJson));
+export const RescindMarriageOffer = new ExecutableScript<{
+  proposer: Address;
+  fealtyId: HexString;
+}>(Script.fromJson(RescindMarriageOfferScriptJson));
+export const RevokeAnathemaByBribe = new ExecutableScript<{
+  scroundrelAddress: Address;
+  fealtyId: HexString;
+  bribe: bigint;
+  goldtokenid: HexString;
+  lordAddress: Address;
+}>(Script.fromJson(RevokeAnathemaByBribeScriptJson));
+export const RevokeAnathemaByDeclarer = new ExecutableScript<{
+  scroundrelAddress: Address;
+  revokerAddress: Address;
+  fealtyId: HexString;
+}>(Script.fromJson(RevokeAnathemaByDeclarerScriptJson));
+export const RevokeAnathemaByHighLord = new ExecutableScript<{
+  revokerAddress: Address;
+  scroundrelAddress: Address;
+  fealtyId: HexString;
+}>(Script.fromJson(RevokeAnathemaByHighLordScriptJson));
+export const RevokeAnathemaByTime = new ExecutableScript<{
+  scroundrelAddress: Address;
+  fealtyId: HexString;
+}>(Script.fromJson(RevokeAnathemaByTimeScriptJson));
+export const RevokeListing = new ExecutableScript<{
+  nftId: HexString;
+  marketplaceId: HexString;
+}>(Script.fromJson(RevokeListingScriptJson));
+export const SwearFealtyForGold = new ExecutableScript<{
+  lordAddress: Address;
+  subjectAddress: Address;
+  lordSubjectIndex: bigint;
+  fealtyId: HexString;
+}>(Script.fromJson(SwearFealtyForGoldScriptJson));
+export const SwearFealtyWithoutGoldFree = new ExecutableScript<{
+  lordAddress: Address;
+  subjectAddress: Address;
+  time: bigint;
+  fealtyId: HexString;
+}>(Script.fromJson(SwearFealtyWithoutGoldFreeScriptJson));
+export const VoteInElection = new ExecutableScript<{
+  selfAddress: Address;
+  voteInput: bigint;
+  fealtyId: HexString;
+}>(Script.fromJson(VoteInElectionScriptJson));
+export const WithDrawFromCollection = new ExecutableScript<{
+  to: Address;
+  amount: bigint;
+  nftCollectionId: HexString;
+}>(Script.fromJson(WithDrawFromCollectionScriptJson));
+export const WithDrawRoyalty = new ExecutableScript<{
+  to: Address;
+  amount: bigint;
+  nftCollectionId: HexString;
+}>(Script.fromJson(WithDrawRoyaltyScriptJson));
 export const Withdraw = new ExecutableScript<{
   token: HexString;
   amount: bigint;

@@ -1,0 +1,37 @@
+{
+  "version": "v2.9.0",
+  "name": "SwearFealtyForGold",
+  "bytecodeTemplate": "0101030000000ab413c3038d7ea4c68000a2{0}{1}{2}0f0c{3}010c",
+  "fieldsSig": {
+    "names": [
+      "lordAddress",
+      "subjectAddress",
+      "lordSubjectIndex",
+      "fealtyId"
+    ],
+    "types": [
+      "Address",
+      "Address",
+      "U256",
+      "ByteVec"
+    ],
+    "isMutable": [
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+TxScript CreateFealtyForGoldContract(
+    bribe: U256,
+    time: U256,
+    lordAddress: Address,
+    minimumClass: U256,
+    lordSubjectIndex: U256,
+    fealtyId: ByteVec,
+    goldtokenid: ByteVec,
+    campaign: ByteVec,
+    subjecttarget: Address
+) {
+    Fealty(fealtyId).createFealtyContract{callerAddress!() -> ALPH: 1 alph + dustAmount!(), goldtokenid: bribe}(bribe, time, lordAddress, minimumClass, lordSubjectIndex, campaign, subjecttarget)
+}

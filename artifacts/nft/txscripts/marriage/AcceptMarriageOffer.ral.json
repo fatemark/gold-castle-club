@@ -1,0 +1,34 @@
+{
+  "version": "v2.9.0",
+  "name": "AcceptMarriageOffer",
+  "bytecodeTemplate": "01010300000006{0}{1}0e0c{2}0107",
+  "fieldsSig": {
+    "names": [
+      "proposee",
+      "proposer",
+      "fealtyId"
+    ],
+    "types": [
+      "Address",
+      "Address",
+      "ByteVec"
+    ],
+    "isMutable": [
+      false,
+      false,
+      false
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    }
+  ]
+}

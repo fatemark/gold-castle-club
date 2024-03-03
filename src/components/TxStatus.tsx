@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from 'react'
 import { useTxStatus } from '@alephium/web3-react'
-import { node } from "@alephium/web3"
+import { node } from '@alephium/web3'
 
 interface TxStatusAlertProps {
   txId: string
@@ -9,10 +9,13 @@ interface TxStatusAlertProps {
 
 export const TxStatus = ({ txId, txStatusCallback }: TxStatusAlertProps) => {
   const numberOfChecks = useRef(0)
-  const callback = useCallback(async (status: node.TxStatus) => {
-    numberOfChecks.current += 1
-    return txStatusCallback(status, numberOfChecks.current)
-  }, [txStatusCallback, numberOfChecks])
+  const callback = useCallback(
+    async (status: node.TxStatus) => {
+      numberOfChecks.current += 1
+      return txStatusCallback(status, numberOfChecks.current)
+    },
+    [txStatusCallback, numberOfChecks]
+  )
 
   const { txStatus } = useTxStatus(txId, callback)
 

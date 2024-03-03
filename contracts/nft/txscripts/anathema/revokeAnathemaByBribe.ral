@@ -1,0 +1,9 @@
+TxScript RevokeAnathemaByBribe(
+    scroundrelAddress: Address,
+    fealtyId: ByteVec,
+    bribe: U256,
+    goldtokenid: ByteVec,
+    lordAddress: Address
+) {
+    Fealty(fealtyId).revokeAnathemaByBribe{callerAddress!() -> goldtokenid: bribe}(scroundrelAddress, lordAddress)
+}

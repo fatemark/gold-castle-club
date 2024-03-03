@@ -1,0 +1,7 @@
+TxScript ChangeCollectionId(
+    collectiontochangenumber: U256,
+    newcollection: ByteVec,
+    fealtyId: ByteVec
+) {
+    Fealty(fealtyId).newCollection(newcollection, collectiontochangenumber)
+}

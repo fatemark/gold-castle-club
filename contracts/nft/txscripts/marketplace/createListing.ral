@@ -1,0 +1,7 @@
+TxScript CreateListing(
+    nftId: ByteVec,
+    price: U256,
+    marketplaceId: ByteVec
+) {
+    MarketPlace(marketplaceId).createListing{callerAddress!() -> ALPH: 1 alph, nftId: 1}(nftId, price)
+}

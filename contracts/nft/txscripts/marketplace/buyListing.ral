@@ -1,0 +1,7 @@
+TxScript BuyListing(
+    marketplaceId: ByteVec,
+    price: U256,
+    nftId: ByteVec
+) {
+    MarketPlace(marketplaceId).buyListing{callerAddress!() -> ALPH: price + dustAmount!()}(nftId)
+}

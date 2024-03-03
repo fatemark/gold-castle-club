@@ -1,0 +1,9 @@
+TxScript Divorce(
+    wifeHusband: Address,
+    claimant: Address,
+    fealtyId: ByteVec,
+    goldtokenid: ByteVec,
+    divorcefee: U256
+) {
+    Fealty(fealtyId).divorce{callerAddress!() -> goldtokenid: divorcefee}(wifeHusband, claimant)
+}

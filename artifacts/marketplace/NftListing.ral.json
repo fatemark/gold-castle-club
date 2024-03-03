@@ -1,0 +1,109 @@
+{
+  "version": "v2.9.0",
+  "name": "NftListing",
+  "bytecode": "040540224033403c4045404e010102030012b417021602ce007745130d7b1600ce031601a71600ce010dabce03b0010200000008b4ce007745130d7bce03b0010000000102ce0202010000000102ce0102010000000102ce0302",
+  "codeHash": "2b777eaf3b29a86b595d5f135f5bf3e10e8b8ba9f35ee623666e37d25ed72e68",
+  "fieldsSig": {
+    "names": [
+      "marketplaceId",
+      "nftId",
+      "price",
+      "lister"
+    ],
+    "types": [
+      "ByteVec",
+      "ByteVec",
+      "U256",
+      "Address"
+    ],
+    "isMutable": [
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "eventsSig": [],
+  "functions": [
+    {
+      "name": "buyNFT",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": true,
+      "isPublic": true,
+      "paramNames": [
+        "buyer",
+        "priceAfterFee"
+      ],
+      "paramTypes": [
+        "Address",
+        "U256"
+      ],
+      "paramIsMutable": [
+        false,
+        false
+      ],
+      "returnTypes": []
+    },
+    {
+      "name": "revokeListing",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": true,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    },
+    {
+      "name": "getPrice",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "U256"
+      ]
+    },
+    {
+      "name": "getNftId",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "ByteVec"
+      ]
+    },
+    {
+      "name": "getLister",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "Address"
+      ]
+    }
+  ],
+  "constants": [],
+  "enums": [
+    {
+      "name": "ErrorCodes",
+      "fields": [
+        {
+          "name": "NotMarketplace",
+          "value": {
+            "type": "U256",
+            "value": "13"
+          }
+        }
+      ]
+    }
+  ]
+}

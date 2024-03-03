@@ -1,0 +1,8 @@
+TxScript BecomeLover(
+    selfloverAddress: Address, 
+    lovertargetAddress: Address,
+    fealtyId: ByteVec
+)
+{
+    Fealty(fealtyId).becomeLover(selfloverAddress, lovertargetAddress)
+}

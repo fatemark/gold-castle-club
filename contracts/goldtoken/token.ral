@@ -1,0 +1,185 @@
+import "std/fungible_token_interface"
+
+// Defines a contract named `GoldToken`.
+// A contract is a collection of fields (its state) and functions.
+// Once deployed, a contract resides at a specific address on the Alephium blockchain.
+// Contract fields are permanently stored in contract storage.
+// A contract can issue an initial amount of token at its deployment.
+Contract GoldToken(
+    symbol: ByteVec,
+    name: ByteVec,
+    decimals: U256,
+    supply: U256,
+    chancellor: Address,
+    fealtyId: ByteVec,
+    mut lotterybalance: U256,
+    mut warfund: U256,
+    mut airdropbalance: U256,
+    mut wartime: U256,
+    mut jackpot: U256
+) implements IFungibleToken {
+
+    // Events allow for logging of activities on the blockchain.
+    // Alephium clients can listen to events in order to react to contract state changes.
+    event Withdraw(to: Address, transferamount: U256, jackpotwinnings: U256, jackpot: U256)
+
+    enum ErrorCodes {
+        InvalidWithdrawAmount = 0
+        NotTheChancellor = 99
+        NotWarTimeYet = 21
+        NoLottery = 120
+        NoAirdropbalance = 230
+        LotteryStillGoing = 777
+    }
+
+
+    pub fn getTotalSupply() -> U256 {
+        return supply
+    }
+
+    pub fn getJackpot() -> U256 {
+        return jackpot
+    }
+
+    // A public function that returns the symbol of the token.
+    pub fn getSymbol() -> ByteVec {
+        return symbol
+    }
+
+    // A public function that returns the name of the token.
+    pub fn getName() -> ByteVec {
+        return name
+    }
+
+    // A public function that returns the decimals of the token.
+    pub fn getDecimals() -> U256 {
+        return decimals
+    }
+
+    pub fn lotterybalance() -> U256 {
+        return lotterybalance
+    }
+
+    pub fn getAirdropbalance() -> U256 {
+        return airdropbalance
+    }
+
+
+
+    @using(preapprovedAssets = true, assetsInContract = true, updateFields = true, checkExternalCaller = false)
+    pub fn withdraw(betamount: U256) -> () {
+
+        let userAddress = callerAddress!()
+        assert!(betamount >= 10**18, ErrorCodes.InvalidWithdrawAmount)     
+        let bets = betamount / 10**18  
+        transferTokenToSelf!(userAddress, ALPH, betamount)
+        jackpot = jackpot + betamount
+        let amount = 10**18
+        // Debug events can be helpful for error analysis
+        let mut transferamount = 0
+        let mut jackpotwinnings = 0
+        for (let mut index = 0; index <= bets; index = index + 1) {
+        assert!(lotterybalance != 0, ErrorCodes.NoLottery)
+        // Make sure the amount is valid
+
+        // Functions postfixed with `!` are built-in functions.
+
+                // Charge the caller 1 Alphemium
+        let randomnumber = (u256From32Byte!(blake2b!(toByteVec!(blockTarget!()) ++ toByteVec!(blockTimeStamp!()))) % 10000) + 1
+
+        let bonus = 
+        if (randomnumber == 333) 
+            300000000
+        else if (randomnumber < 10)
+            44444
+        else if (randomnumber == 77)
+            2
+        else if (randomnumber == 222) 
+            500000000
+        else if (randomnumber == 444) 
+            2000000000
+         else if (randomnumber == 999) 
+            1500000000
+         else if (randomnumber == 777) 
+            2500000000
+        else if (randomnumber == 2222) 
+            1500000000
+        else if (randomnumber == 4444) 
+            5000000000
+        else if (randomnumber == 7777)
+            1
+        else if (randomnumber == 8888)
+            3
+        else if (randomnumber == 5555)
+            5
+        else if (randomnumber == 2222)
+            7
+        else if (randomnumber == 7) 
+            50000000000
+         else 
+            0
+
+        let jackpotaddition =
+        if (bonus == 1)
+            jackpot
+        else if (bonus == 2)
+            jackpot / 2
+        else if (bonus == 3)
+            jackpot / 8
+        else if (bonus == 5)
+            jackpot / 5
+        else if (bonus == 7)
+            jackpot / 10
+        else
+            0
+
+        jackpotwinnings = jackpotwinnings + jackpotaddition
+
+        let winnings = amount * randomnumber / 200000000000000
+
+        transferamount = transferamount + bonus + winnings
+
+    }
+      
+    transferTokenFromSelf!(userAddress, selfTokenId!(), transferamount)
+    jackpot = jackpot - jackpotwinnings
+
+    transferTokenFromSelf!(userAddress, ALPH, jackpotwinnings)
+
+
+    lotterybalance = lotterybalance - transferamount
+    emit Withdraw(userAddress, transferamount, jackpotwinnings, jackpot)
+}
+
+
+@using(preapprovedAssets = false, assetsInContract = true, updateFields = true, checkExternalCaller = true)
+pub fn airdropWithdraw(amount: U256) -> () {
+    checkCaller!(callerAddress!() == chancellor, ErrorCodes.NotTheChancellor)
+    assert!(airdropbalance > 0, ErrorCodes.NoAirdropbalance)
+    transferTokenFromSelf!(chancellor, selfTokenId!(), amount)
+    airdropbalance = airdropbalance - amount
+}
+
+@using(preapprovedAssets = false, assetsInContract = true, updateFields = false, checkExternalCaller = true)
+pub fn emergencyWithdraw() -> () {
+    checkCaller!(callerAddress!() == chancellor, ErrorCodes.NotTheChancellor)
+    assert!(lotterybalance < 10000000, ErrorCodes.LotteryStillGoing)
+    transferTokenFromSelf!(chancellor, ALPH, jackpot)
+}
+
+
+
+@using(preapprovedAssets = false, assetsInContract = true, updateFields = true, checkExternalCaller = true)
+pub fn warForTheAges() -> () {
+    checkCaller!(callerAddress!() == chancellor, ErrorCodes.NotTheChancellor)
+    let timeSincelastwar = blockTimeStamp!() - wartime
+    assert!(timeSincelastwar > 5102880000, ErrorCodes.NotWarTimeYet)
+
+    let warAmount = 100000000000
+    transferTokenFromSelf!(contractIdToAddress!(fealtyId), selfTokenId!(), warAmount)
+    warfund = warfund - warAmount
+    wartime = blockTimeStamp!()
+}
+
+
+}
