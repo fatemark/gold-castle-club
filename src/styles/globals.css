@@ -844,14 +844,30 @@ blockquote footer {
 }
 
 .discord-icon {
-  color: #7289da; /* Discord color */
-}
+  color: #7289da; 
+  transition: transform 0.3s;
 
+}
+.discord-icon:hover {
+  color: #7289da;
+  transform: scale(2); 
+}
 .telegram-icon {
   color: #0088cc; /* Telegram color */
+  transition: transform 0.3s;
 }
-
+.telegram-icon:hover {
+  color: #0088cc; /* Telegram color */
+  transform: scale(2); 
+}
 .twitter-icon {
   color: #1da1f2; /* Twitter color */
   cursor: pointer;
+  transition: transform 0.3s;
+}
+.twitter-icon:hover {
+  color: #1da1f2; /* Twitter color */
+  cursor: pointer;
+  transform: scale(2); 
+
 }

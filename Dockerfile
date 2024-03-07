@@ -9,6 +9,8 @@ COPY package*.json ./
 
 # Install project dependencies
 RUN npm install
+RUN apt-get update
+RUN apt-get install -y nano
 
 # Copy the rest of the application code to the working directory
 COPY . .

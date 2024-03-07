@@ -1,0 +1,7 @@
+TxScript DestroyNftAndReturnIt(
+    nftId: ByteVec,
+    nftCollectionId: ByteVec,
+    lockedasset: U256
+) {
+    NFTPublicSaleCollectionRandomWithRoyalty(nftCollectionId).destroyNftAndReturnIt{callerAddress!() -> nftId: 1}(nftId, lockedasset)
+}

@@ -44,20 +44,22 @@ export type Settings = {
   marketplaceId: string
 }
 const defaultSettings: Settings = {
-  nftTemplateId: "f349f3ff0b3db9102aa20315bf676362af9e06822874c3a6900e33249ff83200",
+  nftTemplateId: "53d10762aec2b7612c9df5e400e77578747a24ef2e316ffac39e1ff3c8595e00",
   specificmarriagetemplateid: "49b3f99d6635712d357aeaeb3595e93dc6174eda5570652adf9202cc287f9800",
   fealtyforgoldid: '4fe0566cc7cc0a3e7f26cb1a0011310cabf0f4453406af97e22bb30ac17f0400', 
   anathemaId: "390d30ac38b4cc1e1a9be2466aa9f3d1b7adcd81b68862f80f3b0a9d8374f300",
 
-  listingTemplateId: "4797b50c3c52d7ff1f6ad4f9d6f4736ce97b0c295e871eedadbef2f35098c300",
-  marketplaceId: 'c7cad13399077bcf67f5e1e2c346ea70dcfd3a703a51dd4ea509e4d4b3035500',
+  listingTemplateId: "7bae06d74b8f763c91e3445d58a81c9086707f8a715441a424616eefaa46f200",
+  marketplaceId: '1049eaa6d1660be75b8dd960d9d852ec0f2e06a5fc58a8d8df78534d39ac1600',
 
-  fealtyId: "10292b7358c6a9823ddcd48292c56025b4005be4623a8d0cea439e16c769ad00",
+  fealtyId: "8805ae3a93cc73766aa8bbf1deb83814798924acb23be5e1e328dd904d247f00",
 
   goldtokenid: '0beffdfa642818060ca796ff770bb42d437c93f4f5c381ef89b226ec6ae5f500',  
 
 
-  collectionId: "d64406c4596aa5a2e8fb489d7d307e2b5d3710659d44aa57bfcc7094a278f700",
+  collectionId: "68858bfeec8b260a98cef84852cb102eee8f123008edcfbf503a603f63f86000",
+
+
 
   nftclass: 0n, 
   issueTokenAmount: 20_000_000_000_000n, 

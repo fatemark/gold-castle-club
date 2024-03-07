@@ -19,6 +19,8 @@ import {
   NFTPublicSaleCollectionRandomWithRoyaltyInstance,
   GoldToken,
   GoldTokenInstance,
+  MarketPlace,
+  MarketPlaceInstance,
 } from ".";
 import { default as mainnetDeployments } from "../.deployments.mainnet.json";
 
@@ -32,6 +34,7 @@ export type Deployments = {
     Fealty: DeployContractExecutionResult<FealtyInstance>;
     NFTPublicSaleCollectionRandomWithRoyalty: DeployContractExecutionResult<NFTPublicSaleCollectionRandomWithRoyaltyInstance>;
     GoldToken: DeployContractExecutionResult<GoldTokenInstance>;
+    MarketPlace: DeployContractExecutionResult<MarketPlaceInstance>;
   };
 };
 
@@ -76,6 +79,12 @@ function toDeployments(json: any): Deployments {
       ...json.contracts["GoldToken"],
       contractInstance: GoldToken.at(
         json.contracts["GoldToken"].contractInstance.address
+      ),
+    },
+    MarketPlace: {
+      ...json.contracts["MarketPlace"],
+      contractInstance: MarketPlace.at(
+        json.contracts["MarketPlace"].contractInstance.address
       ),
     },
   };

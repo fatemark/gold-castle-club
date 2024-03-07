@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getApi } from '../utils';
 
 
 
@@ -10,7 +11,7 @@ export interface GoldTokenContract {
 
 async function getGoldTokenWinners(): Promise<GoldTokenContract[]> {
 
-    const response = await fetch(`http://localhost:4000/top3wonamount`);
+    const response = await fetch(`${getApi}top3wonamount`);
 
     if (!response.ok) {
         throw new Error('Failed to fetch data from server');
@@ -31,7 +32,7 @@ export interface GoldStateData {
   }
   
    async function fetchGoldTokenState(): Promise<GoldStateData> {
-    const url = 'http://localhost:4000/goldtokenstate';
+    const url = `${getApi}goldtokenstate`;
   
     try {
       const response = await fetch(url);
@@ -66,33 +67,6 @@ interface TransactionResponse {
     generatedOutputs: GeneratedOutput[];
 }
 
-async function getTokenIdWithAmountOne(txId: string, maxRetries = 3): Promise<string | null> {
-  let retries = 0;
 
-  while (retries < maxRetries) {
-      try {
-          const response = await axios.get<TransactionResponse>(`http://localhost:22973/transactions/details/${txId}`);
-          const generatedOutputs = response.data.generatedOutputs;
-
-          for (const output of generatedOutputs) {
-              for (const token of output.tokens) {
-                  if (token.amount === '1') {
-                      return token.id;
-                  }
-              }
-          }
-
-          return null;
-      } catch (error) {
-          console.error(`Error fetching transaction details (attempt ${retries + 1}):`, error);
-          retries++;
-      }
-  }
-
-  console.error(`Max retries (${maxRetries}) reached, could not fetch transaction details for transaction ID ${txId}`);
-  return null;
-}
-
-
-export { fetchGoldTokenState, getGoldTokenWinners, getTokenIdWithAmountOne };
+export { fetchGoldTokenState, getGoldTokenWinners };
 

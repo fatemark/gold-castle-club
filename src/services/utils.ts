@@ -8,6 +8,7 @@ export interface GoldTokenConfig {
   GoldTokenId: string
 }
 
+
 function getNetwork(): NetworkId {
   const network = (process.env.NEXT_PUBLIC_NETWORK ?? 'mainnet') as NetworkId
   return network
@@ -22,6 +23,9 @@ function getGoldTokenConfig(): GoldTokenConfig {
   const GoldTokenId = GoldToken.contractId
   return { network, groupIndex, GoldTokenAddress, GoldTokenId }
 }
+
+export const getApi = 'https://goldcastle.club/api/'
+
 
 export const GoldTokenConfig = getGoldTokenConfig()
 

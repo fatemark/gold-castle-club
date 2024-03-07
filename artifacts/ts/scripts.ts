@@ -24,9 +24,12 @@ import { default as CreateMarriageOfferScriptJson } from "../nft/txscripts/marri
 import { default as DeclareAnathemaByHighLordScriptJson } from "../nft/txscripts/anathema/DeclareAnathemaByHighLord.ral.json";
 import { default as DeclareAnathemaByLordScriptJson } from "../nft/txscripts/anathema/DeclareAnathemaByLord.ral.json";
 import { default as DeclareWarScriptJson } from "../nft/txscripts/fealty/DeclareWar.ral.json";
+import { default as DestroyCollectionScriptJson } from "../nft/DestroyCollection.ral.json";
 import { default as DestroyNftScriptJson } from "../nft/DestroyNft.ral.json";
+import { default as DestroyNftAndReturnItScriptJson } from "../nft/DestroyNftAndReturnIt.ral.json";
 import { default as DivorceScriptJson } from "../nft/txscripts/marriage/Divorce.ral.json";
 import { default as MarryOwnCollectionScriptJson } from "../nft/txscripts/marriage/MarryOwnCollection.ral.json";
+import { default as MigrateFealtyContractScriptJson } from "../nft/txscripts/fealty/MigrateFealtyContract.ral.json";
 import { default as MintScriptJson } from "../nft/Mint.ral.json";
 import { default as RescindGoldForFealtyOfferScriptJson } from "../nft/txscripts/fealty/RescindGoldForFealtyOffer.ral.json";
 import { default as RescindMarriageOfferScriptJson } from "../nft/txscripts/marriage/RescindMarriageOffer.ral.json";
@@ -41,6 +44,7 @@ import { default as VoteInElectionScriptJson } from "../nft/txscripts/fealty/Vot
 import { default as WithDrawFromCollectionScriptJson } from "../nft/txscripts/owner/WithDrawFromCollection.ral.json";
 import { default as WithDrawRoyaltyScriptJson } from "../nft/txscripts/owner/WithDrawRoyalty.ral.json";
 import { default as WithdrawScriptJson } from "../goldtoken/Withdraw.ral.json";
+import { default as WithdrawFromFealtyScriptJson } from "../nft/txscripts/fealty/WithdrawFromFealty.ral.json";
 
 export const AcceptMarriageOffer = new ExecutableScript<{
   proposee: Address;
@@ -121,10 +125,18 @@ export const DeclareWar = new ExecutableScript<{
   target: Address;
   fealtyId: HexString;
 }>(Script.fromJson(DeclareWarScriptJson));
+export const DestroyCollection = new ExecutableScript<{
+  nftCollectionId: HexString;
+}>(Script.fromJson(DestroyCollectionScriptJson));
 export const DestroyNft = new ExecutableScript<{
   nftId: HexString;
   nftCollectionId: HexString;
 }>(Script.fromJson(DestroyNftScriptJson));
+export const DestroyNftAndReturnIt = new ExecutableScript<{
+  nftId: HexString;
+  nftCollectionId: HexString;
+  lockedasset: bigint;
+}>(Script.fromJson(DestroyNftAndReturnItScriptJson));
 export const Divorce = new ExecutableScript<{
   wifeHusband: Address;
   claimant: Address;
@@ -138,6 +150,10 @@ export const MarryOwnCollection = new ExecutableScript<{
   extratime: bigint;
   fealtyId: HexString;
 }>(Script.fromJson(MarryOwnCollectionScriptJson));
+export const MigrateFealtyContract = new ExecutableScript<{
+  newBytecode: HexString;
+  fealtyId: HexString;
+}>(Script.fromJson(MigrateFealtyContractScriptJson));
 export const Mint = new ExecutableScript<{
   mintPrice: bigint;
   nftCollectionId: HexString;
@@ -207,3 +223,8 @@ export const Withdraw = new ExecutableScript<{
   token: HexString;
   amount: bigint;
 }>(Script.fromJson(WithdrawScriptJson));
+export const WithdrawFromFealty = new ExecutableScript<{
+  tokenId: HexString;
+  amount: bigint;
+  fealtyId: HexString;
+}>(Script.fromJson(WithdrawFromFealtyScriptJson));

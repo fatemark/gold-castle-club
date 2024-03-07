@@ -1,7 +1,10 @@
+import { getApi } from '../utils';
+
+
 export class getAvailableIndex {
         static async execute(lordAddress: string): Promise<number> {
     try {
-        const response = await fetch(`http://localhost:4000/get_lordsubjectindex?lordaddress=${lordAddress}`);
+        const response = await fetch(`${getApi}get_lordsubjectindex?lordaddress=${lordAddress}`);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -33,7 +36,7 @@ import axios from 'axios';
 
 export async function checkMinting(): Promise<void> {
     try {
-        await axios.get('http://localhost:4000/checkminting');
+        await axios.get(`${getApi}checkminting`);
         console.log('Checkmingting started successfully');
     } catch (error) {
         console.error('Error starting checkMinting:', error);
@@ -42,7 +45,7 @@ export async function checkMinting(): Promise<void> {
 
 export async function checkMarketplace(): Promise<void> {
     try {
-        await axios.get('http://localhost:4000/checkmarketplace');
+        await axios.get(`${getApi}checkmarketplace`);
         console.log('checkmarketplace started successfully');
     } catch (error) {
         console.error('Error starting checkmarketplace:', error);
@@ -51,7 +54,7 @@ export async function checkMarketplace(): Promise<void> {
 
 export async function checkGoldContract(): Promise<void> {
     try {
-        await axios.get('http://localhost:4000/checkgoldcontract');
+        await axios.get(`${getApi}checkgoldcontract`);
         console.log('checkgoldcontract started successfully');
     } catch (error) {
         console.error('Error starting checkgoldcontract:', error);
@@ -60,7 +63,7 @@ export async function checkGoldContract(): Promise<void> {
 
 export async function checkFealtycontract(): Promise<void> {
     try {
-        await axios.get('http://localhost:4000/checkfealtycontract');
+        await axios.get(`${getApi}checkfealtycontract`);
         console.log('checkfealtycontract started successfully');
     } catch (error) {
         console.error('Error starting checkfealtycontract:', error);
@@ -70,7 +73,7 @@ export async function checkFealtycontract(): Promise<void> {
 
 export async function electionAndFealtyChecker(): Promise<void> {
     try {
-        await axios.get('http://localhost:4000/checkfealtycontractandelection');
+        await axios.get(`${getApi}checkfealtycontractandelection`);
         console.log('checkfealtycontractandelection started successfully');
     } catch (error) {
         console.error('Error starting checkfealtycontractandelection:', error);
@@ -79,7 +82,7 @@ export async function electionAndFealtyChecker(): Promise<void> {
 
 export async function fetchNullOwnersCount(): Promise<number> {
     try {
-        const response = await fetch('http://localhost:4000/count_null_owners');
+        const response = await fetch(`${getApi}count_null_owners`);
         const data = await response.json();
         if (response.ok) {
             return data.count_null_owners;

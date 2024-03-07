@@ -50,6 +50,11 @@ enum ErrorCodes {
   pub fn getfeudalLord() -> Address {
     return feudalLord
   }
+  pub fn getFeudalTime() -> U256 {
+    return feudalTime
+  }
+
+  
 
   pub fn getWarTarget() -> (Address, U256) {
     return wartarget, warStarted

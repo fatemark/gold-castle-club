@@ -3,8 +3,10 @@ import { ChangeCollectionId } from '../../artifacts/ts/scripts'
 import { WithDrawRoyalty } from '../../artifacts/ts/scripts'
 import { WithDrawFromCollection } from '../../artifacts/ts/scripts'
 import { AirdropWithdraw } from '../../artifacts/ts/scripts'
+import { DestroyCollection } from '../../artifacts/ts/scripts'
 
 import { GoldTokenConfig } from './utils'
+import { NftMintconfig } from './nftutils'
 // import { GetRealIndex } from '../services/database_services/getindexforminting'
 
 export const ChangeCollectionid = async (
@@ -79,3 +81,20 @@ export const withDrawRoyalty = async (
           attoAlphAmount: DUST_AMOUNT
         })
       }
+
+      export const destroyCollection = async (
+        signer: SignerProvider
+        ): Promise<ExecuteScriptResult> => {
+          const nftCollectionId = NftMintconfig.NftCollectionAsiaId;
+          return await DestroyCollection.execute(
+            signer,
+            {
+            initialFields: {
+              nftCollectionId: nftCollectionId
+              },
+            attoAlphAmount: DUST_AMOUNT
+          })
+        }
+
+
+      

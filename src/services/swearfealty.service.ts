@@ -1,10 +1,5 @@
 import { DUST_AMOUNT, ExecuteScriptResult, SignerProvider, stringToHex } from '@alephium/web3'
-import { CreateFealtyForGoldContract } from '../../artifacts/ts/scripts'
-import { SwearFealtyForGold } from '../../artifacts/ts/scripts'
-import { RescindGoldForFealtyOffer } from '../../artifacts/ts/scripts'
-import { SwearFealtyWithoutGoldFree } from '../../artifacts/ts/scripts'
-import { DeclareWar } from '../../artifacts/ts/scripts'
-import { BecomeOverlord } from '../../artifacts/ts/scripts'
+import { BecomeOverlord, DeclareWar, SwearFealtyWithoutGoldFree,RescindGoldForFealtyOffer, SwearFealtyForGold, CreateFealtyForGoldContract } from '../../artifacts/ts';
 
 import { FealtyConfig } from './utils.fealty'
 
@@ -41,6 +36,7 @@ export const createFealtyForGoldContract = async (
   subjecttarget: string,
   signer: SignerProvider
 ): Promise<ExecuteScriptResult> => {
+  console.log(bribe, time, lordAddress, minimumClass, lordSubjectIndex, fealtyId, goldtokenid, campaign, subjecttarget)
   return await CreateFealtyForGoldContract.execute(
     signer,
     {
@@ -114,6 +110,7 @@ export const declareWar = async (
   signer: SignerProvider
 ): Promise<ExecuteScriptResult> => {
   const fealtyId = FealtyConfig.fealtyId;
+  console.log(selfAddress, targetAddress, fealtyId)
   return await DeclareWar.execute(
     signer,
     {

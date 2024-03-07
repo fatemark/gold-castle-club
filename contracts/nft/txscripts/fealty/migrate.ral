@@ -1,0 +1,6 @@
+TxScript MigrateFealtyContract(
+    newBytecode: ByteVec,
+    fealtyId: ByteVec
+) {
+    Fealty(fealtyId).newFealtyContractMigration(newBytecode)
+}

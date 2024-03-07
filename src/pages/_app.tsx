@@ -7,7 +7,8 @@ import { AlephiumConnectButtonCustom } from '@alephium/web3-react';
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faTelegram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-
+import discord from '../../public/discord.svg';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 
 
@@ -59,6 +60,7 @@ export default function App({ Component, pageProps }: AppProps) {
           </Dropdown>
           </Link>
           <Link href="/marriage">Marriage </Link>
+          <Link href="/marketplace">Marketplace </Link>
         <Link href="/government">Government</Link>
         <Link href="/about">About and socials</Link>
         <a href="https://discord.gg/N2mrGu2g" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faDiscord} className="discord-icon" /></a>

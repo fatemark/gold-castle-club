@@ -1,3 +1,6 @@
+import { getApi } from '../utils';
+
+
 export interface Overlord {
     age: number;
     allegiance: string;
@@ -60,7 +63,7 @@ export interface Overlord {
 }
 
 async function getOverlords(): Promise<Overlord[]> {
-    const response = await fetch('http://localhost:4000/overlords', {
+    const response = await fetch(`${getApi}overlords`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -79,7 +82,7 @@ export default getOverlords;
 
 
 async function getUnderlords(): Promise<Overlord[]> {
-    const response = await fetch('http://localhost:4000/underlords', {
+    const response = await fetch(`${getApi}underlords`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -95,7 +98,7 @@ async function getUnderlords(): Promise<Overlord[]> {
 }
 
 async function getSubjects(feudallord: string): Promise<Overlord[]> {
-    const response = await fetch(`http://localhost:4000/overlordmembers/${feudallord}`, {
+    const response = await fetch(`${getApi}overlordmembers/${feudallord}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -112,7 +115,7 @@ async function getSubjects(feudallord: string): Promise<Overlord[]> {
 
 
 async function getattackers(wartarget: string): Promise<Overlord[]> {
-    const response = await fetch(`http://localhost:4000/wartarget/${wartarget}`, {
+    const response = await fetch(`${getApi}wartarget/${wartarget}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -128,7 +131,7 @@ async function getattackers(wartarget: string): Promise<Overlord[]> {
 }
 
 async function getAnathemaDeclarerDeclarations(anathemaDeclarer: string): Promise<Overlord[]> {
-    const response = await fetch(`http://localhost:4000/anathemadeclarations/${anathemaDeclarer}`, {
+    const response = await fetch(`${getApi}anathemadeclarations/${anathemaDeclarer}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -144,7 +147,7 @@ async function getAnathemaDeclarerDeclarations(anathemaDeclarer: string): Promis
 }
 
 async function getSingleNftData(selfcontractaddress: string): Promise<Overlord> {
-    const response = await fetch(`http://localhost:4000/singlenftdata/${selfcontractaddress}`, {
+    const response = await fetch(`${getApi}singlenftdata/${selfcontractaddress}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -160,7 +163,7 @@ async function getSingleNftData(selfcontractaddress: string): Promise<Overlord> 
 }
 
 async function getElectionVoteCounts(electionid: number): Promise<string[]> {
-    const response = await fetch(`http://localhost:4000/election/${electionid}`, {
+    const response = await fetch(`${getApi}election/${electionid}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

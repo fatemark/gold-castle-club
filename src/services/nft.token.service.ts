@@ -1,8 +1,7 @@
 import { DUST_AMOUNT, ExecuteScriptResult, NodeProvider, SignerProvider } from '@alephium/web3'
 import { useTxStatus } from '@alephium/web3-react'
 import { Mint } from '../../artifacts/ts/scripts'
-import { GetRealIndex } from '../services/database_services/getindexforminting'
-import { DestroyNft } from '../../artifacts/ts/scripts'
+import { DestroyNft, DestroyNftAndReturnIt } from '../../artifacts/ts/scripts'
 import { ChangeOwner } from '../../artifacts/ts/scripts'
 
 export const mintNft = async (
@@ -34,6 +33,31 @@ export const destroyNft = async (
     {
     initialFields: {
       nftId: nftId,
+      nftCollectionId: nftCollectionContractId,
+      },
+    attoAlphAmount: DUST_AMOUNT,
+    tokens: [
+      {
+        id: nftId,
+        amount: BigInt(1)
+      }
+    ]
+  })
+}
+
+
+export const destroyNftAndReturnIt = async (
+  nftId: string,
+  nftCollectionContractId: string,
+  signer: SignerProvider
+): Promise<ExecuteScriptResult> => {
+  const lockedasset = BigInt(1e18)
+  return await DestroyNftAndReturnIt.execute(
+    signer,
+    {
+    initialFields: {
+      nftId: nftId,
+      lockedasset: lockedasset,
       nftCollectionId: nftCollectionContractId,
       },
     attoAlphAmount: DUST_AMOUNT,

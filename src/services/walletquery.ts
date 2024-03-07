@@ -1,7 +1,8 @@
 import { NodeProvider, web3 } from '@alephium/web3'
+import { getApi } from '../services/utils'
 
 //devnet:
-// const nodeProvider = new NodeProvider('http://localhost:22973')
+// const nodeProvider = new NodeProvider('https://localhost:22973')
 
 //mainet:
 // web3.setCurrentNodeProvider("https://wallet.testnet.alephium.org")
@@ -14,7 +15,7 @@ import { NodeProvider, web3 } from '@alephium/web3'
 // Make the API call to get the balance
 async function getOwnedNfts(walletAddress: string): Promise<string[]> {
     //devnet:
-   // const nodeProvider = new NodeProvider('http://localhost:22973');
+   // const nodeProvider = new NodeProvider('https://localhost:22973');
 
     web3.setCurrentNodeProvider("https://wallet.mainnet.alephium.org")
     const nodeProvider = web3.getCurrentNodeProvider()
@@ -27,7 +28,7 @@ async function getOwnedNfts(walletAddress: string): Promise<string[]> {
     const idsWithAmountOne = tokenBalances?.filter(token => token.amount === '1').map(token => token.id);
 
     // Send POST request to server
-    const response = await fetch('http://localhost:4000/compare', {
+    const response = await fetch(`${getApi}compare`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

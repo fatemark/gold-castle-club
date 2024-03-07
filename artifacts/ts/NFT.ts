@@ -85,6 +85,10 @@ export namespace NFTTypes {
       params: Omit<CallContractParams<{}>, "args">;
       result: CallContractResult<Address>;
     };
+    getFeudalTime: {
+      params: Omit<CallContractParams<{}>, "args">;
+      result: CallContractResult<bigint>;
+    };
     getWarTarget: {
       params: Omit<CallContractParams<{}>, "args">;
       result: CallContractResult<[Address, bigint]>;
@@ -185,6 +189,11 @@ class Factory extends ContractFactory<NFTInstance, NFTTypes.Fields> {
     ): Promise<TestContractResult<Address>> => {
       return testMethod(this, "getfeudalLord", params);
     },
+    getFeudalTime: async (
+      params: Omit<TestContractParams<NFTTypes.Fields, never>, "testArgs">
+    ): Promise<TestContractResult<bigint>> => {
+      return testMethod(this, "getFeudalTime", params);
+    },
     getWarTarget: async (
       params: Omit<TestContractParams<NFTTypes.Fields, never>, "testArgs">
     ): Promise<TestContractResult<[Address, bigint]>> => {
@@ -278,7 +287,7 @@ export const NFT = new Factory(
   Contract.fromJson(
     NFTContractJson,
     "",
-    "e3b8b1d9e07bced78726022d82a4386b6cb1a452b5d845699512e1c2d4e42dbc"
+    "4f9381da8adcb1904f6d332ad0c8bd6419bebc2c37b8397866300260ffdc4913"
   )
 );
 
@@ -377,6 +386,17 @@ export class NFTInstance extends ContractInstance {
         NFT,
         this,
         "getfeudalLord",
+        params === undefined ? {} : params,
+        getContractByCodeHash
+      );
+    },
+    getFeudalTime: async (
+      params?: NFTTypes.CallMethodParams<"getFeudalTime">
+    ): Promise<NFTTypes.CallMethodResult<"getFeudalTime">> => {
+      return callMethod(
+        NFT,
+        this,
+        "getFeudalTime",
         params === undefined ? {} : params,
         getContractByCodeHash
       );

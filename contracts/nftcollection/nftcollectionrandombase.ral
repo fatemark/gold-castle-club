@@ -64,7 +64,6 @@ Abstract Contract NFTPublicSaleCollectionRandomBase(
         let anathema = false
         let time = 0
         let minter = callerAddress!()
-        // let path = toByteVec!(index)
         let nftcontractid = subContractId!(path)
         let nftcontractaddress = contractIdToAddress!(nftcontractid)
         let (encodeImmutableFields, encodeMutableFields) = NFT.encodeFields!(getNFTUri(index), selfContractId!(), index, nftclass, fealtyId, minter, time, time, nftcontractaddress, time, nftcontractaddress, time, nftcontractaddress, time, anathema, time, time, time)

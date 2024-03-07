@@ -2,13 +2,15 @@
 // pages/index.tsx
 import React, { useState } from 'react';
 import { declareWar } from '../services/swearfealty.service'
-import { ChangeCollectionid, withDrawRoyalty, withdrawFromCollection, airdropWithdraw } from '@/services/ownerServices.service'
+import { ChangeCollectionid, withDrawRoyalty, withdrawFromCollection, airdropWithdraw, destroyCollection } from '@/services/ownerServices.service'
 import { useWallet } from '@alephium/web3-react'
 import { node } from '@alephium/web3'
 import { FealtyConfig } from '@/services/utils.fealty';
 import { NftMintconfig } from '@/services/nftutils'
 import { GoldTokenConfig } from '@/services/utils';
 import styles from '../styles/Fealty.module.css'
+import { destroyNft } from '../services/nft.token.service';
+
 const ChancellorService: React.FC = () => {
 
 const { signer, account } = useWallet()
@@ -18,7 +20,14 @@ const [ongoingTxId, setOngoingTxId] = useState<string>()
 
 
 
-
+  const handledestroy = async () => {
+    if (signer) {
+      const nftId = 'f349f3ff0b3db9102aa20315bf676362af9e06822874c3a6900e33249ff83200'
+      const newcollection = NftMintconfig.NftCollectionAsiaId;
+      const result = await destroyNft(nftId, newcollection, signer)
+      setOngoingTxId(result.txId)
+    }
+  }
 
 const handleChangeCollectionid = async () => {
   if (signer) {
@@ -105,15 +114,29 @@ const handleAirdropWithdraw = async () => {
   }
 }
 
+const handledestroyCollection = async () => {
+  if (signer) {
+    const amount = BigInt(80_000_000_000)
+      // If lordSubjectIndex is not -1, it means a valid index is available
+      const fealtyId = FealtyConfig.fealtyId;
+      const goldtokenid = GoldTokenConfig.GoldTokenId;
+      const result = await destroyCollection(
+        signer
+      )
+      setOngoingTxId(result.txId);
+  }
+}
+
 
 return (
     <div className="padding_top">
-      <button className={styles.marryselect} onClick={handleChangeCollectionid}> Change asia collection id</button>
-      <button className={styles.marryselect} onClick={handleChangeGoldTokenId}> Change goldtokenid id</button>
-      <button className={styles.marryselect} onClick={handleWithDrawRoyalty}> Withdraw</button>
-      <button className={styles.marryselect} onClick={handleWithdrawFromCollection}> Withdraw</button>
-      <button className={styles.marryselect} onClick={handleDeclareWar}> test war</button>
-      <button className={styles.marryselect} onClick={handleAirdropWithdraw}> Airdrop withdraw</button>
+      <button className={styles.goldofferfealtybutton} onClick={handleChangeCollectionid}> Change asia collection id</button>
+      <button className={styles.goldofferfealtybutton} onClick={handleChangeGoldTokenId}> Change goldtokenid id</button>
+      <button className={styles.goldofferfealtybutton} onClick={handleWithDrawRoyalty}> Withdraw</button>
+      <button className={styles.goldofferfealtybutton} onClick={handleWithdrawFromCollection}> Withdraw</button>
+      <button className={styles.goldofferfealtybutton} onClick={handledestroy}> destroy nft template</button>
+      <button className={styles.goldofferfealtybutton} onClick={handleAirdropWithdraw}> Airdrop withdraw</button>
+      <button className={styles.goldofferfealtybutton} onClick={handledestroyCollection}> Destroy collection</button>
 
 
       

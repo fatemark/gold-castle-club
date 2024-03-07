@@ -107,9 +107,23 @@
       "codeHashDebug": "",
       "warnings": []
     },
+    "DestroyCollection": {
+      "sourceFile": "nft/destroycollection.ral",
+      "sourceCodeHash": "48d4bc73256365c5f40d3fc18b24beed81a4cef5dfb06e57ea7e873df29fb317",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
     "DestroyNft": {
       "sourceFile": "nft/destroynft.ral",
       "sourceCodeHash": "31501dd6b3aa848cb755b060dcf6e7e9be1614bdb198cf2be029986b727db058",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "DestroyNftAndReturnIt": {
+      "sourceFile": "nft/destroynftandreturnit.ral",
+      "sourceCodeHash": "c090ad1590ce7218fe7f4b36476283c8a8ec8e2c35a693f441a84b9423631250",
       "bytecodeDebugPatch": "",
       "codeHashDebug": "",
       "warnings": []
@@ -125,7 +139,7 @@
       "sourceFile": "nft/fealtyandmarriage.ral",
       "sourceCodeHash": "627d43ca5c315eea274a3086fc08345d718a754dd5d6537d352ebc2682fbd1bf",
       "bytecodeDebugPatch": "",
-      "codeHashDebug": "16abbf44da06d7543194b5a2cdeac375d35acb44bc5ffffcf6765f3456b4dd61",
+      "codeHashDebug": "d7e92d469b2e1b80eb7d86cb2068d08ec10e72cbc7f223d8c805682b18458ee5",
       "warnings": []
     },
     "FealtyForGold": {
@@ -143,28 +157,28 @@
       "warnings": []
     },
     "IFungibleToken": {
-      "sourceFile": "../../../../../../.npm/_npx/f1b120e1b513c04c/node_modules/@alephium/web3/std/fungible_token_interface.ral",
+      "sourceFile": "../../../../../../../.npm/_npx/f1b120e1b513c04c/node_modules/@alephium/web3/std/fungible_token_interface.ral",
       "sourceCodeHash": "6809cb06fb20fa7edf529461998beeebd12b1636d439612cca2f84214dbf4a20",
       "bytecodeDebugPatch": "",
       "codeHashDebug": "",
       "warnings": []
     },
     "INFT": {
-      "sourceFile": "../../../../../../.npm/_npx/f1b120e1b513c04c/node_modules/@alephium/web3/std/nft_interface.ral",
+      "sourceFile": "../../../../../../../.npm/_npx/f1b120e1b513c04c/node_modules/@alephium/web3/std/nft_interface.ral",
       "sourceCodeHash": "7f7514adf9fee057049d1c162701725b3377c01a0a102e6f0f5cf747039926b6",
       "bytecodeDebugPatch": "",
       "codeHashDebug": "",
       "warnings": []
     },
     "INFTCollection": {
-      "sourceFile": "../../../../../../.npm/_npx/f1b120e1b513c04c/node_modules/@alephium/web3/std/nft_collection_interface.ral",
+      "sourceFile": "../../../../../../../.npm/_npx/f1b120e1b513c04c/node_modules/@alephium/web3/std/nft_collection_interface.ral",
       "sourceCodeHash": "738a3440b686d94c9f7db58f23e22b7512d229540392b426ecb190b82db3fb4f",
       "bytecodeDebugPatch": "",
       "codeHashDebug": "",
       "warnings": []
     },
     "INFTCollectionWithRoyalty": {
-      "sourceFile": "../../../../../../.npm/_npx/f1b120e1b513c04c/node_modules/@alephium/web3/std/nft_collection_with_royalty_interface.ral",
+      "sourceFile": "../../../../../../../.npm/_npx/f1b120e1b513c04c/node_modules/@alephium/web3/std/nft_collection_with_royalty_interface.ral",
       "sourceCodeHash": "6407fb10136b21e191c5cf1f695be89f9e427ce2b01c039dd525dac587f3fc05",
       "bytecodeDebugPatch": "",
       "codeHashDebug": "",
@@ -172,9 +186,9 @@
     },
     "MarketPlace": {
       "sourceFile": "marketplace/marketplace.ral",
-      "sourceCodeHash": "bf70177bfad50fef8c0be64fb58e586072bda0394c360b23de332ad3981b4bd8",
+      "sourceCodeHash": "84175ac87081525d5e5c18d700cff2db958d29978a7b9de77ac626c558659c87",
       "bytecodeDebugPatch": "",
-      "codeHashDebug": "a18dd3da1255f952360b8c86e36d5d6eb0b0af6e0a52307282720ecea0a75cdc",
+      "codeHashDebug": "ededc279de06ddd39640019524345f55dfb697ef447e8250accd2a31e4279863",
       "warnings": []
     },
     "MarriageSpecific": {
@@ -191,6 +205,13 @@
       "codeHashDebug": "",
       "warnings": []
     },
+    "MigrateFealtyContract": {
+      "sourceFile": "nft/txscripts/fealty/migrate.ral",
+      "sourceCodeHash": "fffb2f51480a34c065cfb03f904efd339141684b1d7f9017f3965cf4e58a3456",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
     "Mint": {
       "sourceFile": "nft/mintnft.ral",
       "sourceCodeHash": "0f1f0b4799c075418cb0b8abbae6195deea3d2139e2515721d7148e59f5fdf3a",
@@ -200,9 +221,9 @@
     },
     "NFT": {
       "sourceFile": "nft/nft.ral",
-      "sourceCodeHash": "3c8944552fe2eac2f8807d699ffc929fbfb7e8d979baf0a610db75c74011608a",
+      "sourceCodeHash": "580d7d8d5d9e56573b54619d870fd1f6d56c096ab50b8225e4b88882b4461abf",
       "bytecodeDebugPatch": "",
-      "codeHashDebug": "e3b8b1d9e07bced78726022d82a4386b6cb1a452b5d845699512e1c2d4e42dbc",
+      "codeHashDebug": "4f9381da8adcb1904f6d332ad0c8bd6419bebc2c37b8397866300260ffdc4913",
       "warnings": []
     },
     "NFTCollectionBase": {
@@ -221,16 +242,16 @@
     },
     "NFTPublicSaleCollectionRandomBase": {
       "sourceFile": "nftcollection/nftcollectionrandombase.ral",
-      "sourceCodeHash": "922aba7c97c5e93b870fde5509594aace97e6d8297d1586a2758136e7bd23276",
+      "sourceCodeHash": "d83639a13d7464e996eb69cc069e8fa102b79f94ff3cdc5e8ae4a5fa6d5ce48d",
       "bytecodeDebugPatch": "",
       "codeHashDebug": "",
       "warnings": []
     },
     "NFTPublicSaleCollectionRandomWithRoyalty": {
       "sourceFile": "nftcollection/nftcollectionwithroyalty.ral",
-      "sourceCodeHash": "48fafb61fd8f7b985e81c786fe6487d0d9a8873780897e58409eb9927757aaaa",
+      "sourceCodeHash": "11b37eaaf456ae25c07f80cb3276d1939d6490a9956c4ed8903948860101994f",
       "bytecodeDebugPatch": "",
-      "codeHashDebug": "92ae7f267c61b48d5226cb0ce8db12c510ad07f5af930464d564562c761d8629",
+      "codeHashDebug": "5aab5b6b8c5742c923c0c4fd14ceac1c2249b21a18853dd4e932d84b37e092fa",
       "warnings": []
     },
     "NftListing": {
@@ -327,6 +348,13 @@
     "Withdraw": {
       "sourceFile": "goldtoken/withdraw.ral",
       "sourceCodeHash": "19508025d4b2fa94a26ff3e016173744be45dd130499c068489c9fde9d14f30c",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "WithdrawFromFealty": {
+      "sourceFile": "nft/txscripts/fealty/withdrawFromFealty.ral",
+      "sourceCodeHash": "e275b9002d7a429227e507c9023b87ea4a1d033b3bdd2549eb1348816ba9f1b0",
       "bytecodeDebugPatch": "",
       "codeHashDebug": "",
       "warnings": []

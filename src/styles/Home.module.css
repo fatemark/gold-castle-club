@@ -290,7 +290,7 @@ font-size: 20px;
   font-family: 'Copperplatebold';
   box-shadow: var(--box-shadow) var(--color-shadow);
   max-width: 100%;
-  font-size: clamp(0.6em, 2vw, 1.0rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  font-size: 0.9vw; /* Adjusts between 1rem and 1.75rem based on viewport width */
   background-color: #06750058; /* Example background color */
   color: #ffffff; /* Replace with your desired color */
   padding: 0.00008px 5px;
@@ -316,7 +316,7 @@ font-size: 20px;
   font-family: 'Copperplatebold';
   box-shadow: var(--box-shadow) var(--color-shadow);
   max-width: 100%;
-  font-size: clamp(0.6em, 2vw, 1.0rem); /* Adjusts between 1rem and 1.75rem based on viewport width */
+  font-size: 0.9vw; /* Adjusts between 1rem and 1.75rem based on viewport width */
   background-color: #067500aa; /* Example background color */
   color: #ffffff; /* Replace with your desired color */
   padding: 0.00008px 5px;
@@ -335,6 +335,7 @@ font-size: 20px;
   position: relative;
   align-items: center; /* Vertical centering */
   cursor: wait;
+  transition: all 0.8s;
 }
 
 .mintNowActioncontainer{
@@ -713,7 +714,7 @@ font-size: 20px;
 
 
 .tokenDappBackground {
-  background-image: url('/goldcoins.png'); /* Update with your image path */
+  background-image: url('/goldcoins.webp'); /* Update with your image path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

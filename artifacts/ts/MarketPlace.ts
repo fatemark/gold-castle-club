@@ -47,7 +47,6 @@ export namespace MarketPlaceTypes {
     price: bigint;
   }>;
   export type RevokedListingEvent = ContractEvent<{ nftId: HexString }>;
-  export type NewOwnerEvent = ContractEvent<{ nftId: HexString }>;
 }
 
 class Factory extends ContractFactory<
@@ -58,12 +57,7 @@ class Factory extends ContractFactory<
     return this.contract.getInitialFieldsWithDefaultValues() as MarketPlaceTypes.Fields;
   }
 
-  eventIndex = {
-    NewListing: 0,
-    NewBuyListing: 1,
-    RevokedListing: 2,
-    NewOwner: 3,
-  };
+  eventIndex = { NewListing: 0, NewBuyListing: 1, RevokedListing: 2 };
   consts = { ErrorCodes: { NotOwner: BigInt(108), NotLister: BigInt(124) } };
 
   at(address: string): MarketPlaceInstance {
@@ -105,11 +99,6 @@ class Factory extends ContractFactory<
     ): Promise<TestContractResult<null>> => {
       return testMethod(this, "revokeListing", params);
     },
-    changeOwner: async (
-      params: TestContractParams<MarketPlaceTypes.Fields, { nftId: HexString }>
-    ): Promise<TestContractResult<null>> => {
-      return testMethod(this, "changeOwner", params);
-    },
   };
 }
 
@@ -118,7 +107,7 @@ export const MarketPlace = new Factory(
   Contract.fromJson(
     MarketPlaceContractJson,
     "",
-    "a18dd3da1255f952360b8c86e36d5d6eb0b0af6e0a52307282720ecea0a75cdc"
+    "ededc279de06ddd39640019524345f55dfb697ef447e8250accd2a31e4279863"
   )
 );
 
@@ -175,25 +164,11 @@ export class MarketPlaceInstance extends ContractInstance {
     );
   }
 
-  subscribeNewOwnerEvent(
-    options: EventSubscribeOptions<MarketPlaceTypes.NewOwnerEvent>,
-    fromCount?: number
-  ): EventSubscription {
-    return subscribeContractEvent(
-      MarketPlace.contract,
-      this,
-      options,
-      "NewOwner",
-      fromCount
-    );
-  }
-
   subscribeAllEvents(
     options: EventSubscribeOptions<
       | MarketPlaceTypes.NewListingEvent
       | MarketPlaceTypes.NewBuyListingEvent
       | MarketPlaceTypes.RevokedListingEvent
-      | MarketPlaceTypes.NewOwnerEvent
     >,
     fromCount?: number
   ): EventSubscription {

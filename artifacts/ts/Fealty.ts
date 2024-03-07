@@ -440,7 +440,7 @@ export const Fealty = new Factory(
   Contract.fromJson(
     FealtyContractJson,
     "",
-    "16abbf44da06d7543194b5a2cdeac375d35acb44bc5ffffcf6765f3456b4dd61"
+    "d7e92d469b2e1b80eb7d86cb2068d08ec10e72cbc7f223d8c805682b18458ee5"
   )
 );
 

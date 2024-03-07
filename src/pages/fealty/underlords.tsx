@@ -416,7 +416,7 @@ const sortedNftData = [...(Array.isArray(nftData) ? nftData : [])].sort((a, b) =
 
   return (
 <div style= { {  
-  backgroundImage: `url(/backgrounds/fatemark_Knights_on_their_knees_swearing_fealty_to_the_king_cas_3261020b-dfdd-46c7-88d0-a637666e7105.png)`,
+  backgroundImage: `url(/backgrounds/fatemark_Cats_in_golden_armor_in_front_of_a_golden_castle_Larry_b11cab21-7334-4122-8cda-d4e2721f9172_resized.webp)`,
   backgroundSize: '1600px', // Let the browser size the background image
   backgroundRepeat: 'repeat', // Repeat the background image
   height: '100vh',

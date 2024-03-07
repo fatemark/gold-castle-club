@@ -1,0 +1,7 @@
+TxScript changeDivorceFee(
+    newdivorcefee: U256,
+    fealtyId: ByteVec
+) {
+    Fealty(fealtyId).changeDivorceFee(newdivorcefee)
+
+}

@@ -114,6 +114,8 @@ class Factory extends ContractFactory<
       NFTNotFound: BigInt(13),
       CollectionOwnerAllowedOnly: BigInt(1),
       NFTNotPartOfCollection: BigInt(2),
+      ActiveSupply: BigInt(512),
+      NotCollectionOwner: BigInt(514),
     },
   };
 
@@ -260,6 +262,25 @@ class Factory extends ContractFactory<
     ): Promise<TestContractResult<null>> => {
       return testMethod(this, "destroyNft", params);
     },
+    destroyNftAndReturnIt: async (
+      params: TestContractParams<
+        NFTPublicSaleCollectionRandomWithRoyaltyTypes.Fields,
+        { nftId: HexString; lockedasset: bigint }
+      >
+    ): Promise<TestContractResult<null>> => {
+      return testMethod(this, "destroyNftAndReturnIt", params);
+    },
+    destroyCollection: async (
+      params: Omit<
+        TestContractParams<
+          NFTPublicSaleCollectionRandomWithRoyaltyTypes.Fields,
+          never
+        >,
+        "testArgs"
+      >
+    ): Promise<TestContractResult<null>> => {
+      return testMethod(this, "destroyCollection", params);
+    },
   };
 }
 
@@ -268,7 +289,7 @@ export const NFTPublicSaleCollectionRandomWithRoyalty = new Factory(
   Contract.fromJson(
     NFTPublicSaleCollectionRandomWithRoyaltyContractJson,
     "",
-    "92ae7f267c61b48d5226cb0ce8db12c510ad07f5af930464d564562c761d8629"
+    "5aab5b6b8c5742c923c0c4fd14ceac1c2249b21a18853dd4e932d84b37e092fa"
   )
 );
 

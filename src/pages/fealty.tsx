@@ -403,7 +403,7 @@ const sortedNftData = [...(Array.isArray(nftData) ? nftData : [])].sort((a, b) =
 
   return (
 <div style= { {  
-  backgroundImage: `url(/backgrounds/principesbackground.png)`,
+  backgroundImage: `url(/backgrounds/principesbackground.webp)`,
   backgroundSize: '500px', // Let the browser size the background image
   backgroundRepeat: 'repeat', // Repeat the background image
   height: '100vh',

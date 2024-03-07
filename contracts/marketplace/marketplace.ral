@@ -6,7 +6,6 @@ Contract MarketPlace(
     event NewListing(newlisting: ByteVec, price: U256, nftId: ByteVec, lister: Address)
     event NewBuyListing(nftId: ByteVec, price: U256)
     event RevokedListing(nftId: ByteVec)
-    event NewOwner(nftId: ByteVec)
 
 
 
@@ -15,7 +14,6 @@ Contract MarketPlace(
         NotOwner = 108
         NotLister = 124
     }
-
 
 
 @using(preapprovedAssets = true, checkExternalCaller = false, assetsInContract = false)
@@ -39,14 +37,12 @@ pub fn buyListing(
     let listingcontractid = subContractId!(path)
 
     let price = NftListing(listingcontractid).getPrice()
-    let royalty = price / 50
+    let royalty = price / 100
     let priceAfterFee = price - royalty
 
     transferTokenToSelf!(buyer, ALPH, royalty)
 
     NftListing(listingcontractid).buyNFT{buyer -> ALPH: priceAfterFee}(buyer, priceAfterFee)
-
-    NFT(nftId).ownerchange(buyer)
 
     emit NewBuyListing(nftId, price)
 }
@@ -74,19 +70,5 @@ NftListing(listingcontractid).revokeListing()
 emit RevokedListing(nftId)
 }
 
-@using(preapprovedAssets = true, assetsInContract = false, checkExternalCaller = false)
-pub fn changeOwner(
-    nftId: ByteVec
-    ) -> () {
-
-    let owner = callerAddress!()
-    
-    let timeuntil = blockTimeStamp!() + 15000
-    lockApprovedAssets!{owner -> nftId: 1}(owner, timeuntil)
-
-    NFT(nftId).ownerchange(owner)
-
-    emit NewOwner(nftId)
-}
 
 }

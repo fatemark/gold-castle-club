@@ -174,7 +174,7 @@
   box-shadow: var(--box-shadow) var(--color-shadow);
   padding: 0.5rem;
   height: 10vh;
-  font-size: 200%;
+  font-size: 150%;
   color: #ffd000;
   text-shadow: 0 0 10px #000000;
   text-align: center;
@@ -449,7 +449,7 @@
 
 
 .marriageoffersbackground{
-  background-image: url('/backgrounds/fatemark_Full_body_a_handsome_knight_and_a_beautiful_lady_with__e3feae0f-8ec1-46ac-a05a-802d7ff4933d.png');
+  background-image: url('/backgrounds/fatemark_Full_body_a_handsome_knight_and_a_beautiful_lady_with__e3feae0f-8ec1-46ac-a05a-802d7ff4933d.webp');
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
@@ -622,7 +622,7 @@ transition: height 1.2s, font-size 1.2s, text-shadow 1.2s;
   color: #ffd000;
   text-shadow: 0 0 10px #000000;
   text-align: left;
-  width: 400px;
+  width: 80;
   padding-left: 1rem;
   white-space: nowrap;
 }
@@ -643,7 +643,7 @@ transition: height 1.2s, font-size 1.2s, text-shadow 1.2s;
   color: #ffd000;
   text-shadow: 0 0 10px #000000;
   text-align: center;
-  width: 105%;
+  width: 91%;
   white-space: nowrap;
   overflow: hidden;
   margin-top: 5px;
@@ -947,7 +947,7 @@ transition: height 1.2s, font-size 1.2s, text-shadow 1.2s;
 }
 
 .goldoffersbackground{
-  background-image: url('/backgrounds/fatemark_At_sunset_treasure_and_loot_on_the_left_side_a_beautif_be3c8c2c-64af-4ff9-8e42-51ace38a99ec.png');
+  background-image: url('/backgrounds/fatemark_At_sunset_treasure_and_loot_on_the_left_side_a_beautif_be3c8c2c-64af-4ff9-8e42-51ace38a99ec.webp');
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
@@ -977,7 +977,7 @@ transition: height 1.2s, font-size 1.2s, text-shadow 1.2s;
 }
 
 .fealtybackground{
-  background-image: url('/backgrounds/mycollectiobackground.png');
+  background-image: url('/backgrounds/mycollectiobackground.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -16,7 +16,7 @@ const nextConfig = {
         pathname: '/sm60z3ecwHoErDNEYGXYarM6FZdMbsOvsJkcbU4tnQI/[number]', // Use [number] as a placeholder
       },
     ],
-  },
+  }
 };
 
 module.exports = nextConfig;

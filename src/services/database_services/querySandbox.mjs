@@ -3,8 +3,19 @@ import { AlephiumBalanceProvider } from '@alephium/web3-react';
 
 
 
+web3.setCurrentNodeProvider("https://wallet.mainnet.alephium.org")
+const nodeProvider = web3.getCurrentNodeProvider()
+
+// Make the API call to get the balance
+const balanceResult = await nodeProvider.addresses.getAddressesAddressBalance('18nnC2vtUCsKRPwGfr3DUidsGhUypjHtMCjprC9N8jseP');
+
+
+const tokenBalances = balanceResult.tokenBalances;
+const idsWithAmountOne = tokenBalances?.filter(token => token.amount === '1').map(token => token.id);
+const addressesWithAmountOne = idsWithAmountOne.map(id => addressFromContractId(id));
+console.log(addressesWithAmountOne)
 //devnet:
-const nodeProvider = new NodeProvider('http://localhost:22973')
+//const nodeProvider = new NodeProvider('http://localhost:22973')
 
 //mainet:
 // web3.setCurrentNodeProvider("https://wallet.testnet.alephium.org")
@@ -13,19 +24,24 @@ const nodeProvider = new NodeProvider('http://localhost:22973')
 //web3.setCurrentNodeProvider("https://wallet.testnet.alephium.org")
 //const nodeProvider = web3.getCurrentNodeProvider()
 
-// web3.setCurrentNodeProvider("https://wallet.testnet.alephium.org")
-// const nodeProvider = web3.getCurrentNodeProvider()
+const ader = '9f27ec8d662eb19674489c02c4124657c515180235ddb30ab0896c578571df00'
+console.log(addressFromContractId(ader))
+
+const collectionaddress = addressFromContractId('10292b7358c6a9823ddcd48292c56025b4005be4623a8d0cea439e16c769ad00');
 
 
-const collectionaddress = addressFromContractId('d2ba8ba495bf0144709f03f03aee0e3ffed0af74d07a9021d2d60a46e1b80000');
 
-const result = await nodeProvider.events.getEventsContractContractaddress(
-  collectionaddress, { start: 0, limit: 9 }
-);
+const listingaddress = '22BioMMH6wSjrcjHCwJcF73AKFbjjDEGhauinqCbhZgXy'
+const listingid = contractIdFromAddress(listingaddress)
+console.log(binToHex(listingid))
+console.log(collectionaddress)
 
-const expandedresult = JSON.stringify(result, null, 2);
-console.log(expandedresult)
+// const result = await nodeProvider.events.getEventsContractContractaddress(
+//   collectionaddress, { start: 0, limit: 9 }
+// );
 
+// const expandedresult = JSON.stringify(result, null, 2);
+// console.log(expandedresult)
 
 // events fealty
 // event NewMarriage(proposer: Address, proposee: Address) event 0

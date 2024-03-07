@@ -53,8 +53,9 @@ const handleMouseLeave = () => {
 useEffect(() => {
   const intervalId = setInterval(() => {
     const currentTime = Math.floor(Date.now() / 1000); // Current Unix timestamp
-    const timeDifference = electionvotecount[0]?.electiondeadline / 1000 - currentTime;
-
+    const electiondeadline = electionvotecount[`electiondeadline` as keyof typeof electionvotecount]
+    const timeDifference = (electiondeadline/ 1000) - currentTime;
+    console.log(timeDifference, currentTime, electiondeadline)
     if (timeDifference <= 0) {
       // If target time has passed, stop the timer
       clearInterval(intervalId);
@@ -337,9 +338,7 @@ const sortedNftData = [...(Array.isArray(nftData) ? nftData : [])].sort((a, b) =
       </div>
       </div>
 
-      {defaultImageIndex !== null && (
-        <img src={`/backgrounds/government/planetator.webp`} alt={`Planetator`} width="450rem" height="450rem"/>
-      )}
+        <img src={`/backgrounds/government/planetator.webp`} alt={`Planetator`} width="400vw" height="400vw" style = { { marginTop:"20px" } } />
 
 
   </div>

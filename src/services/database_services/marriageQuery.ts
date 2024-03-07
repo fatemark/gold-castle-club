@@ -1,4 +1,5 @@
 import { NodeProvider, web3 } from '@alephium/web3';
+import { getApi } from '../utils';
 
 interface MarriageContract {
     allegiance: string;
@@ -25,12 +26,12 @@ interface MarriageContract {
 }
 
 async function getMarriageOffers(page: number): Promise<MarriageContract[]> {
-    //const nodeProvider = new NodeProvider('http://localhost:22973');
+    //const nodeProvider = new NodeProvider('http://backend:22973');
 
     web3.setCurrentNodeProvider("https://wallet.mainnet.alephium.org")
     const nodeProvider = web3.getCurrentNodeProvider()
 
-    const response = await fetch(`http://localhost:4000/marriagecontracts/${page}`);
+    const response = await fetch(`${getApi}marriagecontracts/${page}`);
 
     if (!response.ok) {
         throw new Error('Failed to fetch data from server');

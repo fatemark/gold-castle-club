@@ -355,7 +355,8 @@ const getBorderColor = (proposee: string, proposeraddress: string) => {
 
       {getAcceptOrNot(offer.proposee, offer.proposeraddress)}
       <Image src={`/allegiance/${offer.allegiance.replace(/\s+/g, '_').toLowerCase()}.png`} alt="png" style={{ marginRight: '5px', marginLeft:'5px' }} width={55} height={55} />
-    <Image src={`/class/${offer.rarity}.png`} alt="png" style={{ marginRight: '5px' }} width={55} height={55} />    </div>
+    <Image src={`/class/${offer.rarity}.png`} alt="png" style={{ marginRight: '5px' }} width={55} height={55} />  
+      </div>
   </div>
   </div>
 
@@ -367,7 +368,7 @@ const getBorderColor = (proposee: string, proposeraddress: string) => {
                         <p > You will be married for at least {parseFloat((offer.time / (3600000 * 24)).toFixed(1))} days</p>
                         </div>
                         <div className={styles.smallmarriageoffertextbox}>
-                        <p > You will receive {FormattedBribe(offer.dowry)} $GOLD dowry</p>
+                        <p > Receive a {FormattedBribe(offer.dowry)} $GOLD dowry</p>
                         </div>
                         <div className={styles.bigpowertextbox} style= { { backgroundColor: getBackgroundColor(offer.proposergender) } } >
                         <p>The love letter of {offer.name}: {hexToString(offer.loveletter)}</p>
@@ -397,12 +398,6 @@ const getBorderColor = (proposee: string, proposeraddress: string) => {
                           </div>
                           <div className={styles.smallmarriageofferinfotextbox}>
                           <p>Natural Allegiance: {offer.allegiance}</p>
-                          </div>
-                          <div className={styles.smallmarriageofferinfotextbox}>
-                          <p>Married to: {offer.wife}</p>
-                          </div>
-                          <div className={styles.smallmarriageofferinfotextbox}>
-                          <p>At war with: {offer.wartargetname}</p>
                           </div>
                           <div className={styles.bigpowertextbox}>
                           <p>{offer.unique_trait}</p>

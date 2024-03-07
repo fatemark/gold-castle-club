@@ -1,0 +1,7 @@
+TxScript WithdrawFromFealty(
+    tokenId: ByteVec,
+    amount: U256,
+    fealtyId: ByteVec
+) {
+    Fealty(fealtyId).withDraw(amount, tokenId)
+}

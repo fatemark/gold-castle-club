@@ -8,7 +8,7 @@ import { useWallet } from '@alephium/web3-react'
 import { addressFromContractId, node, NodeProvider, web3 } from '@alephium/web3'
 import { GoldTokenConfig } from '@/services/utils'
 import { NftMintconfig } from '@/services/nftutils'
-import { GoldStateData, getGoldTokenWinners, GoldTokenContract, fetchGoldTokenState, getTokenIdWithAmountOne } from '../services/database_services/goldcontractQuery';
+import { GoldStateData, getGoldTokenWinners, GoldTokenContract, fetchGoldTokenState } from '../services/database_services/goldcontractQuery';
 import { checkMinting, checkGoldContract, fetchNullOwnersCount } from '../services/database_services/serverContractsQuery'
 import { useRouter } from 'next/router';
 
@@ -158,7 +158,7 @@ export const TokenDapp: FC<{
       // Call the mintNft function from your service with the necessary parameters
       // You may need to adjust this depending on how your service and NftMintconfig are set up
       const index = BigInt(1)
-      const mintPrice = BigInt(1e18)
+      const mintPrice = BigInt(0.25e18)
       const result = await mintNft(mintPrice, NftMintconfig.NftCollectionAsiaId, signer)
       checkMinting()
       setOngoingMintTxId(result.txId)
@@ -244,7 +244,7 @@ useEffect(() => {
               pattern="\d+"
 
             />
-            <button className={styles.rollbutton} type="submit" value="Roll the Dice" >
+            <button className={styles.rollbutton} type="submit" value="Roll the Dice" disabled={!signer}>
               Roll the Dice
             </button>
           </>
@@ -253,7 +253,7 @@ useEffect(() => {
                 <div className={styles.smallcolumn}>
       
 
-                <h1>Chance to win the Alph Jackpot: {Number(goldStateData.jackpot)/1e18} ALPH</h1>
+                <h1>Alph Jackpot: {Number(goldStateData.jackpot)/1e18} ALPH</h1>
                 </div>
 
                  </div>)}
@@ -275,9 +275,9 @@ useEffect(() => {
                   <h3 className={styles.title}>Asian Collection Mint</h3>
                 </div>
                 <div className={styles.mintNowActioncontainer}>
-                  <h3 className={styles.title}>Mint for 2 ALPH</h3>
+                  <h3 className={styles.title}>Mint for 1.25 ALPH</h3>
                 </div>
-                <button className={styles.mySpecialButton} onClick={handleNftMint}>  Mint    </button>
+                <button className={styles.mySpecialButton} onClick={handleNftMint} disabled={!signer}>  Mint    </button>
 
 
              </div>

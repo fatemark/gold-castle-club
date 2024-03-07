@@ -212,11 +212,9 @@ const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
 
 const handleSwearFealtyWithinCollection = async () => {
   if (signer && selectedNftContractId) {
-
-  const fealtyId = FealtyConfig.fealtyId;
-  const goldtokenid = GoldTokenConfig.GoldTokenId;
   const lordaddress =  expandedNftData.nftselfcontractaddress
   const subjectaddress = addressFromContractId(selectedNftContractId)
+  console.log(lordaddress, subjectaddress, signer)
   const result = await swearFealtyWithoutGoldFree(
     BigInt(0),
     lordaddress,

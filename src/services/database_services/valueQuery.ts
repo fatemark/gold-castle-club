@@ -1,5 +1,7 @@
+import { getApi } from '../utils';
+
 export async function getValue(your_nft_self_contract_address: string, selectortype: string): Promise<any> {
-    const url = `http://localhost:4000/get_value?nftselfcontractaddress=${your_nft_self_contract_address}&selectortype=${selectortype}`;
+    const url = `${getApi}${your_nft_self_contract_address}&selectortype=${selectortype}`;
     try {
         const response = await fetch(url);
         if (!response.ok) {

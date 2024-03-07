@@ -434,7 +434,7 @@ const defaultImageIndex = expandedIndex === null ? findHighestvotingpowerNftInde
     <div>
     {feudallordData != null && (
 <div style= { {  
-  backgroundImage: `url(/backgrounds/fealtybackgrounds/${getbackground(feudallordData.ap, feudallordData.gender, feudallordData.rarity, feudallordData.item, feudallordData.allegiance, feudallordData.magic, feudallordData.group_attack, feudallordData.solo_attack, feudallordData.class)}.png)`,
+  backgroundImage: `url(/backgrounds/fealtybackgrounds/${getbackground(feudallordData.ap, feudallordData.gender, feudallordData.rarity, feudallordData.item, feudallordData.allegiance, feudallordData.magic, feudallordData.group_attack, feudallordData.solo_attack, feudallordData.class)}.webp)`,
   backgroundSize: '300px', // Let the browser size the background image
   backgroundRepeat: 'repeat', // Repeat the background image
   height: '100vh',

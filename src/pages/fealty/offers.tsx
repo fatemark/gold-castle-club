@@ -304,7 +304,7 @@ const defaultImageIndex = expandedIndex === null ? findHighestRarityNftIndex(sor
   className={`${styles.nft} ${
     expandedIndex === index ? styles.expanded : ''
   } ${expandedIndex === index ? styles.expandedBorderRadius : ''}`}  
-  style= { {   backgroundImage: `url(/backgrounds/fealtybackgrounds/${getbackground(offer.ap, offer.gender, offer.rarity, offer.item, offer.allegiance, offer.magic, offer.group_attack, offer.solo_attack, offer.classtype)}.png)`,
+  style= { {   backgroundImage: `url(/backgrounds/fealtybackgrounds/${getbackground(offer.ap, offer.gender, offer.rarity, offer.item, offer.allegiance, offer.magic, offer.group_attack, offer.solo_attack, offer.classtype)}.webp)`,
   backgroundSize: '200px', 
   backgroundRepeat: 'repeat', 
   border: `5px solid ${getBorderColor(offer.subjectaddress, offer.lordaddress)}`
@@ -337,10 +337,10 @@ const defaultImageIndex = expandedIndex === null ? findHighestRarityNftIndex(sor
                   <div className={styles.threeColumnLayout} style= { {  display: 'flex', justifyContent: 'space-between', alignItems: 'center'  } } >
                   <div >
                   <div className={styles.smalloffertextbox}>
-                  <p > You will swear fealty for {parseFloat((offer.time / (3600000 * 24)).toFixed(1))} days</p>
+                  <p > Swear fealty for {parseFloat((offer.time / (3600000 * 24)).toFixed(1))} days</p>
                   </div>
                   <div className={styles.smalloffertextbox}>
-                  <p > You will receive {FormattedBribe(offer.bribe)} $GOLD</p>
+                  <p > Receive {FormattedBribe(offer.bribe)} $GOLD</p>
                   </div>
                 <div className={styles.bigpowertextbox}>
                   <p>The campaign message of {offer.name}: {hexToString(offer.campaign)}</p>
@@ -349,7 +349,7 @@ const defaultImageIndex = expandedIndex === null ? findHighestRarityNftIndex(sor
                   <div style= { {  display: 'flex', flexDirection: 'column', alignItems: 'right'  } } >
   
                   <div >
-                  <div className={styles.smalloffertextbox} style= { { width:'400px', marginBottom:'3px' } } >
+                  <div className={styles.smalloffertextbox} style= { { width:'100%', marginBottom:'3px' } } >
                   <p > Minimum R.{offer.minimumnftclass} required</p>
                   </div>
                   <div className={styles.smallofferinfotextbox}>
