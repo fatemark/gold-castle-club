@@ -1,19 +1,21 @@
 import { groupOfAddress, NodeProvider, web3, subContractId, addressFromContractId, binToHex, contractIdFromAddress, hexToString, stringToHex, encodeByteVec, toApiByteVec, encodeU256, hexToBinUnsafe, encodeHexSignature, buildContractByteCode, EventSubscription, node, encodeI256 } from '@alephium/web3'
 import { AlephiumBalanceProvider } from '@alephium/web3-react';
 
+const apiKey = 'LS6YppYYm1bvF0OxcoqcGd3HaaAIGs4aXTj6NYma8sAoiKDZ'; // Replace 'your-api-key' with your actual API key
 
+web3.setCurrentNodeProvider("https://lb.notrustverify.ch/");
+const nodeProvider = web3.getCurrentNodeProvider();
 
-web3.setCurrentNodeProvider("https://wallet.mainnet.alephium.org")
-const nodeProvider = web3.getCurrentNodeProvider()
+// Define your API key
 
 // Make the API call to get the balance
-const balanceResult = await nodeProvider.addresses.getAddressesAddressBalance('18nnC2vtUCsKRPwGfr3DUidsGhUypjHtMCjprC9N8jseP');
-
-
-const tokenBalances = balanceResult.tokenBalances;
-const idsWithAmountOne = tokenBalances?.filter(token => token.amount === '1').map(token => token.id);
-const addressesWithAmountOne = idsWithAmountOne.map(id => addressFromContractId(id));
-console.log(addressesWithAmountOne)
+// const balanceResult = await nodeProvider.addresses.getAddressesAddressBalance('18nnC2vtUCsKRPwGfr3DUidsGhUypjHtMCjprC9N8jseP', {
+// });
+// console.log(balanceResult)
+// const tokenBalances = balanceResult.tokenBalances;
+// const idsWithAmountOne = tokenBalances?.filter(token => token.amount === '1').map(token => token.id);
+// const addressesWithAmountOne = idsWithAmountOne.map(id => addressFromContractId(id));
+// console.log(addressesWithAmountOne)
 //devnet:
 //const nodeProvider = new NodeProvider('http://localhost:22973')
 
@@ -24,17 +26,17 @@ console.log(addressesWithAmountOne)
 //web3.setCurrentNodeProvider("https://wallet.testnet.alephium.org")
 //const nodeProvider = web3.getCurrentNodeProvider()
 
-const ader = '9f27ec8d662eb19674489c02c4124657c515180235ddb30ab0896c578571df00'
-console.log(addressFromContractId(ader))
+// const ader = '9f27ec8d662eb19674489c02c4124657c515180235ddb30ab0896c578571df00'
+// console.log(addressFromContractId(ader))
 
-const collectionaddress = addressFromContractId('10292b7358c6a9823ddcd48292c56025b4005be4623a8d0cea439e16c769ad00');
+// const collectionaddress = addressFromContractId('10292b7358c6a9823ddcd48292c56025b4005be4623a8d0cea439e16c769ad00');
 
 
 
-const listingaddress = '22BioMMH6wSjrcjHCwJcF73AKFbjjDEGhauinqCbhZgXy'
-const listingid = contractIdFromAddress(listingaddress)
-console.log(binToHex(listingid))
-console.log(collectionaddress)
+// const listingaddress = '22BioMMH6wSjrcjHCwJcF73AKFbjjDEGhauinqCbhZgXy'
+// const listingid = contractIdFromAddress(listingaddress)
+// console.log(binToHex(listingid))
+// console.log(collectionaddress)
 
 // const result = await nodeProvider.events.getEventsContractContractaddress(
 //   collectionaddress, { start: 0, limit: 9 }
@@ -91,7 +93,7 @@ console.log(collectionaddress)
 // }
 
 
-
+// const contractAddress = 'unY1RSzgLf7jcAG4LnYqgcgZ7CHqfkwA1NF8FWfJtrh5'
 // const event = await nodeProvider.events.getEventsContractContractaddress(
 //     contractAddress, {start: 0, limit: 100, group: 0}
 //   )
@@ -103,13 +105,15 @@ console.log(collectionaddress)
 
 
 
-  // const goldtokenAddress = '29HUL2W2CDgQAkvBWCi1yrEGsGbCaexnQdzcLoQqBJtX1'
+  const parentid = '68858bfeec8b260a98cef84852cb102eee8f123008edcfbf503a603f63f86000'
+  const path = encodeU256(338)
+  const subcontractid = subContractId(parentid, path, 0)
+  const subcontractaddress = addressFromContractId(subcontractid)
+  const result = await nodeProvider.contracts.getContractsAddressState(subcontractaddress, {
+      group: groupOfAddress(subcontractaddress),
+  });
 
-  // const result = await nodeProvider.contracts.getContractsAddressState(goldtokenAddress, {
-  //     group: groupOfAddress(goldtokenAddress),
-  // });
-
-  // console.log(result)
+  console.log(result)
 
 
 

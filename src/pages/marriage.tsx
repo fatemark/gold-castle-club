@@ -334,7 +334,7 @@ const getBorderColor = (proposee: string, proposeraddress: string) => {
 <div className={styles.marriageoffersbackground}>
   <div className={styles.collectiontwoColumnLayout}>
   <ul className={styles.collection} style= { { backgroundColor: 'rgba(4, 190, 242, 0.458)' , color: '#ffd000' } } >
-  <h1>Offers &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Mary and receive a $GOLD dowry</h1>
+  <h1>Offers &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Marry and receive a $GOLD dowry</h1>
   {sortedFealtyOfferData.map((offer, index) => (
     <li 
   key={index} 

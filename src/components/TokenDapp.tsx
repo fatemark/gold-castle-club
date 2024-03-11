@@ -267,7 +267,7 @@ useEffect(() => {
           </div>
 
           <div className={styles.newmintContainer}>
-            <h3 className={styles.title}>Old Asia Mint Live ({mintedNftCount} / 562 minted)</h3>
+            <h3 className={styles.title}>Old Asia Mint sold out within a few hours</h3>
           </div>
           <div className={styles.newWrapperContainer}>
              <div className={styles.newLeftSideContainer}>

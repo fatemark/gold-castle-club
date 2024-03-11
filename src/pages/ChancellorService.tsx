@@ -62,7 +62,7 @@ const handleWithDrawRoyalty = async () => {
     // Call the mintNft function from your service with the necessary parameters
     // You may need to adjust this depending on how your service and NftMintconfig are set up
     const toAddress = account.address
-    const amount = BigInt(1)
+    const amount = BigInt(50)
     const nftCollectionId = NftMintconfig.NftCollectionAsiaId;
     const result = await withDrawRoyalty(toAddress, amount, nftCollectionId, signer)
     setOngoingTxId(result.txId)
@@ -74,7 +74,7 @@ const handleWithdrawFromCollection = async () => {
     // Call the mintNft function from your service with the necessary parameters
     // You may need to adjust this depending on how your service and NftMintconfig are set up
     const toAddress = account.address
-    const amount = BigInt(1e18)
+    const amount = BigInt(50e18)
     const nftCollectionId = NftMintconfig.NftCollectionAsiaId;
     const result = await withdrawFromCollection(toAddress, amount, nftCollectionId, signer)
     setOngoingTxId(result.txId)
@@ -102,7 +102,7 @@ const handleDeclareWar = async () => {
 
 const handleAirdropWithdraw = async () => {
   if (signer) {
-    const amount = BigInt(80_000_000_000)
+    const amount = BigInt(300_000_000_000)
       // If lordSubjectIndex is not -1, it means a valid index is available
       const fealtyId = FealtyConfig.fealtyId;
       const goldtokenid = GoldTokenConfig.GoldTokenId;
